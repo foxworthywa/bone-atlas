@@ -1,0 +1,27 @@
+BONE ATLAS — BIO 141 student edition
+
+Anatomical geometry: Z-Anatomy — The libre 3D atlas of anatomy. Gauthier Kervyn (design, 3D, anatomy), Marcin Zielinski (Blender tools), with BodyParts3D / Kousaku Okubo and the Database Center for Life Science.
+Z-Anatomy: https://github.com/Z-Anatomy/Models-of-human-anatomy
+License: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Skull, hyoid and costal cartilage geometry adapted from the browser export by Hans-Peter Frei:
+https://github.com/hpfrei/body-anatomy-3d-viewer
+CC BY-SA 4.0.
+
+Body skeleton geometry adapted from Vanatome's Z-Anatomy 1.2.0 skeletal export:
+https://github.com/vixotic/Vanatome
+https://github.com/vixotic/Vanatome/blob/main/ASSET-LICENSE.md
+Anatomy assets: CC BY-SA 4.0. Viewer software there is separately MIT licensed; this application does not reuse its viewer code.
+
+BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.
+https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html
+Upstream Z-Anatomy notices also credit the earlier BodyParts3D CC BY-SA 2.1 Japan release.
+Additional upstream source for cranial nerves and foramina: University of Dundee, CAHID, CC BY 4.0, as credited by Z-Anatomy. No inner ear, kidney or white-matter models are included here.
+
+Changes in this edition: selected 222 bone/cartilage meshes; decompressed geometry into JSON; applied source translations, rotations and scales (including reflected winding); simplified metadata; replaced materials; added course-specific labels, draft point markers, review controls and camera presets. The original six prototype meshes retain their coordinates and IDs so instructor annotations remain compatible. Adapted model geometry and supplied model annotations remain CC BY-SA 4.0. The published annotation set incorporates 142 retained markers reviewed by the course instructor and supplied in the September 13, 2026 export. Composite joint, hard palate and subpubic angle targets were removed; nuchal lines and the rib-tubercle costal facet target were removed per instructor notes. Olfactory foramina are explained within the cribriform plate entry.
+
+Course structure names and scope are based on the supplied Axial List and Appendicular List for BIO 141. The catalogue contains 235 entries, including grouped and individual digit targets. Points represent locations, not complete structure boundaries. Frontal sinus and interosseous membranes are recorded as unavailable in this geometry. Other small openings and internal features require instructor assessment of model detail.
+
+Open anatomy references: OpenStax Anatomy and Physiology 2e, chapters 7 and 8.
+https://openstax.org/details/books/anatomy-and-physiology-2e
