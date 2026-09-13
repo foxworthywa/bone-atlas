@@ -1,0 +1,3033 @@
+[
+  {
+    "id": "frontal",
+    "label": "Frontal bone",
+    "bone": "frontal",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "frontal-mark-0",
+    "label": "Supraorbital margin",
+    "bone": "frontal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.03623641801298442,
+      1.6133305134982319,
+      0.07617701997223214
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "frontal-mark-1",
+    "label": "Supraorbital foramen / notch",
+    "bone": "frontal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.02762873530090057,
+      1.6157044194898267,
+      0.07982069231581457
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "frontal-sinus",
+    "label": "Frontal sinus",
+    "bone": "frontal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": null,
+    "note": "Internal cavity: this surface model has no verified sinus cutaway. A more detailed model is needed.",
+    "anchor": "Frontal sinus",
+    "unavailable": true,
+    "system": "axial"
+  },
+  {
+    "id": "parietal",
+    "label": "Parietal bones",
+    "bone": "parietal",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "temporal",
+    "label": "Temporal bones",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "",
+    "system": "axial"
+  },
+  {
+    "id": "temporal-0",
+    "label": "Zygomatic process",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.06239794947616467,
+      1.5766204620406974,
+      0.029870870029715224
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "temporal-1",
+    "label": "Mandibular fossa",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.042364119251634164,
+      1.5740974437253994,
+      0.000604402343317656
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "temporal-2",
+    "label": "External auditory meatus",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.04513865588710625,
+      1.5804936456990915,
+      -0.002884840180527759
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "temporal-3",
+    "label": "Internal auditory meatus",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.030241017400380155,
+      1.5819223597152736,
+      -0.01067851433241647
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "temporal-4",
+    "label": "Styloid process",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.03902425961692296,
+      1.550793757531117,
+      4.441218320845597e-05
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "temporal-5",
+    "label": "Mastoid process",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.04481329357767572,
+      1.5603241080228725,
+      -0.022395910594892987
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "temporal-6",
+    "label": "Carotid canal",
+    "bone": "temporal",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.030101098310161514,
+      1.574943919723209,
+      -0.005951544861157031
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "occipital",
+    "label": "Occipital bone",
+    "bone": "occipital",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "",
+    "system": "axial"
+  },
+  {
+    "id": "occipital-0",
+    "label": "Foramen magnum",
+    "bone": "occipital",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.010466330227898378,
+      1.5541033175746737,
+      -0.042417866603817495
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "occipital-1",
+    "label": "Jugular foramen",
+    "bone": "occipital",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.024623354024177334,
+      1.5656517869953477,
+      -0.011552789808982139
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "occipital-2",
+    "label": "Occipital condyles",
+    "bone": "occipital",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.02396544724759105,
+      1.553912937451943,
+      -0.02089520820657971
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "occipital-3",
+    "label": "External occipital protuberance",
+    "bone": "occipital",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.0022337029564275523,
+      1.5734836965586072,
+      -0.08311280775223365
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid",
+    "label": "Sphenoid bone",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-0",
+    "label": "Body of sphenoid",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.01260753529726065,
+      1.592229556932865,
+      0.01793816443764415
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-1",
+    "label": "Greater wings",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.032796664778320495,
+      1.5967027534031433,
+      0.03725401666693409
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-2",
+    "label": "Lesser wings",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.021510174381132965,
+      1.6076547672387274,
+      0.031375454582779044
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-3",
+    "label": "Superior orbital fissure",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.020163161748792444,
+      1.5997662823857353,
+      0.03400631069959956
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-4",
+    "label": "Optic canals (foramina)",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.012848958557058046,
+      1.602673802931405,
+      0.03624415424540858
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-5",
+    "label": "Sella turcica",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.0004911036124128638,
+      1.594406650757377,
+      0.019870210362322116
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-6",
+    "label": "Hypophyseal fossa",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.0010378458381747196,
+      1.5936154253530448,
+      0.018928778423327332
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "sphenoid-7",
+    "label": "Pterygoid processes",
+    "bone": "sphenoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.020470817984304557,
+      1.5701276195627265,
+      0.026084270079267224
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "ethmoid",
+    "label": "Ethmoid bone",
+    "bone": "ethmoid",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "",
+    "system": "axial"
+  },
+  {
+    "id": "ethmoid-0",
+    "label": "Perpendicular plate",
+    "bone": "ethmoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.0001466224836803795,
+      1.5905195780802315,
+      0.07333935873662879
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "ethmoid-1",
+    "label": "Cribriform plate",
+    "bone": "ethmoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.0032962067250352613,
+      1.5962092293802652,
+      0.06108448190594869
+    ],
+    "note": "Olfactory (cribriform) foramina are openings in the cribriform plate. Study them together here.",
+    "system": "axial"
+  },
+  {
+    "id": "ethmoid-3",
+    "label": "Crista galli",
+    "bone": "ethmoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      6.942650681874066e-05,
+      1.6037878150727458,
+      0.058431194228518515
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "ethmoid-4",
+    "label": "Superior nasal conchae",
+    "bone": "ethmoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.004151420766809648,
+      1.5861022156945446,
+      0.07424746031900152
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "ethmoid-5",
+    "label": "Middle nasal conchae",
+    "bone": "ethmoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.00353255933526719,
+      1.5765307847788652,
+      0.06266218561916564
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "axial"
+  },
+  {
+    "id": "suture-sagittal",
+    "label": "Sagittal suture",
+    "bone": "sutures",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.001011567053694314,
+      1.7039596804484238,
+      -0.028185028320630717
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "suture-coronal",
+    "label": "Coronal suture",
+    "bone": "sutures",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.038030645740631155,
+      1.6852467070310557,
+      0.025975609848843496
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "suture-lambdoid",
+    "label": "Lambdoid suture",
+    "bone": "sutures",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.026183974785517504,
+      1.6329837596259076,
+      -0.10003893314280055
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "suture-squamous",
+    "label": "Squamous suture",
+    "bone": "sutures",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.07170498137653619,
+      1.6188501954533545,
+      -0.01216424201633412
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "maxilla",
+    "label": "Maxillae",
+    "bone": "maxilla",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "maxilla-mark-0",
+    "label": "Palatine process",
+    "bone": "maxilla",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.004585432265474976,
+      1.5481886775586247,
+      0.06530306150179148
+    ],
+    "note": "The palatine processes of the maxillae and horizontal plates of the palatine bones together form the hard palate.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "palatine",
+    "label": "Palatine bones",
+    "bone": "palatine",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "palatine-mark-0",
+    "label": "Horizontal plate",
+    "bone": "palatine",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.005746653803117302,
+      1.5489248205891961,
+      0.04911971994158108
+    ],
+    "note": "The palatine processes of the maxillae and horizontal plates of the palatine bones together form the hard palate.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "palatine-mark-1",
+    "label": "Perpendicular plate",
+    "bone": "palatine",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.010135738424500301,
+      1.566391530010235,
+      0.03514471633562868
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "zygomatic",
+    "label": "Zygomatic bones",
+    "bone": "zygomatic",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "zygomatic-mark-0",
+    "label": "Temporal process",
+    "bone": "zygomatic",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.06075357287763311,
+      1.5725759435803284,
+      0.04041985545317971
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "zygomatic-mark-1",
+    "label": "Frontal process",
+    "bone": "zygomatic",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.05119289710781896,
+      1.6027574423465007,
+      0.060967296197010426
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "zygomatic-mark-2",
+    "label": "Maxillary process",
+    "bone": "zygomatic",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.03964234798962819,
+      1.567931251409521,
+      0.06856368762422119
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "lacrimal",
+    "label": "Lacrimal bones",
+    "bone": "lacrimal",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "nasal",
+    "label": "Nasal bones",
+    "bone": "nasal",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "inferior-conchae",
+    "label": "Inferior nasal conchae",
+    "bone": "inferior-conchae",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "vomer",
+    "label": "Vomer",
+    "bone": "vomer",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "mandible",
+    "label": "Mandible",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-0",
+    "label": "Body",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.014554034510321848,
+      1.5095206947807986,
+      0.07508937844463628
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-1",
+    "label": "Ramus",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.043652575361597584,
+      1.541237588178327,
+      0.02899322359468428
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-2",
+    "label": "Angle",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.04132720250438726,
+      1.5247553195530148,
+      0.02631339491596757
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-3",
+    "label": "Mental foramen",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.02163483194382647,
+      1.510582762287315,
+      0.0661697474200531
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-4",
+    "label": "Condylar process",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.04976102473805635,
+      1.5728522520564132,
+      0.006718648506795091
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-5",
+    "label": "Coronoid process",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.04287072940882203,
+      1.5621783585257902,
+      0.04625467168877556
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-6",
+    "label": "Mandibular notch",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.043913320283711754,
+      1.5591878060307471,
+      0.024525244585208945
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "mandible-mark-7",
+    "label": "Mandibular foramen",
+    "bone": "mandible",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.037499088602043706,
+      1.5415074468923424,
+      0.022358365752738876
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "hyoid",
+    "label": "Hyoid",
+    "bone": "hyoid",
+    "region": "skull",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "hyoid-mark-0",
+    "label": "Body",
+    "bone": "hyoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      -0.0014067369500829555,
+      1.4952784720909615,
+      0.037326318767839636
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "hyoid-mark-1",
+    "label": "Greater cornu (horns)",
+    "bone": "hyoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.020895129671001225,
+      1.508743483877243,
+      0.007817971800706994
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "hyoid-mark-2",
+    "label": "Lesser cornu (horns)",
+    "bone": "hyoid",
+    "region": "skull",
+    "kind": "landmark",
+    "point": [
+      0.015579690438262475,
+      1.5032609819447393,
+      0.03281915480454835
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae",
+    "label": "Vertebrae",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Learn cervical, thoracic, lumbar, sacral and coccygeal regions. Mark common features on a representative vertebra.",
+    "system": "axial"
+  },
+  {
+    "id": "cervical",
+    "label": "Cervical vertebrae",
+    "bone": "cervical",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "atlas",
+    "label": "Atlas (C1)",
+    "bone": "atlas",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "axis",
+    "label": "Axis (C2)",
+    "bone": "axis",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "axis-mark-0",
+    "label": "Odontoid process / dens",
+    "bone": "axis",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.0006680122447423227,
+      1.5485132767854994,
+      -0.014464614305098378
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "thoracic-vertebrae",
+    "label": "Thoracic vertebrae",
+    "bone": "thoracic-vertebrae",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "lumbar",
+    "label": "Lumbar vertebrae",
+    "bone": "lumbar",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-0",
+    "label": "Body (centrum)",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.0148823,
+      1.0887826,
+      0.0076702
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-1",
+    "label": "Spinous process",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      -0.0015283,
+      1.0752648,
+      -0.0646015
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-2",
+    "label": "Transverse process",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.0356990567952237,
+      1.084340980864278,
+      -0.0405665933707714
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-3",
+    "label": "Vertebral foramen",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      -0.014135891160983682,
+      1.0769043782431194,
+      -0.02617843057281198
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-4",
+    "label": "Intervertebral foramen (vertebral notches)",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.017078563686040105,
+      1.1383317027835818,
+      -0.03806242741587991
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-5",
+    "label": "Superior articular process",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.019600578141933445,
+      1.221102770145579,
+      -0.06488914813870818
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-6",
+    "label": "Inferior articular process",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.018039809657605488,
+      1.160670064548072,
+      -0.05452914052037261
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-7",
+    "label": "Superior articular facet",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      -0.014752176942214458,
+      1.1224152247717722,
+      -0.049599014650727746
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "vertebrae-mark-8",
+    "label": "Inferior articular facet",
+    "bone": "vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.013605581724543986,
+      1.0858520647031524,
+      -0.04430282270116104
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "cervical-mark-0",
+    "label": "Transverse foramen",
+    "bone": "cervical",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      -0.03398204280840109,
+      1.5431373429515807,
+      -0.016070154820555488
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "thoracic-vertebrae-mark-0",
+    "label": "Costal facets for head of rib",
+    "bone": "thoracic-vertebrae",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.03480729509592073,
+      1.3299124513481488,
+      -0.08244306515780725
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "sacrum",
+    "label": "Sacrum / sacral vertebrae",
+    "bone": "sacrum",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "sacrum-mark-0",
+    "label": "Auricular surface",
+    "bone": "sacrum",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.044018969843358624,
+      0.927603276266613,
+      -0.04281968261094184
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "sacrum-mark-1",
+    "label": "Sacral canal",
+    "bone": "sacrum",
+    "region": "spine",
+    "kind": "landmark",
+    "point": [
+      0.0022944021949904483,
+      0.8989618841871461,
+      -0.08092320563395773
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "coccyx",
+    "label": "Coccyx / coccygeal vertebrae",
+    "bone": "coccyx",
+    "region": "spine",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "sternum",
+    "label": "Sternum",
+    "bone": "sternum",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "manubrium",
+    "label": "Manubrium",
+    "bone": "manubrium",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "sternal-body",
+    "label": "Body of sternum",
+    "bone": "sternal-body",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "xiphoid",
+    "label": "Xiphoid process",
+    "bone": "xiphoid",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "sternum-mark-0",
+    "label": "Suprasternal (jugular) notch",
+    "bone": "sternum",
+    "region": "thorax",
+    "kind": "landmark",
+    "point": [
+      -0.0009038514260343372,
+      1.3985021350803895,
+      0.04223630367373471
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "sternum-mark-1",
+    "label": "Clavicular notches",
+    "bone": "sternum",
+    "region": "thorax",
+    "kind": "landmark",
+    "point": [
+      0.02391315531970048,
+      1.3840399242721941,
+      0.04519069187179048
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "ribs",
+    "label": "Ribs",
+    "bone": "ribs",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "true-ribs",
+    "label": "True ribs (1\u20137)",
+    "bone": "true-ribs",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Rib grouping follows your course list. Floating ribs are included within the false-rib group.",
+    "system": "axial"
+  },
+  {
+    "id": "false-ribs",
+    "label": "False ribs (8\u201312)",
+    "bone": "false-ribs",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Rib grouping follows your course list. Floating ribs are included within the false-rib group.",
+    "system": "axial"
+  },
+  {
+    "id": "floating-ribs",
+    "label": "Floating ribs (11\u201312)",
+    "bone": "floating-ribs",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Rib grouping follows your course list. Floating ribs are included within the false-rib group.",
+    "system": "axial"
+  },
+  {
+    "id": "costal-cartilage",
+    "label": "Costal cartilage",
+    "bone": "costal-cartilage",
+    "region": "thorax",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "axial"
+  },
+  {
+    "id": "ribs-mark-0",
+    "label": "Head",
+    "bone": "ribs",
+    "region": "thorax",
+    "kind": "landmark",
+    "point": [
+      -0.01604725115549105,
+      1.3875362451909192,
+      -0.045020692642577326
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "ribs-mark-1",
+    "label": "Neck",
+    "bone": "ribs",
+    "region": "thorax",
+    "kind": "landmark",
+    "point": [
+      -0.025772125364964982,
+      1.390685035554775,
+      -0.05551502320012158
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "ribs-mark-2",
+    "label": "Tubercle",
+    "bone": "ribs",
+    "region": "thorax",
+    "kind": "landmark",
+    "point": [
+      -0.032594023368211045,
+      1.3327475750545217,
+      -0.08030027447716426
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "ribs-mark-3",
+    "label": "Shaft",
+    "bone": "ribs",
+    "region": "thorax",
+    "kind": "landmark",
+    "point": [
+      0.1304533421066948,
+      1.3040539454214484,
+      -0.008342286628803625
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "axial"
+  },
+  {
+    "id": "clavicle",
+    "label": "Clavicles",
+    "bone": "clavicle",
+    "region": "shoulder",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "clavicle-mark-0",
+    "label": "Acromial (lateral) end",
+    "bone": "clavicle",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.15326885171506732,
+      1.4212444711689105,
+      -0.035026720043391454
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "clavicle-mark-1",
+    "label": "Sternal (medial) end",
+    "bone": "clavicle",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.016759250007901905,
+      1.4100825359175668,
+      0.040244896270919234
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula",
+    "label": "Scapulae",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-0",
+    "label": "Superior border",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.0962359022209838,
+      1.3980699710747542,
+      -0.06168271926831126
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-1",
+    "label": "Medial border",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.0612393892437359,
+      1.3454655543460676,
+      -0.10300523407596757
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-2",
+    "label": "Lateral border",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      0.13115484299144542,
+      1.3263298594159656,
+      -0.0669742085063621
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-3",
+    "label": "Superior angle",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      0.08102592656116131,
+      1.4071015035055887,
+      -0.08060965187819202
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-4",
+    "label": "Inferior angle",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      0.09536835128757346,
+      1.2583620191789524,
+      -0.10406893883608093
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-5",
+    "label": "Lateral angle",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      0.15313002619074745,
+      1.3786173739348604,
+      -0.04949789661776127
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-6",
+    "label": "Suprascapular notch",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.08677889780756204,
+      1.4052196415198626,
+      -0.07324943560305491
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-7",
+    "label": "Spine",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.119529969249737,
+      1.3910403462473369,
+      -0.08812533593583444
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-8",
+    "label": "Supraspinous fossa",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      0.09783962407508909,
+      1.3831951638082998,
+      -0.07285160242387262
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-9",
+    "label": "Infraspinous fossa",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      0.10933888745507361,
+      1.3503128262821606,
+      -0.07734172680280971
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-10",
+    "label": "Subscapular fossa",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.098691525386122,
+      1.3582191243322068,
+      -0.08069974743795855
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-11",
+    "label": "Acromion",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.16479795283916415,
+      1.417056346941654,
+      -0.028418461736602105
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-12",
+    "label": "Coracoid process",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.13841433248785634,
+      1.3978464708430012,
+      -0.00313238236273089
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "scapula-mark-13",
+    "label": "Glenoid cavity",
+    "bone": "scapula",
+    "region": "shoulder",
+    "kind": "landmark",
+    "point": [
+      -0.1454836650496128,
+      1.3761100200386505,
+      -0.03744605981887783
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "humerus",
+    "label": "Humerus",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "bone",
+    "point": null,
+    "note": "Learn anterior/posterior/superior/inferior orientation and right/left. Initial markers are on the right humerus.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-head",
+    "label": "Head",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.1482303,
+      1.3940537,
+      -0.0272042
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-anatomical-neck",
+    "label": "Anatomical neck",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.1566645,
+      1.3684502,
+      -0.0190354
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-surgical-neck",
+    "label": "Surgical neck",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.1743116,
+      1.3497067,
+      -0.0158601
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-greater-tubercle",
+    "label": "Greater tubercle",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.19273233492309605,
+      1.395372162611081,
+      -0.022641587970932797
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-lesser-tubercle",
+    "label": "Lesser tubercle",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.1662351,
+      1.3808847,
+      -0.0032191
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-capitulum",
+    "label": "Capitulum",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.237631,
+      1.1058005,
+      -0.0268682
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-trochlea",
+    "label": "Trochlea",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.2168731,
+      1.1003252,
+      -0.0262332
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-medial-epicondyle",
+    "label": "Medial epicondyle",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.19024117250267747,
+      1.1055561198908106,
+      -0.030025862265004144
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-lateral-epicondyle",
+    "label": "Lateral epicondyle",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.2455437,
+      1.1157482,
+      -0.0384113
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-olecranon-fossa",
+    "label": "Olecranon fossa",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.2152167213273251,
+      1.1166022045224506,
+      -0.039245931913394316
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "h-deltoid-tuberosity",
+    "label": "Deltoid tuberosity",
+    "bone": "humerus",
+    "region": "humerus",
+    "kind": "landmark",
+    "point": [
+      -0.2028152,
+      1.2916016,
+      -0.0183846
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "system": "appendicular"
+  },
+  {
+    "id": "radius",
+    "label": "Radius",
+    "bone": "radius",
+    "region": "forearm",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "radius-mark-0",
+    "label": "Head",
+    "bone": "radius",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      -0.24932571973905693,
+      1.0891547895678848,
+      -0.03023268942305836
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "radius-mark-1",
+    "label": "Neck",
+    "bone": "radius",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      -0.24586213675674606,
+      1.0758807129303423,
+      -0.0237334232220153
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "radius-mark-2",
+    "label": "Radial tuberosity",
+    "bone": "radius",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      -0.24582400501648227,
+      1.0591087149456784,
+      -0.012406922629291856
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "radius-mark-3",
+    "label": "Styloid process",
+    "bone": "radius",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      -0.2881594871917451,
+      0.8591718827320816,
+      0.017851095609633494
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "radius-mark-4",
+    "label": "Ulnar notch",
+    "bone": "radius",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      -0.2682417126666223,
+      0.8657173084186082,
+      0.005430560458695999
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "ulna",
+    "label": "Ulna",
+    "bone": "ulna",
+    "region": "forearm",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "ulna-mark-0",
+    "label": "Trochlear notch",
+    "bone": "ulna",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      0.2154489851251315,
+      1.0906947729506329,
+      -0.041990248801241636
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "ulna-mark-1",
+    "label": "Olecranon",
+    "bone": "ulna",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      0.21480537403396685,
+      1.0979017789669463,
+      -0.0596908488212361
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "ulna-mark-2",
+    "label": "Styloid process",
+    "bone": "ulna",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      0.24320389328177078,
+      0.8567178020505972,
+      0.012294536890044894
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "ulna-mark-3",
+    "label": "Radial notch",
+    "bone": "ulna",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": [
+      0.22740082612508827,
+      1.081346480754494,
+      -0.034758276384018155
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "forearm-membrane-marker",
+    "label": "Interosseous membrane (syndesmosis)",
+    "bone": "forearm-membrane",
+    "region": "forearm",
+    "kind": "landmark",
+    "point": null,
+    "note": "Your list notes this membrane is not visible on skeleton models. It is not present in this asset; the radius and ulna provide context only.",
+    "anchor": "Interosseous membrane (syndesmosis)",
+    "unavailable": true,
+    "system": "appendicular"
+  },
+  {
+    "id": "carpals",
+    "label": "Carpals (group)",
+    "bone": "carpals",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Your course does not require identifying individual carpals by name.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metacarpal-I",
+    "label": "Metacarpal I",
+    "bone": "metacarpal-I",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metacarpal-II",
+    "label": "Metacarpal II",
+    "bone": "metacarpal-II",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metacarpal-III",
+    "label": "Metacarpal III",
+    "bone": "metacarpal-III",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metacarpal-IV",
+    "label": "Metacarpal IV",
+    "bone": "metacarpal-IV",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metacarpal-V",
+    "label": "Metacarpal V",
+    "bone": "metacarpal-V",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-proximal-phalanges",
+    "label": "Proximal phalanges",
+    "bone": "hand-proximal-phalanges",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-1-proximal",
+    "label": "Proximal phalanx \u00b7 digit 1",
+    "bone": "hand-digit-1-proximal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-2-proximal",
+    "label": "Proximal phalanx \u00b7 digit 2",
+    "bone": "hand-digit-2-proximal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-3-proximal",
+    "label": "Proximal phalanx \u00b7 digit 3",
+    "bone": "hand-digit-3-proximal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-4-proximal",
+    "label": "Proximal phalanx \u00b7 digit 4",
+    "bone": "hand-digit-4-proximal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-5-proximal",
+    "label": "Proximal phalanx \u00b7 digit 5",
+    "bone": "hand-digit-5-proximal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-middle-phalanges",
+    "label": "Middle phalanges",
+    "bone": "hand-middle-phalanges",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-2-middle",
+    "label": "Middle phalanx \u00b7 digit 2",
+    "bone": "hand-digit-2-middle",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-3-middle",
+    "label": "Middle phalanx \u00b7 digit 3",
+    "bone": "hand-digit-3-middle",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-4-middle",
+    "label": "Middle phalanx \u00b7 digit 4",
+    "bone": "hand-digit-4-middle",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-5-middle",
+    "label": "Middle phalanx \u00b7 digit 5",
+    "bone": "hand-digit-5-middle",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-distal-phalanges",
+    "label": "Distal phalanges",
+    "bone": "hand-distal-phalanges",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-1-distal",
+    "label": "Distal phalanx \u00b7 digit 1",
+    "bone": "hand-digit-1-distal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-2-distal",
+    "label": "Distal phalanx \u00b7 digit 2",
+    "bone": "hand-digit-2-distal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-3-distal",
+    "label": "Distal phalanx \u00b7 digit 3",
+    "bone": "hand-digit-3-distal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-4-distal",
+    "label": "Distal phalanx \u00b7 digit 4",
+    "bone": "hand-digit-4-distal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "hand-digit-5-distal",
+    "label": "Distal phalanx \u00b7 digit 5",
+    "bone": "hand-digit-5-distal",
+    "region": "hand",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "tarsals",
+    "label": "Tarsals (group)",
+    "bone": "tarsals",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Only the calcaneus and talus require individual names in your course.",
+    "system": "appendicular"
+  },
+  {
+    "id": "calcaneus",
+    "label": "Calcaneus",
+    "bone": "calcaneus",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "talus",
+    "label": "Talus",
+    "bone": "talus",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metatarsal-I",
+    "label": "Metatarsal I",
+    "bone": "metatarsal-I",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metatarsal-II",
+    "label": "Metatarsal II",
+    "bone": "metatarsal-II",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metatarsal-III",
+    "label": "Metatarsal III",
+    "bone": "metatarsal-III",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metatarsal-IV",
+    "label": "Metatarsal IV",
+    "bone": "metatarsal-IV",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "metatarsal-V",
+    "label": "Metatarsal V",
+    "bone": "metatarsal-V",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-proximal-phalanges",
+    "label": "Proximal phalanges",
+    "bone": "foot-proximal-phalanges",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-1-proximal",
+    "label": "Proximal phalanx \u00b7 digit 1",
+    "bone": "foot-digit-1-proximal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-2-proximal",
+    "label": "Proximal phalanx \u00b7 digit 2",
+    "bone": "foot-digit-2-proximal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-3-proximal",
+    "label": "Proximal phalanx \u00b7 digit 3",
+    "bone": "foot-digit-3-proximal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-4-proximal",
+    "label": "Proximal phalanx \u00b7 digit 4",
+    "bone": "foot-digit-4-proximal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-5-proximal",
+    "label": "Proximal phalanx \u00b7 digit 5",
+    "bone": "foot-digit-5-proximal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-middle-phalanges",
+    "label": "Middle phalanges",
+    "bone": "foot-middle-phalanges",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-2-middle",
+    "label": "Middle phalanx \u00b7 digit 2",
+    "bone": "foot-digit-2-middle",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-3-middle",
+    "label": "Middle phalanx \u00b7 digit 3",
+    "bone": "foot-digit-3-middle",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-4-middle",
+    "label": "Middle phalanx \u00b7 digit 4",
+    "bone": "foot-digit-4-middle",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-5-middle",
+    "label": "Middle phalanx \u00b7 digit 5",
+    "bone": "foot-digit-5-middle",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-distal-phalanges",
+    "label": "Distal phalanges",
+    "bone": "foot-distal-phalanges",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-1-distal",
+    "label": "Distal phalanx \u00b7 digit 1",
+    "bone": "foot-digit-1-distal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-2-distal",
+    "label": "Distal phalanx \u00b7 digit 2",
+    "bone": "foot-digit-2-distal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-3-distal",
+    "label": "Distal phalanx \u00b7 digit 3",
+    "bone": "foot-digit-3-distal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-4-distal",
+    "label": "Distal phalanx \u00b7 digit 4",
+    "bone": "foot-digit-4-distal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "foot-digit-5-distal",
+    "label": "Distal phalanx \u00b7 digit 5",
+    "bone": "foot-digit-5-distal",
+    "region": "foot",
+    "kind": "bone",
+    "point": null,
+    "note": "Identify the digit and the proximal, middle or distal phalanx. Digit 1 has no middle phalanx.",
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal",
+    "label": "Coxal bones",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-0",
+    "label": "Acetabulum",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      0.06672730230956186,
+      0.8766598525353834,
+      -0.012158400393228214
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-1",
+    "label": "Ilium",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      0.08119228612499224,
+      0.9670599994308907,
+      -0.025445979039094735
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-2",
+    "label": "Iliac crest",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      0.12408744372428265,
+      0.9991050899792682,
+      0.007023019975644251
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-3",
+    "label": "Anterior superior iliac spine",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      0.11720574210576967,
+      0.9361780887531538,
+      0.05334933245272688
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-4",
+    "label": "Anterior inferior iliac spine",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      0.09535756598718442,
+      0.8977212136878387,
+      0.02867992690819865
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-5",
+    "label": "Posterior superior iliac spine",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.038079728171566685,
+      0.9474175113953559,
+      -0.08125684839672875
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-6",
+    "label": "Posterior inferior iliac spine",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.04934220040351073,
+      0.9180645913049194,
+      -0.05963999347603677
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-7",
+    "label": "Greater sciatic notch",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.06129504306124264,
+      0.9107546901175939,
+      -0.0315595613012786
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-8",
+    "label": "Iliac fossa",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.09653340812317474,
+      0.9573120217235928,
+      -0.009473518933026281
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-9",
+    "label": "Ischium",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.06231063423592109,
+      0.8142779382077437,
+      -0.03287949532607948
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-10",
+    "label": "Body of ischium",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.04745992290676193,
+      0.8272862821570873,
+      -0.04415374935209554
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-11",
+    "label": "Ischial spine",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.04377972685450618,
+      0.866284649091126,
+      -0.052634686301143874
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-12",
+    "label": "Lesser sciatic notch",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      0.05379634356015295,
+      0.8560098711162285,
+      -0.048102992376481746
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-13",
+    "label": "Ischial tuberosity",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.05890222312830046,
+      0.8129138107918308,
+      -0.05413160986192744
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-14",
+    "label": "Ischial ramus",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.03742046768642643,
+      0.8083551651663863,
+      -0.014987165197979397
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-15",
+    "label": "Pubis",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.02421341742867414,
+      0.8383406533139269,
+      0.03449286343778035
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-16",
+    "label": "Body of pubis",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.017329344169483663,
+      0.8340944322160154,
+      0.03721949654967016
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-17",
+    "label": "Superior pubic ramus",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.042351238611169975,
+      0.8473020233192898,
+      0.033261853110401696
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-18",
+    "label": "Inferior pubic ramus",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      -0.021566325822945022,
+      0.8210506362132023,
+      0.014451650766267143
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "coxal-mark-20",
+    "label": "Obturator foramen",
+    "bone": "coxal",
+    "region": "pelvis",
+    "kind": "landmark",
+    "point": [
+      0.03572442904369205,
+      0.8192994034625729,
+      -0.006099743135959568
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur",
+    "label": "Femur",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-0",
+    "label": "Head",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.08219186205280332,
+      0.8785699144504625,
+      0.009805513496611518
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-1",
+    "label": "Fovea",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      -0.06401351813765266,
+      0.8635506355512937,
+      -0.007547664602954307
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-2",
+    "label": "Greater trochanter",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.1398515024524566,
+      0.8401705627401335,
+      -0.0019342020433443796
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-3",
+    "label": "Lesser trochanter",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.09580899243375254,
+      0.7979584760812712,
+      -0.03142551599749366
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-4",
+    "label": "Linea aspera",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.09959308311669293,
+      0.6537072974252065,
+      -0.017362213740994337
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-5",
+    "label": "Lateral condyle",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.10162989190087879,
+      0.4498765322777364,
+      -0.05622152505902478
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-6",
+    "label": "Medial condyle",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.053434424587821494,
+      0.44677006614737913,
+      -0.05768090861335651
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-7",
+    "label": "Lateral epicondyle",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.11475432326852814,
+      0.45937088725094494,
+      -0.026218979415764343
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-8",
+    "label": "Medial epicondyle",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.033346856017134274,
+      0.4595124389065361,
+      -0.025570983263672242
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-9",
+    "label": "Intercondylar fossa",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.07194153970531535,
+      0.45100177211687315,
+      -0.0329499945615781
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "femur-mark-10",
+    "label": "Patellar surface",
+    "bone": "femur",
+    "region": "thigh",
+    "kind": "landmark",
+    "point": [
+      0.07680657138029799,
+      0.44613612097427274,
+      -0.006749761765731277
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "patella",
+    "label": "Patella",
+    "bone": "patella",
+    "region": "thigh",
+    "kind": "bone",
+    "point": null,
+    "note": "Your course does not require right/left identification for the patella.",
+    "system": "appendicular"
+  },
+  {
+    "id": "tibia",
+    "label": "Tibia",
+    "bone": "tibia",
+    "region": "leg",
+    "kind": "bone",
+    "point": null,
+    "note": "Select the bone in the model, or isolate it to inspect its surfaces.",
+    "system": "appendicular"
+  },
+  {
+    "id": "tibia-mark-0",
+    "label": "Head",
+    "bone": "tibia",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      0.07750699841204922,
+      0.42807517161235553,
+      -0.01068204359772118
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "tibia-mark-1",
+    "label": "Medial condyle",
+    "bone": "tibia",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      0.047761103233904915,
+      0.42024740825532014,
+      -0.040832595420349116
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "tibia-mark-2",
+    "label": "Lateral condyle",
+    "bone": "tibia",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      0.10174446077888759,
+      0.4289060739068731,
+      -0.03098636934412216
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "tibia-mark-3",
+    "label": "Tibial tuberosity",
+    "bone": "tibia",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      -0.08820123886897252,
+      0.4019143752602782,
+      0.0034818463560117863
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "tibia-mark-4",
+    "label": "Anterior border / crest",
+    "bone": "tibia",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      -0.08908605084884025,
+      0.29546264521606225,
+      -0.005129249658313406
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "tibia-mark-5",
+    "label": "Medial malleolus",
+    "bone": "tibia",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      -0.05008860251314305,
+      0.08757337399826559,
+      -0.02609714904904825
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "fibula",
+    "label": "Fibula",
+    "bone": "fibula",
+    "region": "leg",
+    "kind": "bone",
+    "point": null,
+    "note": "Your course does not require right/left identification for the fibula.",
+    "system": "appendicular"
+  },
+  {
+    "id": "fibula-mark-0",
+    "label": "Head",
+    "bone": "fibula",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      0.10713384180139504,
+      0.4030233454527369,
+      -0.028204528096369086
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "fibula-mark-1",
+    "label": "Lateral malleolus",
+    "bone": "fibula",
+    "region": "leg",
+    "kind": "landmark",
+    "point": [
+      0.10188427566615291,
+      0.07169794227821713,
+      -0.035130221910429915
+    ],
+    "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
+    "unavailable": false,
+    "system": "appendicular"
+  },
+  {
+    "id": "leg-membrane-marker",
+    "label": "Interosseous membrane",
+    "bone": "leg-membrane",
+    "region": "leg",
+    "kind": "landmark",
+    "point": null,
+    "note": "This soft-tissue membrane is not present in the skeletal asset. Tibia and fibula are shown for context only.",
+    "anchor": "Interosseous membrane",
+    "unavailable": true,
+    "system": "appendicular"
+  }
+]

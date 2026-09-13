@@ -1,0 +1,4364 @@
+{
+  "groups": {
+    "humerus": [
+      "123",
+      "v46"
+    ],
+    "occipital": [
+      "14"
+    ],
+    "sphenoid": [
+      "15"
+    ],
+    "temporal": [
+      "16",
+      "765"
+    ],
+    "ethmoid": [
+      "17"
+    ],
+    "frontal": [
+      "13"
+    ],
+    "parietal": [
+      "11",
+      "12"
+    ],
+    "sutures": [
+      "11",
+      "12",
+      "13",
+      "14",
+      "16",
+      "765"
+    ],
+    "maxilla": [
+      "21",
+      "770"
+    ],
+    "palatine": [
+      "22",
+      "771"
+    ],
+    "zygomatic": [
+      "23",
+      "772"
+    ],
+    "lacrimal": [
+      "19",
+      "767"
+    ],
+    "nasal": [
+      "20",
+      "768"
+    ],
+    "inferior-conchae": [
+      "18",
+      "766"
+    ],
+    "vomer": [
+      "769"
+    ],
+    "mandible": [
+      "27"
+    ],
+    "hyoid": [
+      "28"
+    ],
+    "vertebrae": [
+      "v126",
+      "v127",
+      "v129",
+      "v145",
+      "v158",
+      "v159",
+      "v160",
+      "v161",
+      "v162",
+      "v163",
+      "v164",
+      "v165",
+      "v166",
+      "v167",
+      "v168",
+      "v169",
+      "v170",
+      "v171",
+      "v172",
+      "v173",
+      "v174",
+      "v175",
+      "v176",
+      "v177",
+      "v178",
+      "v179"
+    ],
+    "cervical": [
+      "v126",
+      "v127",
+      "v158",
+      "v159",
+      "v160",
+      "v161",
+      "v162"
+    ],
+    "atlas": [
+      "v126"
+    ],
+    "axis": [
+      "v127"
+    ],
+    "thoracic-vertebrae": [
+      "v168",
+      "v169",
+      "v170",
+      "v171",
+      "v172",
+      "v173",
+      "v174",
+      "v175",
+      "v176",
+      "v177",
+      "v178",
+      "v179"
+    ],
+    "lumbar": [
+      "v163",
+      "v164",
+      "v165",
+      "v166",
+      "v167"
+    ],
+    "sacrum": [
+      "v145"
+    ],
+    "coccyx": [
+      "v129"
+    ],
+    "sternum": [
+      "v128",
+      "v142",
+      "v180"
+    ],
+    "manubrium": [
+      "v142"
+    ],
+    "sternal-body": [
+      "v128"
+    ],
+    "xiphoid": [
+      "v180"
+    ],
+    "ribs": [
+      "v130",
+      "v131",
+      "v132",
+      "v133",
+      "v134",
+      "v135",
+      "v136",
+      "v137",
+      "v138",
+      "v139",
+      "v143",
+      "v144",
+      "v146",
+      "v147",
+      "v148",
+      "v149",
+      "v150",
+      "v151",
+      "v152",
+      "v153",
+      "v154",
+      "v155",
+      "v156",
+      "v157"
+    ],
+    "true-ribs": [
+      "v134",
+      "v135",
+      "v136",
+      "v137",
+      "v138",
+      "v139",
+      "v146",
+      "v147",
+      "v148",
+      "v149",
+      "v150",
+      "v151",
+      "v154",
+      "v155"
+    ],
+    "false-ribs": [
+      "v130",
+      "v131",
+      "v132",
+      "v133",
+      "v143",
+      "v144",
+      "v152",
+      "v153",
+      "v156",
+      "v157"
+    ],
+    "floating-ribs": [
+      "v132",
+      "v133",
+      "v156",
+      "v157"
+    ],
+    "costal-cartilage": [
+      "109",
+      "110",
+      "111",
+      "112",
+      "113",
+      "114",
+      "115",
+      "116",
+      "117",
+      "118",
+      "805",
+      "806",
+      "807",
+      "808",
+      "809",
+      "810",
+      "811",
+      "812",
+      "813",
+      "814"
+    ],
+    "clavicle": [
+      "v4",
+      "v5"
+    ],
+    "scapula": [
+      "v102",
+      "v103"
+    ],
+    "radius": [
+      "v98",
+      "v99"
+    ],
+    "ulna": [
+      "v124",
+      "v125"
+    ],
+    "forearm-membrane": [
+      "v98",
+      "v99",
+      "v124",
+      "v125"
+    ],
+    "carpals": [
+      "v2",
+      "v3",
+      "v44",
+      "v45",
+      "v52",
+      "v53",
+      "v76",
+      "v77",
+      "v100",
+      "v101",
+      "v118",
+      "v119",
+      "v120",
+      "v121",
+      "v122",
+      "v123"
+    ],
+    "metacarpal-I": [
+      "v36",
+      "v37"
+    ],
+    "metacarpal-II": [
+      "v104",
+      "v105"
+    ],
+    "metacarpal-III": [
+      "v112",
+      "v113"
+    ],
+    "metacarpal-IV": [
+      "v40",
+      "v41"
+    ],
+    "metacarpal-V": [
+      "v32",
+      "v33"
+    ],
+    "hand-proximal-phalanges": [
+      "v80",
+      "v81",
+      "v84",
+      "v85",
+      "v88",
+      "v89",
+      "v92",
+      "v93",
+      "v96",
+      "v97"
+    ],
+    "hand-digit-1-proximal": [
+      "v84",
+      "v85"
+    ],
+    "hand-digit-2-proximal": [
+      "v92",
+      "v93"
+    ],
+    "hand-digit-3-proximal": [
+      "v96",
+      "v97"
+    ],
+    "hand-digit-4-proximal": [
+      "v88",
+      "v89"
+    ],
+    "hand-digit-5-proximal": [
+      "v80",
+      "v81"
+    ],
+    "hand-middle-phalanges": [
+      "v58",
+      "v59",
+      "v62",
+      "v63",
+      "v66",
+      "v67",
+      "v70",
+      "v71"
+    ],
+    "hand-digit-2-middle": [
+      "v66",
+      "v67"
+    ],
+    "hand-digit-3-middle": [
+      "v70",
+      "v71"
+    ],
+    "hand-digit-4-middle": [
+      "v62",
+      "v63"
+    ],
+    "hand-digit-5-middle": [
+      "v58",
+      "v59"
+    ],
+    "hand-distal-phalanges": [
+      "v10",
+      "v11",
+      "v14",
+      "v15",
+      "v18",
+      "v19",
+      "v22",
+      "v23",
+      "v26",
+      "v27"
+    ],
+    "hand-digit-1-distal": [
+      "v14",
+      "v15"
+    ],
+    "hand-digit-2-distal": [
+      "v22",
+      "v23"
+    ],
+    "hand-digit-3-distal": [
+      "v26",
+      "v27"
+    ],
+    "hand-digit-4-distal": [
+      "v18",
+      "v19"
+    ],
+    "hand-digit-5-distal": [
+      "v10",
+      "v11"
+    ],
+    "tarsals": [
+      "v0",
+      "v1",
+      "v6",
+      "v7",
+      "v48",
+      "v49",
+      "v50",
+      "v51",
+      "v54",
+      "v55",
+      "v72",
+      "v73",
+      "v110",
+      "v111"
+    ],
+    "calcaneus": [
+      "v0",
+      "v1"
+    ],
+    "talus": [
+      "v110",
+      "v111"
+    ],
+    "metatarsal-I": [
+      "v38",
+      "v39"
+    ],
+    "metatarsal-II": [
+      "v106",
+      "v107"
+    ],
+    "metatarsal-III": [
+      "v114",
+      "v115"
+    ],
+    "metatarsal-IV": [
+      "v42",
+      "v43"
+    ],
+    "metatarsal-V": [
+      "v34",
+      "v35"
+    ],
+    "foot-proximal-phalanges": [
+      "v78",
+      "v79",
+      "v82",
+      "v83",
+      "v86",
+      "v87",
+      "v90",
+      "v91",
+      "v94",
+      "v95"
+    ],
+    "foot-digit-1-proximal": [
+      "v82",
+      "v83"
+    ],
+    "foot-digit-2-proximal": [
+      "v90",
+      "v91"
+    ],
+    "foot-digit-3-proximal": [
+      "v94",
+      "v95"
+    ],
+    "foot-digit-4-proximal": [
+      "v86",
+      "v87"
+    ],
+    "foot-digit-5-proximal": [
+      "v78",
+      "v79"
+    ],
+    "foot-middle-phalanges": [
+      "v56",
+      "v57",
+      "v60",
+      "v61",
+      "v64",
+      "v65",
+      "v68",
+      "v69"
+    ],
+    "foot-digit-2-middle": [
+      "v64",
+      "v65"
+    ],
+    "foot-digit-3-middle": [
+      "v68",
+      "v69"
+    ],
+    "foot-digit-4-middle": [
+      "v60",
+      "v61"
+    ],
+    "foot-digit-5-middle": [
+      "v56",
+      "v57"
+    ],
+    "foot-distal-phalanges": [
+      "v8",
+      "v9",
+      "v12",
+      "v13",
+      "v16",
+      "v17",
+      "v20",
+      "v21",
+      "v24",
+      "v25"
+    ],
+    "foot-digit-1-distal": [
+      "v12",
+      "v13"
+    ],
+    "foot-digit-2-distal": [
+      "v20",
+      "v21"
+    ],
+    "foot-digit-3-distal": [
+      "v24",
+      "v25"
+    ],
+    "foot-digit-4-distal": [
+      "v16",
+      "v17"
+    ],
+    "foot-digit-5-distal": [
+      "v8",
+      "v9"
+    ],
+    "coxal": [
+      "v140",
+      "v141"
+    ],
+    "femur": [
+      "v28",
+      "v29"
+    ],
+    "patella": [
+      "v74",
+      "v75"
+    ],
+    "tibia": [
+      "v116",
+      "v117"
+    ],
+    "fibula": [
+      "v30",
+      "v31"
+    ],
+    "leg-membrane": [
+      "v30",
+      "v31",
+      "v116",
+      "v117"
+    ]
+  },
+  "models": [
+    {
+      "id": "v0",
+      "name": "Calcaneus.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0546853,
+        0.0114494,
+        -0.0915562
+      ],
+      "max": [
+        0.1022274,
+        0.0625568,
+        -0.0158685
+      ]
+    },
+    {
+      "id": "v1",
+      "name": "Calcaneus.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1022274,
+        0.0114494,
+        -0.0915562
+      ],
+      "max": [
+        -0.0546853,
+        0.0625568,
+        -0.0158684
+      ]
+    },
+    {
+      "id": "v2",
+      "name": "Capitate bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2565487,
+        0.8318799,
+        0.0089714
+      ],
+      "max": [
+        0.2731604,
+        0.8552897,
+        0.0269446
+      ]
+    },
+    {
+      "id": "v3",
+      "name": "Capitate bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2731604,
+        0.8318799,
+        0.0089714
+      ],
+      "max": [
+        -0.2565487,
+        0.8552897,
+        0.0269446
+      ]
+    },
+    {
+      "id": "v4",
+      "name": "Clavicle.l",
+      "region": "shoulder",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0112145,
+        1.3891121,
+        -0.0522618
+      ],
+      "max": [
+        0.1543306,
+        1.4252154,
+        0.0505099
+      ]
+    },
+    {
+      "id": "v5",
+      "name": "Clavicle.r",
+      "region": "shoulder",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1543307,
+        1.3891121,
+        -0.0522618
+      ],
+      "max": [
+        -0.0112145,
+        1.4252154,
+        0.0505099
+      ]
+    },
+    {
+      "id": "v6",
+      "name": "Cuboid bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0795205,
+        0.0289043,
+        -0.0234726
+      ],
+      "max": [
+        0.1117545,
+        0.0597619,
+        0.0107195
+      ]
+    },
+    {
+      "id": "v7",
+      "name": "Cuboid bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1117545,
+        0.0289043,
+        -0.0234726
+      ],
+      "max": [
+        -0.0795205,
+        0.0597619,
+        0.0107195
+      ]
+    },
+    {
+      "id": "v8",
+      "name": "Distal phalanx of fifth finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1385277,
+        0.0092033,
+        0.0855851
+      ],
+      "max": [
+        0.1464164,
+        0.0148376,
+        0.0965132
+      ]
+    },
+    {
+      "id": "v9",
+      "name": "Distal phalanx of fifth finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1464164,
+        0.0092033,
+        0.0855851
+      ],
+      "max": [
+        -0.1385277,
+        0.0148376,
+        0.0965132
+      ]
+    },
+    {
+      "id": "v10",
+      "name": "Distal phalanx of fifth finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2260855,
+        0.7229509,
+        0.0687654
+      ],
+      "max": [
+        0.2346677,
+        0.7360834,
+        0.0835641
+      ]
+    },
+    {
+      "id": "v11",
+      "name": "Distal phalanx of fifth finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2346677,
+        0.7229509,
+        0.0687654
+      ],
+      "max": [
+        -0.2260855,
+        0.7360834,
+        0.0835641
+      ]
+    },
+    {
+      "id": "v12",
+      "name": "Distal phalanx of first finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0697545,
+        0.0099483,
+        0.1077114
+      ],
+      "max": [
+        0.0904291,
+        0.0214174,
+        0.1346221
+      ]
+    },
+    {
+      "id": "v13",
+      "name": "Distal phalanx of first finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0904291,
+        0.0099483,
+        0.1077114
+      ],
+      "max": [
+        -0.0697545,
+        0.0214174,
+        0.1346221
+      ]
+    },
+    {
+      "id": "v14",
+      "name": "Distal phalanx of first finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.320613,
+        0.7668561,
+        0.0573758
+      ],
+      "max": [
+        0.3346246,
+        0.7909849,
+        0.0741342
+      ]
+    },
+    {
+      "id": "v15",
+      "name": "Distal phalanx of first finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.3346246,
+        0.7668561,
+        0.0573758
+      ],
+      "max": [
+        -0.320613,
+        0.7909849,
+        0.0741342
+      ]
+    },
+    {
+      "id": "v16",
+      "name": "Distal phalanx of fourth finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.127783,
+        0.0092393,
+        0.1037273
+      ],
+      "max": [
+        0.1365723,
+        0.0165719,
+        0.1154033
+      ]
+    },
+    {
+      "id": "v17",
+      "name": "Distal phalanx of fourth finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1365723,
+        0.0092393,
+        0.1037273
+      ],
+      "max": [
+        -0.127783,
+        0.0165719,
+        0.1154033
+      ]
+    },
+    {
+      "id": "v18",
+      "name": "Distal phalanx of fourth finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2533382,
+        0.7107602,
+        0.0796698
+      ],
+      "max": [
+        0.2619462,
+        0.7203671,
+        0.0958497
+      ]
+    },
+    {
+      "id": "v19",
+      "name": "Distal phalanx of fourth finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2619462,
+        0.7107602,
+        0.0796698
+      ],
+      "max": [
+        -0.2533382,
+        0.7203671,
+        0.0958497
+      ]
+    },
+    {
+      "id": "v20",
+      "name": "Distal phalanx of second finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0987092,
+        0.0094631,
+        0.1236414
+      ],
+      "max": [
+        0.1088941,
+        0.0170465,
+        0.137308
+      ]
+    },
+    {
+      "id": "v21",
+      "name": "Distal phalanx of second finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1088941,
+        0.0094631,
+        0.1236414
+      ],
+      "max": [
+        -0.0987092,
+        0.0170465,
+        0.137308
+      ]
+    },
+    {
+      "id": "v22",
+      "name": "Distal phalanx of second finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.3111378,
+        0.7077909,
+        0.0702848
+      ],
+      "max": [
+        0.3215742,
+        0.7220907,
+        0.0879305
+      ]
+    },
+    {
+      "id": "v23",
+      "name": "Distal phalanx of second finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.3215742,
+        0.7077908,
+        0.0702848
+      ],
+      "max": [
+        -0.3111378,
+        0.7220907,
+        0.0879305
+      ]
+    },
+    {
+      "id": "v24",
+      "name": "Distal phalanx of third finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1143746,
+        0.0094777,
+        0.1182797
+      ],
+      "max": [
+        0.1232228,
+        0.0156415,
+        0.1302749
+      ]
+    },
+    {
+      "id": "v25",
+      "name": "Distal phalanx of third finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1232229,
+        0.0094777,
+        0.1182797
+      ],
+      "max": [
+        -0.1143746,
+        0.0156415,
+        0.1302749
+      ]
+    },
+    {
+      "id": "v26",
+      "name": "Distal phalanx of third finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2802492,
+        0.6986862,
+        0.0791301
+      ],
+      "max": [
+        0.2901112,
+        0.7125945,
+        0.0970309
+      ]
+    },
+    {
+      "id": "v27",
+      "name": "Distal phalanx of third finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2901112,
+        0.6986861,
+        0.0791301
+      ],
+      "max": [
+        -0.2802492,
+        0.7125945,
+        0.0970309
+      ]
+    },
+    {
+      "id": "v28",
+      "name": "Femur.l",
+      "region": "thigh",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0319771,
+        0.4298661,
+        -0.0593528
+      ],
+      "max": [
+        0.1488022,
+        0.8844057,
+        0.0188143
+      ]
+    },
+    {
+      "id": "v29",
+      "name": "Femur.r",
+      "region": "thigh",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1488022,
+        0.429866,
+        -0.0593528
+      ],
+      "max": [
+        -0.0319771,
+        0.8844057,
+        0.0188143
+      ]
+    },
+    {
+      "id": "v30",
+      "name": "Fibula.l",
+      "region": "leg",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0886237,
+        0.055211,
+        -0.0596865
+      ],
+      "max": [
+        0.1248472,
+        0.4177034,
+        -0.0267604
+      ]
+    },
+    {
+      "id": "v31",
+      "name": "Fibula.r",
+      "region": "leg",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1248471,
+        0.055211,
+        -0.0596865
+      ],
+      "max": [
+        -0.0886237,
+        0.4177035,
+        -0.0267604
+      ]
+    },
+    {
+      "id": "v32",
+      "name": "Fifth metacarpal bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.232518,
+        0.7801267,
+        0.0189384
+      ],
+      "max": [
+        0.2534331,
+        0.8370853,
+        0.0444463
+      ]
+    },
+    {
+      "id": "v33",
+      "name": "Fifth metacarpal bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2534331,
+        0.7801267,
+        0.0189384
+      ],
+      "max": [
+        -0.232518,
+        0.8370853,
+        0.0444463
+      ]
+    },
+    {
+      "id": "v34",
+      "name": "Fifth metatarsal bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1009351,
+        0.0098874,
+        -0.0140383
+      ],
+      "max": [
+        0.1379591,
+        0.0410585,
+        0.0596946
+      ]
+    },
+    {
+      "id": "v35",
+      "name": "Fifth metatarsal bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1379591,
+        0.0098874,
+        -0.0140383
+      ],
+      "max": [
+        -0.1009351,
+        0.0410585,
+        0.0596946
+      ]
+    },
+    {
+      "id": "v36",
+      "name": "First metacarpal bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.28118,
+        0.8093667,
+        0.0225606
+      ],
+      "max": [
+        0.3198442,
+        0.8477457,
+        0.0540402
+      ]
+    },
+    {
+      "id": "v37",
+      "name": "First metacarpal bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.3198442,
+        0.8093667,
+        0.0225606
+      ],
+      "max": [
+        -0.28118,
+        0.8477457,
+        0.0540402
+      ]
+    },
+    {
+      "id": "v38",
+      "name": "First metatarsal bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0603153,
+        0.0146395,
+        0.020834
+      ],
+      "max": [
+        0.0821633,
+        0.059534,
+        0.08441
+      ]
+    },
+    {
+      "id": "v39",
+      "name": "First metatarsal bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0821633,
+        0.0146395,
+        0.020834
+      ],
+      "max": [
+        -0.0603153,
+        0.059534,
+        0.08441
+      ]
+    },
+    {
+      "id": "v40",
+      "name": "Fourth metacarpal bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2491827,
+        0.7731236,
+        0.0147431
+      ],
+      "max": [
+        0.2622729,
+        0.8351924,
+        0.0418851
+      ]
+    },
+    {
+      "id": "v41",
+      "name": "Fourth metacarpal bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2622729,
+        0.7731236,
+        0.0147431
+      ],
+      "max": [
+        -0.2491827,
+        0.8351924,
+        0.0418851
+      ]
+    },
+    {
+      "id": "v42",
+      "name": "Fourth metatarsal bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0943493,
+        0.0124112,
+        0.0036658
+      ],
+      "max": [
+        0.1242211,
+        0.0493823,
+        0.0721847
+      ]
+    },
+    {
+      "id": "v43",
+      "name": "Fourth metatarsal bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1242211,
+        0.0124112,
+        0.0036658
+      ],
+      "max": [
+        -0.0943493,
+        0.0493823,
+        0.0721847
+      ]
+    },
+    {
+      "id": "v44",
+      "name": "Hamate bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2442345,
+        0.8309404,
+        0.0100512
+      ],
+      "max": [
+        0.2603338,
+        0.8511417,
+        0.033461
+      ]
+    },
+    {
+      "id": "v45",
+      "name": "Hamate bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2603338,
+        0.8309404,
+        0.0100512
+      ],
+      "max": [
+        -0.2442345,
+        0.8511417,
+        0.033461
+      ]
+    },
+    {
+      "id": "v46",
+      "name": "Humerus.l",
+      "region": "humerus",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1445801,
+        1.0870495,
+        -0.0537668
+      ],
+      "max": [
+        0.2488546,
+        1.4046841,
+        -0.0012713
+      ]
+    },
+    {
+      "id": "123",
+      "name": "Right humerus",
+      "region": "humerus",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2488546,
+        1.0870494,
+        -0.0537668
+      ],
+      "max": [
+        -0.1445801,
+        1.4046842,
+        -0.0012713
+      ]
+    },
+    {
+      "id": "v48",
+      "name": "Intermediate cuneiform bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.073851,
+        0.0466777,
+        -0.0002194
+      ],
+      "max": [
+        0.0933749,
+        0.0706988,
+        0.0227427
+      ]
+    },
+    {
+      "id": "v49",
+      "name": "Intermediate cuneiform bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0933749,
+        0.0466777,
+        -0.0002194
+      ],
+      "max": [
+        -0.073851,
+        0.0706988,
+        0.0227427
+      ]
+    },
+    {
+      "id": "v50",
+      "name": "Lateral cuneiform bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0813153,
+        0.0402244,
+        -0.0062011
+      ],
+      "max": [
+        0.1055415,
+        0.0670849,
+        0.0202696
+      ]
+    },
+    {
+      "id": "v51",
+      "name": "Lateral cuneiform bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1055415,
+        0.0402244,
+        -0.0062011
+      ],
+      "max": [
+        -0.0813153,
+        0.0670849,
+        0.0202696
+      ]
+    },
+    {
+      "id": "v52",
+      "name": "Lunate bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2439565,
+        0.8477819,
+        0.0095094
+      ],
+      "max": [
+        0.2610536,
+        0.8605213,
+        0.0261162
+      ]
+    },
+    {
+      "id": "v53",
+      "name": "Lunate bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2610536,
+        0.8477819,
+        0.0095094
+      ],
+      "max": [
+        -0.2439565,
+        0.8605213,
+        0.0261162
+      ]
+    },
+    {
+      "id": "v54",
+      "name": "Medial cuneiform bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0580701,
+        0.0354345,
+        -0.0009967
+      ],
+      "max": [
+        0.0831533,
+        0.0677367,
+        0.0319622
+      ]
+    },
+    {
+      "id": "v55",
+      "name": "Medial cuneiform bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0831533,
+        0.0354345,
+        -0.0009968
+      ],
+      "max": [
+        -0.0580701,
+        0.0677367,
+        0.0319622
+      ]
+    },
+    {
+      "id": "v56",
+      "name": "Middle phalanx of fifth finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1368279,
+        0.0095758,
+        0.0797745
+      ],
+      "max": [
+        0.1454239,
+        0.0161784,
+        0.0875644
+      ]
+    },
+    {
+      "id": "v57",
+      "name": "Middle phalanx of fifth finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1454239,
+        0.0095758,
+        0.0797745
+      ],
+      "max": [
+        -0.1368279,
+        0.0161784,
+        0.0875644
+      ]
+    },
+    {
+      "id": "v58",
+      "name": "Middle phalanx of fifth finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2260755,
+        0.7341949,
+        0.0549284
+      ],
+      "max": [
+        0.2381276,
+        0.7546472,
+        0.0722136
+      ]
+    },
+    {
+      "id": "v59",
+      "name": "Middle phalanx of fifth finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2381275,
+        0.7341949,
+        0.0549284
+      ],
+      "max": [
+        -0.2260755,
+        0.7546472,
+        0.0722136
+      ]
+    },
+    {
+      "id": "v60",
+      "name": "Middle phalanx of fourth finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1243204,
+        0.0098192,
+        0.0922832
+      ],
+      "max": [
+        0.1354609,
+        0.0181556,
+        0.1063372
+      ]
+    },
+    {
+      "id": "v61",
+      "name": "Middle phalanx of fourth finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.135461,
+        0.0098192,
+        0.0922832
+      ],
+      "max": [
+        -0.1243204,
+        0.0181556,
+        0.1063372
+      ]
+    },
+    {
+      "id": "v62",
+      "name": "Middle phalanx of fourth finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2505098,
+        0.715859,
+        0.0566378
+      ],
+      "max": [
+        0.2630732,
+        0.7406996,
+        0.0816901
+      ]
+    },
+    {
+      "id": "v63",
+      "name": "Middle phalanx of fourth finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2630732,
+        0.715859,
+        0.0566378
+      ],
+      "max": [
+        -0.2505098,
+        0.7406996,
+        0.0816901
+      ]
+    },
+    {
+      "id": "v64",
+      "name": "Middle phalanx of second finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0948351,
+        0.0118425,
+        0.1089427
+      ],
+      "max": [
+        0.1071606,
+        0.0209262,
+        0.1265698
+      ]
+    },
+    {
+      "id": "v65",
+      "name": "Middle phalanx of second finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1071606,
+        0.0118425,
+        0.1089427
+      ],
+      "max": [
+        -0.0948351,
+        0.0209262,
+        0.1265698
+      ]
+    },
+    {
+      "id": "v66",
+      "name": "Middle phalanx of second finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.304046,
+        0.717067,
+        0.0512267
+      ],
+      "max": [
+        0.3191753,
+        0.738383,
+        0.0728484
+      ]
+    },
+    {
+      "id": "v67",
+      "name": "Middle phalanx of second finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.3191753,
+        0.717067,
+        0.0512267
+      ],
+      "max": [
+        -0.304046,
+        0.738383,
+        0.0728484
+      ]
+    },
+    {
+      "id": "v68",
+      "name": "Middle phalanx of third finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1105473,
+        0.0109655,
+        0.1033988
+      ],
+      "max": [
+        0.1216548,
+        0.0192651,
+        0.1208369
+      ]
+    },
+    {
+      "id": "v69",
+      "name": "Middle phalanx of third finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1216548,
+        0.0109655,
+        0.1033988
+      ],
+      "max": [
+        -0.1105473,
+        0.0192651,
+        0.1208369
+      ]
+    },
+    {
+      "id": "v70",
+      "name": "Middle phalanx of third finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2752591,
+        0.7082518,
+        0.0580195
+      ],
+      "max": [
+        0.2894773,
+        0.7345106,
+        0.0818343
+      ]
+    },
+    {
+      "id": "v71",
+      "name": "Middle phalanx of third finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2894773,
+        0.7082518,
+        0.0580195
+      ],
+      "max": [
+        -0.2752591,
+        0.7345106,
+        0.0818343
+      ]
+    },
+    {
+      "id": "v72",
+      "name": "Navicular bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0526899,
+        0.0484593,
+        -0.0151083
+      ],
+      "max": [
+        0.0933754,
+        0.0759757,
+        0.0089285
+      ]
+    },
+    {
+      "id": "v73",
+      "name": "Navicular bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0933754,
+        0.0484593,
+        -0.0151083
+      ],
+      "max": [
+        -0.0526899,
+        0.0759758,
+        0.0089285
+      ]
+    },
+    {
+      "id": "v74",
+      "name": "Patella.l",
+      "region": "thigh",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0628518,
+        0.4238058,
+        -0.0040879
+      ],
+      "max": [
+        0.1060375,
+        0.464728,
+        0.0186643
+      ]
+    },
+    {
+      "id": "v75",
+      "name": "Patella.r",
+      "region": "thigh",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1060375,
+        0.4238058,
+        -0.0040879
+      ],
+      "max": [
+        -0.0628518,
+        0.464728,
+        0.0186643
+      ]
+    },
+    {
+      "id": "v76",
+      "name": "Pisiform bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.239623,
+        0.839777,
+        0.0268793
+      ],
+      "max": [
+        0.2480863,
+        0.8518677,
+        0.0372987
+      ]
+    },
+    {
+      "id": "v77",
+      "name": "Pisiform bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2480863,
+        0.839777,
+        0.0268793
+      ],
+      "max": [
+        -0.2396229,
+        0.8518677,
+        0.0372987
+      ]
+    },
+    {
+      "id": "v78",
+      "name": "Proximal phalanx of fifth finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.126297,
+        0.0097003,
+        0.0550171
+      ],
+      "max": [
+        0.1446383,
+        0.0201456,
+        0.0817986
+      ]
+    },
+    {
+      "id": "v79",
+      "name": "Proximal phalanx of fifth finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1446383,
+        0.0097003,
+        0.0550171
+      ],
+      "max": [
+        -0.1262969,
+        0.0201456,
+        0.0817986
+      ]
+    },
+    {
+      "id": "v80",
+      "name": "Proximal phalanx of fifth finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2293766,
+        0.7505384,
+        0.0382104
+      ],
+      "max": [
+        0.2442146,
+        0.7843444,
+        0.0598466
+      ]
+    },
+    {
+      "id": "v81",
+      "name": "Proximal phalanx of fifth finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2442146,
+        0.7505384,
+        0.0382104
+      ],
+      "max": [
+        -0.2293766,
+        0.7843444,
+        0.0598466
+      ]
+    },
+    {
+      "id": "v82",
+      "name": "Proximal phalanx of first finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0608917,
+        0.0113265,
+        0.0799206
+      ],
+      "max": [
+        0.0870382,
+        0.0290583,
+        0.1144414
+      ]
+    },
+    {
+      "id": "v83",
+      "name": "Proximal phalanx of first finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0870382,
+        0.0113265,
+        0.0799206
+      ],
+      "max": [
+        -0.0608917,
+        0.0290583,
+        0.1144414
+      ]
+    },
+    {
+      "id": "v84",
+      "name": "Proximal phalanx of first finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.3083609,
+        0.7839408,
+        0.0423398
+      ],
+      "max": [
+        0.3292884,
+        0.8164772,
+        0.0653684
+      ]
+    },
+    {
+      "id": "v85",
+      "name": "Proximal phalanx of first finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.3292884,
+        0.7839408,
+        0.0423398
+      ],
+      "max": [
+        -0.3083609,
+        0.8164772,
+        0.0653684
+      ]
+    },
+    {
+      "id": "v86",
+      "name": "Proximal phalanx of fourth finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1141062,
+        0.0099658,
+        0.0684606
+      ],
+      "max": [
+        0.1322092,
+        0.0237233,
+        0.094455
+      ]
+    },
+    {
+      "id": "v87",
+      "name": "Proximal phalanx of fourth finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1322092,
+        0.0099658,
+        0.0684606
+      ],
+      "max": [
+        -0.1141062,
+        0.0237233,
+        0.094455
+      ]
+    },
+    {
+      "id": "v88",
+      "name": "Proximal phalanx of fourth finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2482203,
+        0.7366891,
+        0.0351009
+      ],
+      "max": [
+        0.26217,
+        0.7771217,
+        0.0623741
+      ]
+    },
+    {
+      "id": "v89",
+      "name": "Proximal phalanx of fourth finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.26217,
+        0.7366891,
+        0.0351009
+      ],
+      "max": [
+        -0.2482203,
+        0.7771217,
+        0.0623741
+      ]
+    },
+    {
+      "id": "v90",
+      "name": "Proximal phalanx of second finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0866042,
+        0.0130312,
+        0.0824457
+      ],
+      "max": [
+        0.1044678,
+        0.0259838,
+        0.1118273
+      ]
+    },
+    {
+      "id": "v91",
+      "name": "Proximal phalanx of second finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1044678,
+        0.0130312,
+        0.0824456
+      ],
+      "max": [
+        -0.0866042,
+        0.0259838,
+        0.1118273
+      ]
+    },
+    {
+      "id": "v92",
+      "name": "Proximal phalanx of second finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2899732,
+        0.732386,
+        0.0334656
+      ],
+      "max": [
+        0.3127209,
+        0.7712959,
+        0.057177
+      ]
+    },
+    {
+      "id": "v93",
+      "name": "Proximal phalanx of second finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.3127209,
+        0.732386,
+        0.0334656
+      ],
+      "max": [
+        -0.2899732,
+        0.7712959,
+        0.057177
+      ]
+    },
+    {
+      "id": "v94",
+      "name": "Proximal phalanx of third finger of foot.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.1024105,
+        0.012157,
+        0.0760825
+      ],
+      "max": [
+        0.1188027,
+        0.0241341,
+        0.1062967
+      ]
+    },
+    {
+      "id": "v95",
+      "name": "Proximal phalanx of third finger of foot.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1188027,
+        0.012157,
+        0.0760825
+      ],
+      "max": [
+        -0.1024105,
+        0.0241341,
+        0.1062967
+      ]
+    },
+    {
+      "id": "v96",
+      "name": "Proximal phalanx of third finger of hand.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2676554,
+        0.7308485,
+        0.0345835
+      ],
+      "max": [
+        0.2866109,
+        0.7729969,
+        0.0647522
+      ]
+    },
+    {
+      "id": "v97",
+      "name": "Proximal phalanx of third finger of hand.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2866109,
+        0.7308485,
+        0.0345835
+      ],
+      "max": [
+        -0.2676554,
+        0.7729969,
+        0.0647522
+      ]
+    },
+    {
+      "id": "v98",
+      "name": "Radius.l",
+      "region": "forearm",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2268769,
+        0.8563237,
+        -0.0419408
+      ],
+      "max": [
+        0.2886669,
+        1.0933313,
+        0.0267303
+      ]
+    },
+    {
+      "id": "v99",
+      "name": "Radius.r",
+      "region": "forearm",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2886669,
+        0.8563236,
+        -0.0419408
+      ],
+      "max": [
+        -0.2268769,
+        1.0933314,
+        0.0267303
+      ]
+    },
+    {
+      "id": "v100",
+      "name": "Scaphoid bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2575288,
+        0.8464999,
+        0.0101256
+      ],
+      "max": [
+        0.2820884,
+        0.8627076,
+        0.0260142
+      ]
+    },
+    {
+      "id": "v101",
+      "name": "Scaphoid bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2820884,
+        0.8464999,
+        0.0101256
+      ],
+      "max": [
+        -0.2575288,
+        0.8627076,
+        0.0260142
+      ]
+    },
+    {
+      "id": "v102",
+      "name": "Scapula.l",
+      "region": "shoulder",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0606082,
+        1.2542695,
+        -0.1128236
+      ],
+      "max": [
+        0.1735641,
+        1.4178634,
+        0.0012854
+      ]
+    },
+    {
+      "id": "v103",
+      "name": "Scapula.r",
+      "region": "shoulder",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1735641,
+        1.2542694,
+        -0.1128236
+      ],
+      "max": [
+        -0.0606082,
+        1.4178635,
+        0.0012855
+      ]
+    },
+    {
+      "id": "v104",
+      "name": "Second metacarpal bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2702603,
+        0.7665467,
+        0.0159325
+      ],
+      "max": [
+        0.3023526,
+        0.8370779,
+        0.0426324
+      ]
+    },
+    {
+      "id": "v105",
+      "name": "Second metacarpal bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.3023526,
+        0.7665467,
+        0.0159325
+      ],
+      "max": [
+        -0.2702603,
+        0.8370779,
+        0.0426324
+      ]
+    },
+    {
+      "id": "v106",
+      "name": "Second metatarsal bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.080749,
+        0.0135289,
+        0.0146973
+      ],
+      "max": [
+        0.0981374,
+        0.0634399,
+        0.085154
+      ]
+    },
+    {
+      "id": "v107",
+      "name": "Second metatarsal bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0981374,
+        0.0135289,
+        0.0146972
+      ],
+      "max": [
+        -0.080749,
+        0.0634399,
+        0.085154
+      ]
+    },
+    {
+      "id": "v110",
+      "name": "Talus.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0536457,
+        0.0498627,
+        -0.066105
+      ],
+      "max": [
+        0.0957554,
+        0.0854756,
+        -0.0070407
+      ]
+    },
+    {
+      "id": "v111",
+      "name": "Talus.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.0957554,
+        0.0498627,
+        -0.066105
+      ],
+      "max": [
+        -0.0536457,
+        0.0854756,
+        -0.0070407
+      ]
+    },
+    {
+      "id": "v112",
+      "name": "Third metacarpal bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2606231,
+        0.768587,
+        0.0110062
+      ],
+      "max": [
+        0.2814122,
+        0.8352753,
+        0.0427204
+      ]
+    },
+    {
+      "id": "v113",
+      "name": "Third metacarpal bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2814122,
+        0.768587,
+        0.0110062
+      ],
+      "max": [
+        -0.2606231,
+        0.8352753,
+        0.0427204
+      ]
+    },
+    {
+      "id": "v114",
+      "name": "Third metatarsal bone.l",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.089144,
+        0.013419,
+        0.0135531
+      ],
+      "max": [
+        0.1122223,
+        0.0578611,
+        0.0813075
+      ]
+    },
+    {
+      "id": "v115",
+      "name": "Third metatarsal bone.r",
+      "region": "foot",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1122223,
+        0.013419,
+        0.0135531
+      ],
+      "max": [
+        -0.089144,
+        0.0578611,
+        0.0813075
+      ]
+    },
+    {
+      "id": "v116",
+      "name": "Tibia.l",
+      "region": "leg",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0373422,
+        0.0752183,
+        -0.0629597
+      ],
+      "max": [
+        0.1157891,
+        0.4331814,
+        0.0050635
+      ]
+    },
+    {
+      "id": "v117",
+      "name": "Tibia.r",
+      "region": "leg",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1157891,
+        0.0752182,
+        -0.0629597
+      ],
+      "max": [
+        -0.0373422,
+        0.4331814,
+        0.0050635
+      ]
+    },
+    {
+      "id": "v118",
+      "name": "Trapezium bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2733876,
+        0.8356791,
+        0.0166777
+      ],
+      "max": [
+        0.2910591,
+        0.8564766,
+        0.0342026
+      ]
+    },
+    {
+      "id": "v119",
+      "name": "Trapezium bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2910591,
+        0.8356791,
+        0.0166777
+      ],
+      "max": [
+        -0.2733876,
+        0.8564766,
+        0.0342026
+      ]
+    },
+    {
+      "id": "v120",
+      "name": "Trapezoid bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2706575,
+        0.8325561,
+        0.0122775
+      ],
+      "max": [
+        0.2823717,
+        0.8456917,
+        0.027822
+      ]
+    },
+    {
+      "id": "v121",
+      "name": "Trapezoid bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2823717,
+        0.8325561,
+        0.0122774
+      ],
+      "max": [
+        -0.2706575,
+        0.8456917,
+        0.027822
+      ]
+    },
+    {
+      "id": "v122",
+      "name": "Triquetrum bone.l",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2396918,
+        0.8388752,
+        0.0134327
+      ],
+      "max": [
+        0.2507924,
+        0.8531523,
+        0.0293626
+      ]
+    },
+    {
+      "id": "v123",
+      "name": "Triquetrum bone.r",
+      "region": "hand",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2507924,
+        0.8388752,
+        0.0134327
+      ],
+      "max": [
+        -0.2396918,
+        0.8531523,
+        0.0293626
+      ]
+    },
+    {
+      "id": "v124",
+      "name": "Ulna.l",
+      "region": "forearm",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.2032372,
+        0.8555802,
+        -0.060388
+      ],
+      "max": [
+        0.2556302,
+        1.1110198,
+        0.0228514
+      ]
+    },
+    {
+      "id": "v125",
+      "name": "Ulna.r",
+      "region": "forearm",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.2556302,
+        0.8555802,
+        -0.0603881
+      ],
+      "max": [
+        -0.2032372,
+        1.1110198,
+        0.0228515
+      ]
+    },
+    {
+      "id": "v126",
+      "name": "Atlas (C1)",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0430279,
+        1.5331084,
+        -0.0459533
+      ],
+      "max": [
+        0.0430362,
+        1.5527561,
+        0.0031142
+      ]
+    },
+    {
+      "id": "v127",
+      "name": "Axis (C2)",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0267846,
+        1.5085252,
+        -0.0523824
+      ],
+      "max": [
+        0.0268159,
+        1.5514352,
+        0.0003565
+      ]
+    },
+    {
+      "id": "v128",
+      "name": "Body of sternum",
+      "region": "thorax",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0246801,
+        1.2395228,
+        0.069179
+      ],
+      "max": [
+        0.0246801,
+        1.3589444,
+        0.1121494
+      ]
+    },
+    {
+      "id": "v129",
+      "name": "Coccyx",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0167411,
+        0.8302966,
+        -0.0863688
+      ],
+      "max": [
+        0.0167638,
+        0.8611256,
+        -0.066644
+      ]
+    },
+    {
+      "id": "v130",
+      "name": "Eighth rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0174096,
+        1.1352754,
+        -0.0963931
+      ],
+      "max": [
+        0.1352841,
+        1.2868335,
+        0.0670754
+      ]
+    },
+    {
+      "id": "v131",
+      "name": "Eighth rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1352841,
+        1.1352754,
+        -0.0963932
+      ],
+      "max": [
+        -0.0174096,
+        1.2868335,
+        0.0670754
+      ]
+    },
+    {
+      "id": "v132",
+      "name": "Eleventh rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0198914,
+        1.0590434,
+        -0.0782546
+      ],
+      "max": [
+        0.1197319,
+        1.1910881,
+        0.0029155
+      ]
+    },
+    {
+      "id": "v133",
+      "name": "Eleventh rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1197319,
+        1.0590434,
+        -0.0782546
+      ],
+      "max": [
+        -0.0198914,
+        1.1910881,
+        0.0029156
+      ]
+    },
+    {
+      "id": "v134",
+      "name": "Fifth rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0155209,
+        1.2412907,
+        -0.0872149
+      ],
+      "max": [
+        0.1313181,
+        1.3673113,
+        0.1020931
+      ]
+    },
+    {
+      "id": "v135",
+      "name": "Fifth rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1313181,
+        1.2412907,
+        -0.0872149
+      ],
+      "max": [
+        -0.0155209,
+        1.3673113,
+        0.1020932
+      ]
+    },
+    {
+      "id": "v136",
+      "name": "First rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0162712,
+        1.3871314,
+        -0.0335518
+      ],
+      "max": [
+        0.0711377,
+        1.4465352,
+        0.0371534
+      ]
+    },
+    {
+      "id": "v137",
+      "name": "First rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.0711377,
+        1.3871314,
+        -0.0335518
+      ],
+      "max": [
+        -0.0162712,
+        1.4465352,
+        0.0371535
+      ]
+    },
+    {
+      "id": "v138",
+      "name": "Fourth rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0158165,
+        1.2774958,
+        -0.0770287
+      ],
+      "max": [
+        0.1253747,
+        1.3946153,
+        0.0928105
+      ]
+    },
+    {
+      "id": "v139",
+      "name": "Fourth rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1253747,
+        1.2774958,
+        -0.0770288
+      ],
+      "max": [
+        -0.0158165,
+        1.3946152,
+        0.0928107
+      ]
+    },
+    {
+      "id": "v140",
+      "name": "Hip bone.l",
+      "region": "pelvis",
+      "system": "appendicular",
+      "side": "left",
+      "min": [
+        0.0029371,
+        0.7973397,
+        -0.0867836
+      ],
+      "max": [
+        0.1348862,
+        1.0119403,
+        0.0560687
+      ]
+    },
+    {
+      "id": "v141",
+      "name": "Hip bone.r",
+      "region": "pelvis",
+      "system": "appendicular",
+      "side": "right",
+      "min": [
+        -0.1348862,
+        0.7973397,
+        -0.0867836
+      ],
+      "max": [
+        -0.0029371,
+        1.0119403,
+        0.0560687
+      ]
+    },
+    {
+      "id": "v142",
+      "name": "Manubrium of sternum",
+      "region": "thorax",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0286616,
+        1.3499201,
+        0.0315726
+      ],
+      "max": [
+        0.0283189,
+        1.4039696,
+        0.0838245
+      ]
+    },
+    {
+      "id": "v143",
+      "name": "Ninth rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0181678,
+        1.1038336,
+        -0.0932923
+      ],
+      "max": [
+        0.1334124,
+        1.2589515,
+        0.0390713
+      ]
+    },
+    {
+      "id": "v144",
+      "name": "Ninth rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1334124,
+        1.1038336,
+        -0.0932923
+      ],
+      "max": [
+        -0.0181678,
+        1.2589515,
+        0.0390714
+      ]
+    },
+    {
+      "id": "v145",
+      "name": "Sacrum",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0614104,
+        0.8657538,
+        -0.0950026
+      ],
+      "max": [
+        0.061382,
+        0.9808365,
+        -0.0036262
+      ]
+    },
+    {
+      "id": "v146",
+      "name": "Second rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0172644,
+        1.3450751,
+        -0.0452827
+      ],
+      "max": [
+        0.099409,
+        1.4363752,
+        0.0666766
+      ]
+    },
+    {
+      "id": "v147",
+      "name": "Second rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.099409,
+        1.3450751,
+        -0.0452827
+      ],
+      "max": [
+        -0.0172644,
+        1.4363752,
+        0.0666766
+      ]
+    },
+    {
+      "id": "v148",
+      "name": "Seventh rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0164727,
+        1.17143,
+        -0.0964657
+      ],
+      "max": [
+        0.141658,
+        1.315801,
+        0.0851545
+      ]
+    },
+    {
+      "id": "v149",
+      "name": "Seventh rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.141658,
+        1.17143,
+        -0.0964658
+      ],
+      "max": [
+        -0.0164727,
+        1.315801,
+        0.0851546
+      ]
+    },
+    {
+      "id": "v150",
+      "name": "Sixth rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0157297,
+        1.2058084,
+        -0.0973504
+      ],
+      "max": [
+        0.1388129,
+        1.3444105,
+        0.09887
+      ]
+    },
+    {
+      "id": "v151",
+      "name": "Sixth rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1388129,
+        1.2058084,
+        -0.0973504
+      ],
+      "max": [
+        -0.0157297,
+        1.3444105,
+        0.0988701
+      ]
+    },
+    {
+      "id": "v152",
+      "name": "Tenth rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0185367,
+        1.0724123,
+        -0.0852004
+      ],
+      "max": [
+        0.1314434,
+        1.2292687,
+        0.0241974
+      ]
+    },
+    {
+      "id": "v153",
+      "name": "Tenth rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1314435,
+        1.0724123,
+        -0.0852005
+      ],
+      "max": [
+        -0.0185366,
+        1.2292687,
+        0.0241974
+      ]
+    },
+    {
+      "id": "v154",
+      "name": "Third rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0170415,
+        1.3107261,
+        -0.0627732
+      ],
+      "max": [
+        0.1125486,
+        1.4164946,
+        0.0764336
+      ]
+    },
+    {
+      "id": "v155",
+      "name": "Third rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.1125487,
+        1.3107261,
+        -0.0627733
+      ],
+      "max": [
+        -0.0170414,
+        1.4164946,
+        0.0764337
+      ]
+    },
+    {
+      "id": "v156",
+      "name": "Twelfth rib.l",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "min": [
+        0.0194031,
+        1.0564376,
+        -0.068121
+      ],
+      "max": [
+        0.0854217,
+        1.1543411,
+        -0.0237158
+      ]
+    },
+    {
+      "id": "v157",
+      "name": "Twelfth rib.r",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "min": [
+        -0.0854217,
+        1.0564376,
+        -0.068121
+      ],
+      "max": [
+        -0.0194031,
+        1.1543412,
+        -0.0237158
+      ]
+    },
+    {
+      "id": "v158",
+      "name": "Vertebra C3",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0282608,
+        1.4930547,
+        -0.0539805
+      ],
+      "max": [
+        0.0282608,
+        1.5197059,
+        0.000201
+      ]
+    },
+    {
+      "id": "v159",
+      "name": "Vertebra C4",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0289045,
+        1.4805546,
+        -0.0526484
+      ],
+      "max": [
+        0.0290553,
+        1.5055946,
+        -0.0002917
+      ]
+    },
+    {
+      "id": "v160",
+      "name": "Vertebra C5",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0307159,
+        1.4688952,
+        -0.0579968
+      ],
+      "max": [
+        0.0307159,
+        1.491394,
+        -0.0015563
+      ]
+    },
+    {
+      "id": "v161",
+      "name": "Vertebra C6",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0306308,
+        1.4537261,
+        -0.0667675
+      ],
+      "max": [
+        0.0306308,
+        1.4783262,
+        -0.0031452
+      ]
+    },
+    {
+      "id": "v162",
+      "name": "Vertebra C7",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0356104,
+        1.4385142,
+        -0.0772264
+      ],
+      "max": [
+        0.0356104,
+        1.4655272,
+        -0.0069203
+      ]
+    },
+    {
+      "id": "v163",
+      "name": "Vertebra L1",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0372111,
+        1.0742597,
+        -0.0707606
+      ],
+      "max": [
+        0.0372111,
+        1.1336181,
+        0.0123133
+      ]
+    },
+    {
+      "id": "v164",
+      "name": "Vertebra L2",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0418736,
+        1.0499942,
+        -0.0656743
+      ],
+      "max": [
+        0.0418736,
+        1.0999072,
+        0.0174459
+      ]
+    },
+    {
+      "id": "v165",
+      "name": "Vertebra L3",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0417405,
+        1.0209779,
+        -0.065607
+      ],
+      "max": [
+        0.0417611,
+        1.0655586,
+        0.0193453
+      ]
+    },
+    {
+      "id": "v166",
+      "name": "Vertebra L4",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0443929,
+        0.9935764,
+        -0.0661301
+      ],
+      "max": [
+        0.0443929,
+        1.0364728,
+        0.0179033
+      ]
+    },
+    {
+      "id": "v167",
+      "name": "Vertebra L5",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.052946,
+        0.9575244,
+        -0.0704853
+      ],
+      "max": [
+        0.052946,
+        1.0080167,
+        0.0123038
+      ]
+    },
+    {
+      "id": "v168",
+      "name": "Vertebra T1",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.038845,
+        1.4226065,
+        -0.0834442
+      ],
+      "max": [
+        0.038845,
+        1.4533796,
+        -0.0112618
+      ]
+    },
+    {
+      "id": "v169",
+      "name": "Vertebra T2",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0375507,
+        1.4025536,
+        -0.0892482
+      ],
+      "max": [
+        0.0375507,
+        1.4375724,
+        -0.0162835
+      ]
+    },
+    {
+      "id": "v170",
+      "name": "Vertebra T3",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0344272,
+        1.3781676,
+        -0.1004014
+      ],
+      "max": [
+        0.0344272,
+        1.4194359,
+        -0.0225581
+      ]
+    },
+    {
+      "id": "v171",
+      "name": "Vertebra T4",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.035436,
+        1.3536843,
+        -0.1009212
+      ],
+      "max": [
+        0.035436,
+        1.3967604,
+        -0.0295904
+      ]
+    },
+    {
+      "id": "v172",
+      "name": "Vertebra T5",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0377086,
+        1.3205786,
+        -0.0993425
+      ],
+      "max": [
+        0.0377087,
+        1.3739286,
+        -0.0327915
+      ]
+    },
+    {
+      "id": "v173",
+      "name": "Vertebra T6",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0379727,
+        1.2831987,
+        -0.1001347
+      ],
+      "max": [
+        0.0379727,
+        1.3452819,
+        -0.0333734
+      ]
+    },
+    {
+      "id": "v174",
+      "name": "Vertebra T7",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0383495,
+        1.2551399,
+        -0.0982176
+      ],
+      "max": [
+        0.0383495,
+        1.3169477,
+        -0.0316231
+      ]
+    },
+    {
+      "id": "v175",
+      "name": "Vertebra T8",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0350974,
+        1.2257131,
+        -0.1002693
+      ],
+      "max": [
+        0.0350974,
+        1.2859474,
+        -0.0265662
+      ]
+    },
+    {
+      "id": "v176",
+      "name": "Vertebra T9",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.036192,
+        1.2001614,
+        -0.096471
+      ],
+      "max": [
+        0.036192,
+        1.2567941,
+        -0.0207301
+      ]
+    },
+    {
+      "id": "v177",
+      "name": "Vertebra T10",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0375857,
+        1.1677851,
+        -0.0920075
+      ],
+      "max": [
+        0.0377043,
+        1.2272027,
+        -0.0141679
+      ]
+    },
+    {
+      "id": "v178",
+      "name": "Vertebra T11",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0290346,
+        1.1418152,
+        -0.0844007
+      ],
+      "max": [
+        0.0290346,
+        1.1968159,
+        -0.0057549
+      ]
+    },
+    {
+      "id": "v179",
+      "name": "Vertebra T12",
+      "region": "spine",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0233416,
+        1.1120526,
+        -0.0770843
+      ],
+      "max": [
+        0.0233415,
+        1.1661008,
+        0.0036214
+      ]
+    },
+    {
+      "id": "v180",
+      "name": "Xiphoid process",
+      "region": "thorax",
+      "system": "axial",
+      "side": "midline",
+      "min": [
+        -0.0108502,
+        1.2209055,
+        0.0958875
+      ],
+      "max": [
+        0.0108502,
+        1.2435902,
+        0.1112472
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Parietal bone.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0743159,
+        1.59,
+        -0.1003399
+      ],
+      "max": [
+        0.0055396,
+        1.7056235,
+        0.0388824
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Parietal bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "midline",
+      "tissue": "bone",
+      "min": [
+        -0.0070125,
+        1.5896872,
+        -0.1004767
+      ],
+      "max": [
+        0.0748952,
+        1.7052574,
+        0.0425823
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Frontal bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "midline",
+      "tissue": "bone",
+      "min": [
+        -0.0614654,
+        1.5934341,
+        0.0178043
+      ],
+      "max": [
+        0.0614654,
+        1.6992267,
+        0.0867619
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Occipital bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "midline",
+      "tissue": "bone",
+      "min": [
+        -0.0598741,
+        1.5507997,
+        -0.1038435
+      ],
+      "max": [
+        0.0599406,
+        1.6553807,
+        0.0120586
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Sphenoid bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "midline",
+      "tissue": "bone",
+      "min": [
+        -0.0546142,
+        1.5506186,
+        0.0020666
+      ],
+      "max": [
+        0.0546142,
+        1.6206239,
+        0.055724
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Temporal bone.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0722485,
+        1.548422,
+        -0.0514534
+      ],
+      "max": [
+        -0.0098955,
+        1.623248,
+        0.044754
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Ethmoid bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "midline",
+      "tissue": "bone",
+      "min": [
+        -0.0186933,
+        1.5657099,
+        0.0313006
+      ],
+      "max": [
+        0.0186924,
+        1.6055173,
+        0.0759784
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Inferior nasal concha bone.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0140832,
+        1.5520408,
+        0.0409197
+      ],
+      "max": [
+        -0.0040594,
+        1.5746293,
+        0.0759871
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Lacrimal bone.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0169739,
+        1.5731537,
+        0.0615953
+      ],
+      "max": [
+        -0.0061953,
+        1.5982155,
+        0.0760452
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Nasal bone.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0085521,
+        1.5738217,
+        0.0792694
+      ],
+      "max": [
+        6.46e-05,
+        1.6048608,
+        0.1003259
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Maxilla.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0459639,
+        1.5373011,
+        0.0405094
+      ],
+      "max": [
+        3.85e-05,
+        1.6055486,
+        0.0940852
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Palatine bone.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0270232,
+        1.5438838,
+        0.0253714
+      ],
+      "max": [
+        -0.0011009,
+        1.5843108,
+        0.0599205
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Zygomatic bone.001",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0625175,
+        1.553376,
+        0.0328897
+      ],
+      "max": [
+        -0.0315256,
+        1.6084036,
+        0.0717379
+      ]
+    },
+    {
+      "id": "27",
+      "name": "Mandible",
+      "region": "skull",
+      "system": "axial",
+      "side": "midline",
+      "tissue": "bone",
+      "min": [
+        -0.0516729,
+        1.4965342,
+        0.0017635
+      ],
+      "max": [
+        0.0516729,
+        1.57871,
+        0.0838257
+      ]
+    },
+    {
+      "id": "28",
+      "name": "Hyoid bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "midline",
+      "tissue": "bone",
+      "min": [
+        -0.0228529,
+        1.4913375,
+        0.0030458
+      ],
+      "max": [
+        0.0228529,
+        1.511296,
+        0.038831
+      ]
+    },
+    {
+      "id": "765",
+      "name": "Temporal bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "left",
+      "tissue": "bone",
+      "min": [
+        0.0098974,
+        1.548422,
+        -0.0514534
+      ],
+      "max": [
+        0.0722504,
+        1.623248,
+        0.044754
+      ]
+    },
+    {
+      "id": "766",
+      "name": "Inferior nasal concha bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "left",
+      "tissue": "bone",
+      "min": [
+        0.0040591,
+        1.5520408,
+        0.0409197
+      ],
+      "max": [
+        0.0140829,
+        1.5746293,
+        0.0759871
+      ]
+    },
+    {
+      "id": "767",
+      "name": "Lacrimal bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "left",
+      "tissue": "bone",
+      "min": [
+        0.0061952,
+        1.5731537,
+        0.0615953
+      ],
+      "max": [
+        0.0169737,
+        1.5982155,
+        0.0760452
+      ]
+    },
+    {
+      "id": "768",
+      "name": "Nasal bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "left",
+      "tissue": "bone",
+      "min": [
+        -6.48e-05,
+        1.5738217,
+        0.0792694
+      ],
+      "max": [
+        0.0085518,
+        1.6048608,
+        0.1003259
+      ]
+    },
+    {
+      "id": "769",
+      "name": "Vomer",
+      "region": "skull",
+      "system": "axial",
+      "side": "right",
+      "tissue": "bone",
+      "min": [
+        -0.0052763,
+        1.5574589,
+        0.0207673
+      ],
+      "max": [
+        0.0052781,
+        1.5802543,
+        0.0821711
+      ]
+    },
+    {
+      "id": "770",
+      "name": "Maxilla",
+      "region": "skull",
+      "system": "axial",
+      "side": "left",
+      "tissue": "bone",
+      "min": [
+        -3.76e-05,
+        1.5373011,
+        0.0405094
+      ],
+      "max": [
+        0.0459649,
+        1.6055486,
+        0.0940852
+      ]
+    },
+    {
+      "id": "771",
+      "name": "Palatine bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "left",
+      "tissue": "bone",
+      "min": [
+        0.001101,
+        1.5438838,
+        0.0253714
+      ],
+      "max": [
+        0.0270233,
+        1.5843108,
+        0.0599205
+      ]
+    },
+    {
+      "id": "772",
+      "name": "Zygomatic bone",
+      "region": "skull",
+      "system": "axial",
+      "side": "left",
+      "tissue": "bone",
+      "min": [
+        0.0315241,
+        1.553376,
+        0.0328897
+      ],
+      "max": [
+        0.062516,
+        1.6084036,
+        0.0717379
+      ]
+    },
+    {
+      "id": "109",
+      "name": "Costal cartilage of first rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.0518533,
+        1.3796059,
+        0.0286351
+      ],
+      "max": [
+        -0.0241464,
+        1.3964468,
+        0.0510502
+      ]
+    },
+    {
+      "id": "110",
+      "name": "Costal cartilage of second rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.0449644,
+        1.343596,
+        0.0590634
+      ],
+      "max": [
+        -0.0132546,
+        1.3589176,
+        0.0808323
+      ]
+    },
+    {
+      "id": "111",
+      "name": "Costal cartilage of third rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.0514465,
+        1.3110305,
+        0.0695699
+      ],
+      "max": [
+        -0.0157989,
+        1.3292253,
+        0.0902191
+      ]
+    },
+    {
+      "id": "112",
+      "name": "Costal cartilage of fourth rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.0696139,
+        1.2774699,
+        0.0857623
+      ],
+      "max": [
+        -0.0165364,
+        1.3052317,
+        0.0966642
+      ]
+    },
+    {
+      "id": "113",
+      "name": "Costal cartilage of fifth rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.0835028,
+        1.2410141,
+        0.0943431
+      ],
+      "max": [
+        -0.0193916,
+        1.2796656,
+        0.1090022
+      ]
+    },
+    {
+      "id": "114",
+      "name": "Costal cartilage of sixth rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.0958138,
+        1.2060024,
+        0.0907819
+      ],
+      "max": [
+        -0.0144063,
+        1.2609549,
+        0.1123425
+      ]
+    },
+    {
+      "id": "115",
+      "name": "Costal cartilage of seventh rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.1125955,
+        1.1692033,
+        0.0764047
+      ],
+      "max": [
+        -0.0068196,
+        1.2432393,
+        0.1112888
+      ]
+    },
+    {
+      "id": "116",
+      "name": "Costal cartilage of eighth rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.1168758,
+        1.1303381,
+        0.0621624
+      ],
+      "max": [
+        -0.039281,
+        1.1895655,
+        0.1080571
+      ]
+    },
+    {
+      "id": "117",
+      "name": "Costal cartilage of tenth rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.1261679,
+        1.0648781,
+        0.0198832
+      ],
+      "max": [
+        -0.0853871,
+        1.0962521,
+        0.0787269
+      ]
+    },
+    {
+      "id": "118",
+      "name": "Costal cartilage of ninth rib.001",
+      "region": "thorax",
+      "system": "axial",
+      "side": "right",
+      "tissue": "cartilage",
+      "min": [
+        -0.1242651,
+        1.0969758,
+        0.0330437
+      ],
+      "max": [
+        -0.0692881,
+        1.1324512,
+        0.0949254
+      ]
+    },
+    {
+      "id": "805",
+      "name": "Costal cartilage of first rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0241464,
+        1.3796059,
+        0.0286351
+      ],
+      "max": [
+        0.0518533,
+        1.3964468,
+        0.0510502
+      ]
+    },
+    {
+      "id": "806",
+      "name": "Costal cartilage of second rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0132546,
+        1.343596,
+        0.0590634
+      ],
+      "max": [
+        0.0449644,
+        1.3589176,
+        0.0808323
+      ]
+    },
+    {
+      "id": "807",
+      "name": "Costal cartilage of third rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0157989,
+        1.3110305,
+        0.0695699
+      ],
+      "max": [
+        0.0514465,
+        1.3292253,
+        0.0902191
+      ]
+    },
+    {
+      "id": "808",
+      "name": "Costal cartilage of fourth rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0165364,
+        1.2774699,
+        0.0857623
+      ],
+      "max": [
+        0.0696139,
+        1.3052317,
+        0.0966642
+      ]
+    },
+    {
+      "id": "809",
+      "name": "Costal cartilage of fifth rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0193916,
+        1.2410141,
+        0.0943431
+      ],
+      "max": [
+        0.0835028,
+        1.2796656,
+        0.1090022
+      ]
+    },
+    {
+      "id": "810",
+      "name": "Costal cartilage of sixth rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0144063,
+        1.2060024,
+        0.0907819
+      ],
+      "max": [
+        0.0958138,
+        1.2609549,
+        0.1123425
+      ]
+    },
+    {
+      "id": "811",
+      "name": "Costal cartilage of seventh rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0068196,
+        1.1692033,
+        0.0764047
+      ],
+      "max": [
+        0.1125955,
+        1.2432393,
+        0.1112888
+      ]
+    },
+    {
+      "id": "812",
+      "name": "Costal cartilage of eighth rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.039281,
+        1.1303381,
+        0.0621624
+      ],
+      "max": [
+        0.1168758,
+        1.1895655,
+        0.1080571
+      ]
+    },
+    {
+      "id": "813",
+      "name": "Costal cartilage of tenth rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0853864,
+        1.0648781,
+        0.0198832
+      ],
+      "max": [
+        0.1261671,
+        1.0962521,
+        0.0787269
+      ]
+    },
+    {
+      "id": "814",
+      "name": "Costal cartilage of ninth rib",
+      "region": "thorax",
+      "system": "axial",
+      "side": "left",
+      "tissue": "cartilage",
+      "min": [
+        0.0692898,
+        1.0969758,
+        0.0330437
+      ],
+      "max": [
+        0.1242669,
+        1.1324512,
+        0.0949254
+      ]
+    }
+  ]
+}
