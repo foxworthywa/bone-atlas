@@ -1,0 +1,52 @@
+'use client';
+import {useEffect,useRef,useState} from 'react';
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {Annotations,Entry,Point,Scope,Side,boneMeshes,catalog,meshIndex,meshInScope,inScope,pointInSide} from '@/lib/atlas';
+export type ViewName='anterior'|'posterior'|'superior'|'inferior'|'lateral'|'reset'|'focus';
+type Props={region:Scope;side:Side;selected:Entry;annotations:Annotations;isolate:boolean;showMarkers:boolean;practice:boolean;placing:boolean;view:{name:ViewName;sequence:number};onSelect:(id:string)=>void;onPlace:(p:Point)=>void;onNotice:(s:string)=>void};
+type Model={id:string;name:string;positions:number[];indices:number[]};
+type Engine={scene:THREE.Scene;group:THREE.Group;markers:THREE.Group;camera:THREE.PerspectiveCamera;controls:OrbitControls;meshes:THREE.Mesh[];center:THREE.Vector3;size:number;fit:(name:ViewName)=>void};
+const ivory=new THREE.Color('#e5dbc7'),teal=new THREE.Color('#358574'),amber=new THREE.Color('#c57c32');
+export default function Viewer(props:Props){
+ const host=useRef<HTMLDivElement>(null),engine=useRef<Engine|null>(null),latest=useRef(props);latest.current=props;
+ const [status,setStatus]=useState('Loading anatomical model…'),[ready,setReady]=useState(0),[retry,setRetry]=useState(0);
+ useEffect(()=>{
+  const div=host.current;if(!div)return;let active=true;const abort=new AbortController();setStatus('Loading anatomical model…');
+  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.001,100);let renderer:THREE.WebGLRenderer;
+  try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});}catch{setStatus('3D graphics are unavailable. Try a browser with WebGL enabled.');return;}
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0xffffff,0);renderer.outputColorSpace=THREE.SRGBColorSpace;div.appendChild(renderer.domElement);
+  renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('role','img');renderer.domElement.setAttribute('aria-label','3D specimen. Drag or use arrow keys to rotate; plus and minus to zoom. Select structures with the course list.');
+  const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.10;controls.screenSpacePanning=true;controls.maxPolarAngle=Math.PI;
+  scene.add(new THREE.HemisphereLight(0xfffcf0,0x65776b,2.2));for(const [pos,col,intensity] of [[[2,3,4],0xfff5dc,2.5],[[-2,1,-3],0xc4e3dd,1.9]] as [number[],number,number][]){const light=new THREE.DirectionalLight(col,intensity);light.position.fromArray(pos);scene.add(light);}
+  const group=new THREE.Group(),markers=new THREE.Group();scene.add(group);group.add(markers);
+  fetch(new URL('./model.json',document.baseURI).href,{signal:abort.signal}).then(r=>{if(!r.ok)throw Error('load');return r.json() as Promise<Model[]>;}).then(data=>{
+   if(!active)return;const meshes:THREE.Mesh[]=[];
+   for(const bone of data){const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(bone.positions,3));geo.setIndex(bone.indices);geo.computeVertexNormals();geo.setAttribute('color',new THREE.Float32BufferAttribute(new Float32Array(bone.positions.length).fill(1),3));const mat=new THREE.MeshStandardMaterial({color:ivory,vertexColors:true,roughness:.65,metalness:0,side:THREE.DoubleSide});const mesh=new THREE.Mesh(geo,mat);mesh.name=bone.name;mesh.userData.id=bone.id;mesh.userData.info=meshIndex.find(m=>m.id===bone.id);group.add(mesh);meshes.push(mesh);}
+   const box=new THREE.Box3().setFromObject(group),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()).length();group.position.copy(center).negate();controls.minDistance=.012;controls.maxDistance=size*6;
+   const fit=(name:ViewName)=>{const p=latest.current;const b=new THREE.Box3();const targets=meshes.filter(m=>m.visible&&(name!=='focus'||boneMeshes[p.selected.bone].includes(m.userData.id)));(targets.length?targets:meshes.filter(m=>m.visible)).forEach(m=>b.expandByObject(m));if(b.isEmpty())return;const mid=b.getCenter(new THREE.Vector3()),sz=b.getSize(new THREE.Vector3());const diag=sz.length();const dist=Math.max(diag,Math.max(sz.y,sz.x/camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)))*1.2;const dirs:Record<string,number[]>={anterior:[0,0,1],posterior:[0,0,-1],superior:[0,1,.001],inferior:[0,-1,.001],lateral:p.side==='left'?[1,0,0]:[-1,0,0],reset:['skull-base','pelvis'].includes(p.region)?[.35,.9,.6]:[.1,.05,1]};const direction=name==='focus'?camera.position.clone().sub(controls.target).normalize():new THREE.Vector3().fromArray(dirs[name]);camera.up.set(0,1,0);if(name==='superior')camera.up.set(0,0,-1);if(name==='inferior')camera.up.set(0,0,1);camera.position.copy(mid).add(direction.multiplyScalar(dist));controls.target.copy(mid);controls.update();};
+   engine.current={scene,group,markers,camera,controls,meshes,center,size,fit};group.updateMatrixWorld(true);fit('reset');setStatus('');setReady(v=>v+1);
+  }).catch(e=>{if(active&&e.name!=='AbortError')setStatus('The anatomical model could not load. Please try again.');});
+  const resize=()=>{const w=Math.max(div.clientWidth,1),h=Math.max(div.clientHeight,1);renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();};const ro=new ResizeObserver(resize);ro.observe(div);resize();
+  const ray=new THREE.Raycaster(),pointer=new THREE.Vector2();let down=[0,0];
+  const onDown=(e:PointerEvent)=>{down=[e.clientX,e.clientY];};
+  const onUp=(e:PointerEvent)=>{if(Math.hypot(e.clientX-down[0],e.clientY-down[1])>6||!engine.current)return;const p=latest.current,en=engine.current,b=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-b.left)/b.width*2-1,-(e.clientY-b.top)/b.height*2+1);ray.setFromCamera(pointer,camera);const targets=p.placing?en.meshes.filter(m=>m.visible):[...en.meshes.filter(m=>m.visible),...en.markers.children.filter(m=>m.visible)];const hit=ray.intersectObjects(targets,false)[0];if(!hit)return;
+   if(p.placing){if(!boneMeshes[p.selected.bone].includes(hit.object.userData.id)){p.onNotice('Place this landmark on its selected bone.');return;}const pos=en.group.worldToLocal(hit.point.clone());p.onPlace(pos.toArray() as Point);return;}
+   if(hit.object.userData.entry){p.onSelect(hit.object.userData.entry);return;}const entry=catalog.filter(c=>c.kind==='bone'&&boneMeshes[c.bone].includes(hit.object.userData.id)).sort((a,b)=>boneMeshes[a.bone].length-boneMeshes[b.bone].length)[0];if(entry)p.onSelect(entry.id);
+  };
+  const onKey=(e:KeyboardEvent)=>{const keys=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-'];if(!keys.includes(e.key))return;e.preventDefault();const offset=camera.position.clone().sub(controls.target),s=new THREE.Spherical().setFromVector3(offset);if(e.key==='ArrowLeft')s.theta-=.12;if(e.key==='ArrowRight')s.theta+=.12;if(e.key==='ArrowUp')s.phi-=.12;if(e.key==='ArrowDown')s.phi+=.12;if(e.key==='+'||e.key==='=')s.radius*=.85;if(e.key==='-')s.radius*=1.15;s.makeSafe();camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(s));controls.update();};
+  renderer.domElement.addEventListener('pointerdown',onDown);renderer.domElement.addEventListener('pointerup',onUp);renderer.domElement.addEventListener('keydown',onKey);
+  renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera);});
+  return()=>{active=false;abort.abort();engine.current=null;ro.disconnect();controls.dispose();renderer.setAnimationLoop(null);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
+ },[retry]);
+ useEffect(()=>{const en=engine.current;if(!en)return;const ids=boneMeshes[props.selected.bone],a=props.annotations[props.selected.id];
+  const target=a?new THREE.Vector3(...a.point):null,white=new THREE.Color(1,1,1),v=new THREE.Vector3(),c=new THREE.Color();
+  for(const mesh of en.meshes){const info=mesh.userData.info;const selectedBone=ids.includes(mesh.userData.id);mesh.visible=(props.isolate?selectedBone:(meshInScope(info,props.region)||selectedBone))&&(props.side==='both'||info.side==='midline'||info.side===props.side);const mat=mesh.material as THREE.MeshStandardMaterial;const base=info.tissue==='cartilage'?new THREE.Color('#a4bdc0'):ivory;mat.color.copy((props.selected.kind==='bone'||!a)&&selectedBone&&!props.practice?teal:base);const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color');
+   if(mesh.userData.hadPatch||target&&selectedBone){for(let i=0;i<pos.count;i++){c.copy(white);if(target&&a&&selectedBone){v.fromBufferAttribute(pos,i);const distance=v.distanceTo(target);if(distance<a.radius)c.copy(a.reviewed?teal:amber).lerp(white,Math.min(distance/a.radius,.8));}colors.setXYZ(i,c.r,c.g,c.b);}colors.needsUpdate=true;}mesh.userData.hadPatch=!!target&&selectedBone;
+  }
+  for(const child of [...en.markers.children]){en.markers.remove(child);const m=child as THREE.Mesh;m.geometry.dispose();(m.material as THREE.Material).dispose();}
+  for(const e of catalog.filter(c=>(inScope(c,props.region)||c.id===props.selected.id)&&c.kind==='landmark'&&!c.unavailable)){const annotation=props.annotations[e.id];if(!annotation||!pointInSide(annotation.point,props.side))continue;if(props.practice&&e.id!==props.selected.id)continue;if(!props.showMarkers&&e.id!==props.selected.id)continue;if(props.isolate&&e.bone!==props.selected.bone)continue;const selected=e.id===props.selected.id;const sphere=new THREE.Mesh(new THREE.SphereGeometry(['all','axial','appendicular'].includes(props.region)?(selected?.007:.003):(selected?.0025:.0015),16,12),new THREE.MeshStandardMaterial({color:annotation.reviewed?teal:amber,emissive:annotation.reviewed?teal:amber,emissiveIntensity:selected?.3:0,roughness:.5}));sphere.position.fromArray(annotation.point);sphere.userData.entry=e.id;en.markers.add(sphere);}
+ },[props.selected,props.annotations,props.isolate,props.showMarkers,props.practice,props.region,props.side,ready]);
+ useEffect(()=>{engine.current?.fit(props.view.name);},[props.view,props.side,props.region,ready]);
+ return <><div ref={host} className={'canvas-host'+(props.placing?' placing':'')}/>{status&&<div role="status" className="model-status">{status}{!status.startsWith('Loading')&&<button onClick={()=>setRetry(v=>v+1)}>Retry loading</button>}</div>}</>;
+}
