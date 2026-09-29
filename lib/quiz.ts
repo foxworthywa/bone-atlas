@@ -18,6 +18,8 @@ export type Item=Named&{entry:Entry};
 function akaFor(e:Entry):string[]{
  if(e.kind==='joint')return jointById.get(e.id)?.aka??[];
  const parts=e.label.split('/').map(s=>s.trim()),out=parts.length>1?[...parts]:[];
+ // Catalog aka: other accepted names, e.g. the English or plural form of a Latin label (its parenthesis is ignored).
+ out.push(...e.aka??[]);
  if(e.kind==='landmark')for(const p of parts)out.push(`${p} of ${boneLabel(e.bone)}`);
  else{const l=e.label;if(/ae$/.test(l))out.push(l.slice(0,-1));else if(/s$/.test(l))out.push(l.slice(0,-1));if(e.bone==='coxal')out.push('hip bone','os coxae','innominate');}
  return out;

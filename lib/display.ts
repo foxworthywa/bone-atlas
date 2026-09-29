@@ -1,5 +1,6 @@
 // What the viewer should emphasise: mesh tones, painted surface patches, point markers, labels and joint lines.
-import {Annotation,Entry,Joint,Lateral,Point,boneMeshes,jointById,meshById,meshOnSide,mirror,onSide,sideMeshes} from './atlas';
+import {Annotation,Entry,Joint,Lateral,Point,boneMeshes,jointById,landmarkOnSide,meshById,meshOnSide,mirror,onSide,sideMeshes} from './atlas';
+import landmarkMeshes from './landmark-meshes.json';
 export type Tone='strong'|'soft'|'correct'|'wrong';
 export type Patch={point:Point;radius:number;color:string;mesh:string};
 export type Marker={point:Point;color:string;size:'lg'|'sm';entry?:string};
@@ -10,9 +11,14 @@ export type Display={tones:Map<string,Tone>;patches:Patch[];markers:Marker[];lab
 export const colors={teal:'#358574',amber:'#c57c32',joint:'#d4572a',joint2:'#2f6fd0',correct:'#2e9e57',wrong:'#8c5cf0'};
 export const emptyDisplay=():Display=>({tones:new Map(),patches:[],markers:[],labels:[],lines:[],offsets:new Map(),fade:false,focus:{meshes:[],points:[],pad:0}});
 const near=(p:Point,q:Point)=>Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);
-// The mesh of a bone group that a point sits on (groups such as "ribs" hold many meshes).
-export function meshForPoint(bone:string,p:Point){
- let best='',d=Infinity;for(const id of boneMeshes[bone]){const m=meshById.get(id)!;const out=Math.hypot(...[0,1,2].map(i=>Math.max(m.min[i]-p[i],0,p[i]-m.max[i])));const c=near(p,[0,1,2].map(i=>(m.min[i]+m.max[i])/2) as Point);const score=out*10+c*.01;if(score<d){d=score;best=id;}}
+const boxDistance=(m:{min:number[];max:number[]},p:Point)=>Math.hypot(...[0,1,2].map(i=>Math.max(m.min[i]-p[i],0,p[i]-m.max[i])));
+// The mesh of a bone group that a point sits on (groups such as "ribs" hold many meshes). Landmarks use the mesh
+// recorded by tools/derive-joints.mjs, since stacked vertebrae and ribs have overlapping boxes; the box guess below is
+// the fallback if the annotations change without re-running it.
+export function meshForPoint(bone:string,p:Point,id?:string){
+ const known=id?(landmarkMeshes as Record<string,{right:string;left:string}>)[id]?.[p[0]>0?'left':'right']:undefined,m=known&&meshById.get(known);
+ if(m&&boneMeshes[bone].includes(m.id)&&boxDistance(m,p)<.002)return m.id;
+ let best='',d=Infinity;for(const id of boneMeshes[bone]){const m=meshById.get(id)!;const out=boxDistance(m,p);const c=near(p,[0,1,2].map(i=>(m.min[i]+m.max[i])/2) as Point);const score=out*10+c*.01;if(score<d){d=score;best=id;}}
  return best;
 }
 export function boneDisplay(e:Entry,side:Lateral,tone:Tone='strong'):Display{
@@ -21,7 +27,7 @@ export function boneDisplay(e:Entry,side:Lateral,tone:Tone='strong'):Display{
  d.focus.meshes=mine;return d;
 }
 export function landmarkDisplay(e:Entry,a:Annotation,side:Lateral,color=a.reviewed?colors.teal:colors.amber,d=emptyDisplay()):Display{
- const p=onSide(a.point,side),mesh=meshForPoint(e.bone,p);
+ const p=landmarkOnSide(e,a.point,side),mesh=meshForPoint(e.bone,p,e.id);
  d.patches.push({point:p,radius:Math.max(a.radius,.004),color,mesh});d.markers.push({point:p,color,size:'lg',entry:e.id});
  d.focus={meshes:[mesh],points:[p],pad:.03};return d;
 }
@@ -37,7 +43,9 @@ const add=(p:Point,o?:Point):Point=>o?[p[0]+o[0],p[1]+o[1],p[2]+o[2]]:p;
 // can be seen; with fade, the rest of the skeleton turns see-through.
 export function jointDisplay(id:string,side:Lateral,{labels=true,only,apart=false,fade=false}:{labels?:boolean;only?:number[];apart?:boolean;fade?:boolean}={}):Display{
  const j=jointById.get(id)!,d=emptyDisplay(),drawn=j.surfaces.map(s=>copies(j,s.point,s.mesh,side));d.fade=fade;
- if(apart&&j.apart&&j.move)for(const i of j.move)for(const c of drawn[i])d.offsets.set(c.mesh,c.point[0]>0&&!j.midline?mirror(j.apart):j.apart);
+ if(apart&&j.apart&&j.move){for(const i of j.move)for(const c of drawn[i])d.offsets.set(c.mesh,c.point[0]>0&&!j.midline?mirror(j.apart):j.apart);
+  // Bones that travel with the moving one (the fibula with the tibia), so none is left standing in the gap.
+  for(const bone of j.carry??[])for(const id of sideMeshes(bone,side))d.offsets.set(id,side==='left'&&!j.midline?mirror(j.apart):j.apart);}
  const at=(c:{point:Point;mesh:string})=>add(c.point,d.offsets.get(c.mesh));
  j.surfaces.forEach((s,i)=>{if(only&&!only.includes(i))return;const color=surfaceColor(j,i);drawn[i].forEach((c,k)=>{
   d.tones.set(c.mesh,'soft');d.patches.push({point:c.point,radius:s.radius,color,mesh:c.mesh});d.focus.points.push(at(c));

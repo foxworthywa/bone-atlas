@@ -9,13 +9,13 @@ export type Scope=Region|'all'|'axial'|'appendicular'|'skull-base'|'joints';
 export type Side='both'|'left'|'right';
 export type Lateral='left'|'right';
 export type Point=[number,number,number];
-export type Entry={id:string;label:string;bone:string;region:Region;system:'axial'|'appendicular';kind:'bone'|'landmark'|'joint';point:Point|null;note:string;unavailable?:boolean;sourceAnchor?:string};
+export type Entry={id:string;label:string;bone:string;region:Region;system:'axial'|'appendicular';kind:'bone'|'landmark'|'joint';point:Point|null;note:string;unavailable?:boolean;sourceAnchor?:string;paired?:boolean;aka?:string[]};
 export type Annotation={point:Point;reviewed:boolean;radius:number;reviewedAt?:string;note?:string};
 export type Annotations=Record<string,Annotation>;
 export type MeshInfo={id:string;name:string;region:Region;system:string;side:string;tissue?:string;min:number[];max:number[]};
 // Articular surfaces are stored on the right side; see tools/derive-joints.mjs.
 export type Surface={label:string;bone:string;landmark?:string;point:Point;mesh:string;radius:number};
-export type Joint={id:string;label:string;aka?:string[];region:Region;system:'axial'|'appendicular';type:string;note:string;midline?:boolean;surfaces:Surface[];pairs?:number[][];view:Point;move?:number[];apart?:Point};
+export type Joint={id:string;label:string;aka?:string[];region:Region;system:'axial'|'appendicular';type:string;note:string;midline?:boolean;surfaces:Surface[];pairs?:number[][];view:Point;move?:number[];apart?:Point;carry?:string[]};
 export const joints=rawJoints as Joint[];
 export const jointById=new Map(joints.map(j=>[j.id,j]));
 export const catalog:Entry[]=[...rawCatalog as Entry[],...joints.map(j=>({id:j.id,label:j.label,bone:j.surfaces[0].bone,region:j.region,system:j.system,kind:'joint' as const,point:null,note:j.note}))];
@@ -30,6 +30,8 @@ export function pointInSide(point:Point,side:Side){return side==='both'||pointSi
 // Left and right meshes are exact mirror images across x=0, so any point can be shown on either side.
 export const mirror=(p:Point):Point=>[-p[0],p[1],p[2]];
 export function onSide(p:Point,side:Lateral):Point{const s=pointSide(p);return s==='both'||s===side?p:mirror(p);}
+// A few paired landmarks lie within 8 mm of the midline (nasal conchae, palatine process); they still have one copy per side.
+export function landmarkOnSide(e:Entry,p:Point,side:Lateral):Point{return e.paired?[side==='left'?Math.abs(p[0]):-Math.abs(p[0]),p[1],p[2]]:onSide(p,side);}
 export const meshById=new Map(meshIndex.map(m=>[m.id,m]));
 const mirrored=new Map<string,string>();
 for(const m of meshIndex)if(m.side!=='midline'){const twin=meshIndex.find(o=>o.side!==m.side&&o.side!=='midline'&&Math.abs(o.min[0]+m.max[0])<1e-4&&Math.abs(o.min[1]-m.min[1])<1e-4&&Math.abs(o.max[2]-m.max[2])<1e-4);if(twin)mirrored.set(m.id,twin.id);}

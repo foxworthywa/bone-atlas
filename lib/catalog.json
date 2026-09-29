@@ -415,10 +415,11 @@
     "bone": "ethmoid",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
-      -0.004151420766809648,
-      1.5861022156945446,
-      0.07424746031900152
+      -0.0033,
+      1.588,
+      0.045
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "system": "axial"
@@ -429,6 +430,7 @@
     "bone": "ethmoid",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
       0.00353255933526719,
       1.5765307847788652,
@@ -513,6 +515,7 @@
     "bone": "maxilla",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
       0.004585432265474976,
       1.5481886775586247,
@@ -538,6 +541,7 @@
     "bone": "palatine",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
       0.005746653803117302,
       1.5489248205891961,
@@ -815,6 +819,7 @@
   {
     "id": "hyoid-mark-1",
     "label": "Greater cornu (horns)",
+    "aka": ["Greater horn", "Greater horns", "Greater cornua"],
     "bone": "hyoid",
     "region": "skull",
     "kind": "landmark",
@@ -830,6 +835,7 @@
   {
     "id": "hyoid-mark-2",
     "label": "Lesser cornu (horns)",
+    "aka": ["Lesser horn", "Lesser horns", "Lesser cornua"],
     "bone": "hyoid",
     "region": "skull",
     "kind": "landmark",
@@ -1074,9 +1080,9 @@
     "region": "spine",
     "kind": "landmark",
     "point": [
-      0.03480729509592073,
-      1.3299124513481488,
-      -0.08244306515780725
+      0.015,
+      1.33,
+      -0.0605
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,
@@ -1459,9 +1465,9 @@
     "region": "shoulder",
     "kind": "landmark",
     "point": [
-      -0.08677889780756204,
-      1.4052196415198626,
-      -0.07324943560305491
+      -0.11536,
+      1.38674,
+      -0.05092
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,
@@ -1813,9 +1819,9 @@
     "region": "forearm",
     "kind": "landmark",
     "point": [
-      -0.2682417126666223,
-      0.8657173084186082,
-      0.005430560458695999
+      -0.25541,
+      0.86837,
+      0.01925
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,

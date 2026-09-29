@@ -26,13 +26,15 @@ Keep the repository and GitHub account available to keep serving the link. The c
 
 The separate instructor atlas remains the place to review labels and export corrections. Updates to `lib/published-annotations.json` should include only approved landmarks, with retired targets also removed from `lib/catalog.json`. Rebuild and commit the updated source and `docs/` together.
 
-Joints live in `lib/joints.json`. Each joint lists its articular surfaces. A surface either reuses an approved landmark (`"landmark"`) or, where the course list has no landmark for it, is placed on the closest spot of its bone to the partner surface (`"nearestTo"`). The file also sets each joint's camera direction (`view`) and how the bones slide apart (`move`, `apart`). After changing joints or landmarks, run:
+In `lib/catalog.json`, a landmark may list other accepted typed answers in `aka` (e.g. the English or plural form of a Latin label). `"paired": true` marks a paired landmark that lies within 8 mm of the midline (the nasal conchae, the palatine process and the horizontal plate), so it is still shown on the side chosen instead of being treated as a midline point.
+
+Joints live in `lib/joints.json`. Each joint lists its articular surfaces. A surface either reuses an approved landmark (`"landmark"`) or, where the course list has no landmark for it, is placed on the closest spot of its bone to the partner surface (`"nearestTo"`) or to a fixed point (`"near"`, used where the approved landmark marks a different face of the feature, such as the front of the dens). The file also sets each joint's camera direction (`view`), how the bones slide apart (`move`, `apart`) and any bone that slides with the moving one (`carry`: the fibula travels with the tibia at the knee). After changing joints or landmarks, run:
 
 ```sh
 node tools/derive-joints.mjs
 ```
 
-This recomputes every surface point and records the mesh it sits on. Points are stored on the right side; the atlas mirrors them for the left.
+This recomputes every surface point and records the mesh it sits on. Points are stored on the right side; the atlas mirrors them for the left. It also regenerates `lib/landmark-meshes.json`, the bone mesh under each landmark on each side (e.g. which vertebra or rib), found by nearest surface; the atlas uses it to paint and isolate the right bone.
 
 With Node.js 22.13 or later and pnpm installed:
 

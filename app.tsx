@@ -5,7 +5,7 @@ import {Input} from '@/components/ui/input';
 import {NativeSelect} from '@/components/ui/native-select';
 import Viewer,{Hit,ViewName} from './viewer';
 import Quiz from './quiz';
-import {Entry,Lateral,Scope,Side,boneMeshes,catalog,defaultAnnotations,inScope,jointById,meshById,onSide,pointSide,scopeLabels,referenceUrl} from '@/lib/atlas';
+import {Entry,Lateral,Scope,Side,boneMeshes,catalog,defaultAnnotations,inScope,jointById,landmarkOnSide,meshById,pointSide,scopeLabels,referenceUrl} from '@/lib/atlas';
 import {Display,boneDisplay,colors,emptyDisplay,jointDisplay,landmarkDisplay,surfaceColor} from '@/lib/display';
 const annotations=defaultAnnotations;
 const course=catalog.filter(e=>e.kind!=='landmark'||annotations[e.id]?.reviewed);
@@ -13,7 +13,7 @@ type Mode='explore'|'recall'|'quiz';
 // Paired structures are shown one side at a time so rotation stays centred on a single bone.
 function lateral(e:Entry){
  if(e.kind==='bone')return boneMeshes[e.bone].some(id=>meshById.get(id)!.side!=='midline');
- if(e.kind==='landmark')return !!annotations[e.id]&&pointSide(annotations[e.id].point)!=='both';
+ if(e.kind==='landmark')return !!annotations[e.id]&&(!!e.paired||pointSide(annotations[e.id].point)!=='both');
  return !jointById.get(e.id)!.midline;
 }
 export default function App(){
@@ -41,7 +41,7 @@ export default function App(){
  const display=useMemo(()=>{
   if(quiz)return quizDisplay;
   const d=selected.kind==='bone'?boneDisplay(selected,focusSide):selected.kind==='joint'?jointDisplay(selected.id,focusSide,{labels:!hidden,apart,fade}):annotation?landmarkDisplay(selected,annotation,focusSide):boneDisplay(selected,focusSide,'soft');
-  if(showMarkers&&!practice)for(const e of entries)if(e.kind==='landmark'&&e.id!==selected.id&&!(isolate&&e.bone!==selected.bone)){const a=annotations[e.id];d.markers.push({point:onSide(a.point,side==='both'?focusSide:side),color:colors.teal,size:'sm',entry:e.id});}
+  if(showMarkers&&!practice)for(const e of entries)if(e.kind==='landmark'&&e.id!==selected.id&&!(isolate&&e.bone!==selected.bone)){const a=annotations[e.id];d.markers.push({point:landmarkOnSide(e,a.point,side==='both'?focusSide:side),color:colors.teal,size:'sm',entry:e.id});}
   return d;
  },[quiz,quizDisplay,selected,focusSide,hidden,annotation,showMarkers,practice,entries,isolate,side,apart,fade]);
  // A link can open a structure directly, e.g. …/bone-atlas/#h-capitulum or #joint-hip@left.
