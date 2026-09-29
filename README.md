@@ -1,6 +1,16 @@
 # Bone Atlas — BIO 141
 
-A free student atlas with a rotatable human skeleton, selectable bones and 142 instructor-approved point landmarks. The student edition provides Explore and ungraded Recall. It contains no instructor editing controls, account requirement, score collection, or server dependency.
+A free student atlas with a rotatable human skeleton, selectable bones, 142 instructor-approved point landmarks and the course's key joints. The student edition provides Explore, ungraded Recall and Quiz me. It contains no instructor editing controls, account requirement, score collection, or server dependency.
+
+## For students
+
+- **Rotate**: drag or use the arrow keys. **Zoom**: scroll, pinch or + / −. **Pan**: right-drag or two-finger drag. **Double-click** a spot to rotate around it.
+- **Click a bone** to select it. Paired bones are shown one side at a time: the side you clicked is highlighted and becomes the centre of rotation. Use **Side shown: Right / Left** to switch sides.
+- **Joints**: choose *Joints* to see where bones meet. The articular surfaces are shaded and labelled, and dashed lines join the surfaces that meet. *Pull the bones apart* slides one bone away so you can see the facing surfaces; *Fade the other bones* keeps the rest of the skeleton see-through.
+- **Recall**: name the highlighted landmark, then reveal the answer.
+- **Quiz me**: pick sections and question types. *Find it* (click it on the model; either side counts), *Name it* (type it, with small misspellings accepted, or choose from four), *Articulations* (which surfaces meet at each joint). Missed questions can be retried. Only the quiz settings are stored, in the student's own browser.
+
+A link can open a structure directly, e.g. `…/bone-atlas/#h-capitulum` or `#joint-hip@left`.
 
 ## Publish with GitHub Pages
 
@@ -16,6 +26,14 @@ Keep the repository and GitHub account available to keep serving the link. The c
 
 The separate instructor atlas remains the place to review labels and export corrections. Updates to `lib/published-annotations.json` should include only approved landmarks, with retired targets also removed from `lib/catalog.json`. Rebuild and commit the updated source and `docs/` together.
 
+Joints live in `lib/joints.json`. Each joint lists its articular surfaces. A surface either reuses an approved landmark (`"landmark"`) or, where the course list has no landmark for it, is placed on the closest spot of its bone to the partner surface (`"nearestTo"`). The file also sets each joint's camera direction (`view`) and how the bones slide apart (`move`, `apart`). After changing joints or landmarks, run:
+
+```sh
+node tools/derive-joints.mjs
+```
+
+This recomputes every surface point and records the mesh it sits on. Points are stored on the right side; the atlas mirrors them for the left.
+
 With Node.js 22.13 or later and pnpm installed:
 
 ```sh
@@ -27,9 +45,9 @@ For local development, run `pnpm dev`. Vite serves the atlas at the address prin
 
 ## Model and teaching scope
 
-Anatomical geometry is adapted from Z-Anatomy exports; see [model credits](public/credits.txt). The model includes 222 bone/cartilage meshes. The student list contains 232 selectable bone/group and approved landmark entries.
+Anatomical geometry is adapted from Z-Anatomy exports; see [model credits](public/credits.txt). The model includes 222 bone/cartilage meshes. The student list contains selectable bones and bone groups, approved landmarks and joints.
 
-A point locates a feature; it does not trace its entire boundary. Recall uses the course instructor's approved representative locations. The frontal sinus and interosseous membranes are excluded from the student list because this model does not adequately depict them. Composite joint, hard palate and subpubic angle targets and the other instructor-retired labels are excluded. The cribriform plate entry explains olfactory foramina.
+A point locates a feature; it does not trace its entire boundary. Recall uses the course instructor's approved representative locations. The frontal sinus and interosseous membranes are excluded from the student list because this model does not adequately depict them. The earlier single-point joint markers, hard palate and subpubic angle targets and the other instructor-retired labels are excluded; joints are now shown as pairs of articular surfaces instead. The cribriform plate entry explains olfactory foramina.
 
 ## License
 
