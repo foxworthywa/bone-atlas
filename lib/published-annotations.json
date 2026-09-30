@@ -753,13 +753,14 @@
   },
   "sternum-mark-1": {
     "point": [
-      0.02391315531970048,
-      1.3840399242721941,
-      0.04519069187179048
+      0.01657,
+      1.39435,
+      0.0397
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T14:51:52.047Z"
+    "reviewedAt": "2026-09-13T14:51:52.047Z",
+    "note": "Corrected 2026-09-30: moved from the notch for the first costal cartilage, below the end of the clavicle, to the clavicular notch, where the sternal end of the clavicle meets the manubrium."
   },
   "ribs-mark-2": {
     "point": [

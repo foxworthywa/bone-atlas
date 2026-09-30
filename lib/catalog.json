@@ -1225,9 +1225,9 @@
     "region": "thorax",
     "kind": "landmark",
     "point": [
-      0.02391315531970048,
-      1.3840399242721941,
-      0.04519069187179048
+      0.01657,
+      1.39435,
+      0.0397
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,

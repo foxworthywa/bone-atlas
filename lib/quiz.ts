@@ -2,7 +2,7 @@
 // (which surfaces meet at each joint). Built from the same course list as Explore; nothing is scored or sent anywhere.
 import {Entry,Lateral,Point,Region,baseBones,boneLabel,boneMeshes,catalog,defaultAnnotations,jointById,meshById,meshOnSide,mirror} from './atlas';
 import {partners} from './display';
-import {Named,nameMatches,normalize} from './match';
+import {Named,nameDistance,nameMatches,normalize} from './match';
 import landmarkMeshes from './landmark-meshes.json';
 import findExtents from './find-extents.json';
 export type QType='find'|'name'|'artic';
@@ -23,18 +23,21 @@ const SAME_SPOT=[['sphenoid-5','sphenoid-6']];
 const twins=(id:string)=>SAME_SPOT.find(g=>g.includes(id))?.filter(x=>x!==id)??[];
 // Landmarks that name a region, and the course landmarks lying in it (the ischial tuberosity is part of the ischium).
 // A click on a part counts for the region, and a region and its part are never offered together in Name it.
-const PARTS:Record<string,string[]>={
+export const PARTS:Record<string,string[]>={
  'coxal-mark-1':['coxal-mark-2','coxal-mark-3','coxal-mark-4','coxal-mark-5','coxal-mark-6','coxal-mark-7','coxal-mark-8'],
  'coxal-mark-9':['coxal-mark-10','coxal-mark-11','coxal-mark-12','coxal-mark-13','coxal-mark-14'],'coxal-mark-15':['coxal-mark-16','coxal-mark-17','coxal-mark-18'],
  'scapula-mark-0':['scapula-mark-6'],'scapula-mark-5':['scapula-mark-13'],'mandible-mark-0':['mandible-mark-3'],'mandible-mark-1':['mandible-mark-6','mandible-mark-7'],
- 'sphenoid-0':['sphenoid-5','sphenoid-6'],'tibia-mark-0':['tibia-mark-1','tibia-mark-2'],'femur-mark-0':['femur-mark-1'],
+ 'sphenoid-0':['sphenoid-5','sphenoid-6'],'tibia-mark-0':['tibia-mark-1','tibia-mark-2'],'femur-mark-0':['femur-mark-1'],'frontal-mark-0':['frontal-mark-1'],
 };
 // Ilium, ischium and pubis are whole parts of the coxal bone. Their points sit on smaller features (the ilium's in the
 // iliac fossa), so they are asked only in Find it, where a click counts for the part whose landmarks are nearest.
 // The acetabulum is formed by all three and the obturator foramen is ringed by the ischium and pubis, so a click there
 // counts for each of them.
-const WHOLE=['coxal-mark-1','coxal-mark-9','coxal-mark-15'],SHARED:Record<string,string[]>={'coxal-mark-0':WHOLE,'coxal-mark-20':['coxal-mark-9','coxal-mark-15']};
+export const WHOLE=['coxal-mark-1','coxal-mark-9','coxal-mark-15'],SHARED:Record<string,string[]>={'coxal-mark-0':WHOLE,'coxal-mark-20':['coxal-mark-9','coxal-mark-15']};
 const parentsOf=(id:string)=>Object.keys(PARTS).filter(k=>PARTS[k].includes(id));
+// Only ilium, ischium and pubis stay out of the way of their parts' clicks; any other region's point is a spot of its own
+// (the body of the mandible is not the mental foramen).
+const wholeOf=(id:string)=>parentsOf(id).filter(k=>WHOLE.includes(k));
 export const nested=(a:string,b:string)=>!!(PARTS[a]?.includes(b)||PARTS[b]?.includes(a)||SHARED[a]?.includes(b)||SHARED[b]?.includes(a));
 const ORD=['first','second','third','fourth','fifth'],DIGIT=[['thumb','index finger','middle finger','ring finger','little finger'],['great toe','second toe','third toe','fourth toe','little toe']];
 // A single generic word after "/" keeps the rest of the name: "Supraorbital foramen / notch" -> "Supraorbital notch".
@@ -80,9 +83,10 @@ function bonePhrase(i:Item){const e=i.entry,label=lowerFirst(i.name.replace(/\s*
 export function findWhat(i:Item){const e=i.entry,name=lowerFirst(i.name).replace(' / ',' or ');
  if(e.kind==='landmark')return SERIAL[e.bone]?`the ${name} ${BETWEEN[e.id]?'between the highlighted vertebrae':'of the highlighted '+SERIAL[e.bone]}`:`the ${withBone(name,e.bone)}`;
  return e.kind==='joint'?`the ${name}${instanceMeshes(i).length?' of the highlighted bones':''}`:bonePhrase(i);}
-// Short name for the results list: "Head (femur)", "Spinous process (vertebra L1)", "Proximal phalanx · digit 1 (hand)".
+// Short name for the results list: "Head (femur)", "Spinous process (vertebra L1)", "Transverse foramen (atlas, C1)",
+// "Proximal phalanx · digit 1 (hand)".
 export function reviewName(i:Item){const e=i.entry;
- if(e.kind==='landmark')return `${i.name} (${SERIAL[e.bone]?meshLabel(lmMesh[e.id].right):boneName(e.bone)})`;
+ if(e.kind==='landmark')return `${i.name} (${SERIAL[e.bone]?meshLabel(lmMesh[e.id].right).replace(/ \((C\d)\)$/,', $1'):boneName(e.bone)})`;
  return e.kind==='bone'&&handFoot(e)?`${i.name} (${handFoot(e).slice(8)})`:i.name;}
 // Articulation questions: a surface and what it meets, plus a few common mix-ups. twin: a question asking the same
 // thing, so a quiz includes only one of the two.
@@ -155,9 +159,12 @@ export function nameChoices(target:Item,count=4){
  return shuffle(picked).map(i=>i.id);
 }
 // A typed Name-it answer is compared with structures of the same kind, so "hip" can name the coxal bone and the hip
-// joint. 'part': the answer names the bone or region the landmark lies on, not the landmark itself.
+// joint, unless a structure of another kind is closer ("inferior concha" is not the superior nasal conchae, "ankle" not
+// the angle of the mandible) or the answer says bone for a joint or joint for anything else. 'part': the answer names
+// the bone or region the landmark lies on, not the landmark itself.
 export function typedAnswer(input:string,target:Item):'right'|'part'|'wrong'{
- const e=target.entry;if(nameMatches(input,target,items.filter(i=>i.entry.kind===e.kind)))return 'right';
+ const e=target.entry,d=nameDistance(input,target),said=/\bjoints?\b/i.test(input)?'joint':/\bbones?\b/i.test(input)?'bone':'';
+ if(nameMatches(input,target,items.filter(i=>i.entry.kind===e.kind))&&!items.some(o=>o.entry.kind!==e.kind&&!target.same?.includes(o.id)&&nameDistance(input,o)<d)&&!(said&&(said==='joint')!==(e.kind==='joint')))return 'right';
  const up=e.kind==='landmark'?[...parentsOf(target.id).map(id=>itemById.get(id)!),...items.filter(i=>i.entry.kind==='bone'&&i.entry.bone===e.bone)]:[];
  return up.some(u=>nameMatches(input,u,items))?'part':'wrong';
 }
@@ -200,20 +207,22 @@ export function findHit(target:Item,mesh:string,p:Point,normal?:Point):boolean{
  if(e.kind==='joint')return nearestJoint(mesh,p)===e.id;
  if(!onBone(target,mesh,p)||farFace(e.id,p,normal))return false;
  if(WHOLE.includes(e.id))return partsAt(p).includes(e.id);
- const a=defaultAnnotations[e.id],near=landmarkNear(mesh,p,.018,normal,parentsOf(e.id));
+ const a=defaultAnnotations[e.id],near=landmarkNear(mesh,p,.018,normal,wholeOf(e.id));
  if(nearestCopy(a.point,p)<=Math.max(a.radius,.006)||!!near&&(near.id===e.id||!!target.same?.includes(near.id)||!!PARTS[e.id]?.includes(near.id)))return true;
  // Along the extent, unless the click is right on another named landmark (the acromion at the end of the spine).
  return inExtent(e.id,p)&&!(near&&nearestCopy(defaultAnnotations[near.id].point,p)<.008)&&!onOtherLine(target,p);
 }
-// What a wrong Find-it click landed on, for the feedback: "the ischial spine of the coxal bone", "vertebra T4".
+// What a wrong Find-it click landed on, for the feedback: "the ischial spine of the coxal bone", "vertebra T4", "the
+// seventh rib".
+const theMesh=(id:string)=>{const l=meshLabel(id);return /^vertebra /.test(l)?l:'the '+l;};
 export function clickedWhat(target:Item,mesh:string,p:Point,normal?:Point){
  const e=target.entry,inst=instanceMeshes(target),bone=bonesOfMesh(mesh)[0];
- if(inst.length&&!inst.includes(mesh)&&serialMesh(mesh))return `${meshLabel(mesh)}, not the highlighted ${e.kind==='joint'?'bones':SERIAL[e.bone]}`;
+ if(inst.length&&!inst.includes(mesh)&&serialMesh(mesh))return `${theMesh(mesh)}, not the highlighted ${e.kind==='joint'?'bones':SERIAL[e.bone]}`;
  if(e.kind==='joint'){const j=nearestJoint(mesh,p);if(j)return `the ${lowerFirst(jointById.get(j)!.label)}`;}
- if(e.kind==='landmark'){const near=landmarkNear(mesh,p,.015,normal,parentsOf(e.id));
+ if(e.kind==='landmark'){const near=landmarkNear(mesh,p,.015,normal,wholeOf(e.id));
   if(near&&near.id!==e.id)return `the ${withBone(lowerFirst(near.name).replace(' / ',' or '),near.entry.bone)}`;
   if(boneMeshes[e.bone].includes(mesh)&&farFace(e.id,p,normal))return `the other face of the ${boneName(e.bone)}`;}
- return !bone?'a structure not on the list':serialMesh(mesh)?meshLabel(mesh):bonePhrase(bone);
+ return !bone?'a structure not on the list':serialMesh(mesh)?theMesh(mesh):bonePhrase(bone);
 }
 // Find it: what the model shows while asking. Landmarks inside the cranium open the skull base, as in Explore; those
 // inside a joint show the partner bone see-through (the fovea through the coxal bone); a landmark on one vertebra or

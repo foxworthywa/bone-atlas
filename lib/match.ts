@@ -13,6 +13,7 @@ export function levenshtein(a:string,b:string){
 // Spelling tolerance grows with the length of the expected answer.
 function tolerance(expected:string){const n=expected.replace(/ /g,'').length;return n<=4?0:n<=7?1:n<=12?2:3;}
 function distanceTo(n:string,item:Named){let d=Infinity,tol=0;for(const c of [item.name,...item.aka??[]].map(normalize)){if(!c)continue;const x=levenshtein(n,c);if(x<d){d=x;tol=tolerance(c);}}return {d,tol};}
+export const nameDistance=(input:string,item:Named)=>distanceTo(normalize(input),item).d;
 // Accepts the name, listed alternatives and small misspellings, but only when the answer is closer to this item than
 // to any other: "medial condyle" never passes for "lateral condyle".
 export function nameMatches(input:string,item:Named,all:Named[]){

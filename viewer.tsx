@@ -147,7 +147,7 @@ export default function Viewer(props:Props){
   // Modified keys stay with the browser (Ctrl/Cmd +/- zoom the page, Alt+Left goes back).
   const onKey=(e:KeyboardEvent)=>{const keys=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-'];if(!keys.includes(e.key)||e.ctrlKey||e.metaKey||e.altKey)return;e.preventDefault();tween=null;const offset=camera.position.clone().sub(controls.target),s=new THREE.Spherical().setFromVector3(offset);if(e.key==='ArrowLeft')s.theta-=.12;if(e.key==='ArrowRight')s.theta+=.12;if(e.key==='ArrowUp')s.phi-=.12;if(e.key==='ArrowDown')s.phi+=.12;if(e.key==='+'||e.key==='=')s.radius*=.85;if(e.key==='-')s.radius*=1.15;s.makeSafe();s.radius=THREE.MathUtils.clamp(s.radius,controls.minDistance,controls.maxDistance);camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(s));controls.update();};
   renderer.domElement.addEventListener('pointerdown',onDown);renderer.domElement.addEventListener('click',onClick);renderer.domElement.addEventListener('dblclick',onDouble);renderer.domElement.addEventListener('keydown',onKey);
-  const v=new THREE.Vector3(),w=new THREE.Vector3();
+  const v=new THREE.Vector3(),w=new THREE.Vector3(),sight=new THREE.Raycaster();let sighted=0;
   renderer.setAnimationLoop(now=>{
    if(tween){const k=Math.min(1,(now-tween.t0)/tween.dur),t=ease(k);camera.position.lerpVectors(tween.pos[0],tween.pos[1],t);controls.target.lerpVectors(tween.target[0],tween.target[1],t);if(k>=1)tween=null;}
    controls.update();
@@ -155,8 +155,17 @@ export default function Viewer(props:Props){
     // Bones slide smoothly when a joint is pulled apart or closed.
     for(const m of en.meshes.values()){const t=m.userData.offset as THREE.Vector3|undefined;if(t&&!m.position.equals(t)){m.position.lerp(t,reduced?1:.14);if(m.position.distanceTo(t)<1e-5)m.position.copy(t);}}
     // Markers keep a steady on-screen size at any zoom, and sit on their bone's surface instead of poking through it.
-    for(const o of en.overlay.children)if(o.userData.size){o.getWorldPosition(w);o.scale.setScalar(Math.min(Math.max(w.distanceTo(camera.position)*o.userData.size,.0012),.012));if(o.userData.normal)o.position.copy(o.userData.base).addScaledVector(o.userData.normal,o.scale.x*.9);if(o.children[0])o.children[0].visible=!!en.reveal.key;}
-    const b=div.getBoundingClientRect();for(const el of Array.from(labels.children) as HTMLElement[]){const p=JSON.parse(el.dataset.point!);v.set(p[0],p[1],p[2]).applyMatrix4(en.group.matrixWorld).project(camera);const off=v.z>1||Math.abs(v.x)>1.1||Math.abs(v.y)>1.1;el.style.display=off?'none':'';el.style.transform=`translate(${(v.x+1)/2*b.width}px,${(1-v.y)/2*b.height}px)`;}
+    // A few times a second: is bone in front of the selected marker? Then its faint copy shows through (the vertebral
+    // foramen seen from above, a landmark on the far side after turning the model).
+    const recheck=now-sighted>250,solid=recheck?[...en.meshes.values()].filter(m=>m.visible&&!(m.material as THREE.Material).transparent):[];if(recheck)sighted=now;
+    for(const o of en.overlay.children)if(o.userData.size){o.getWorldPosition(w);o.scale.setScalar(Math.min(Math.max(w.distanceTo(camera.position)*o.userData.size,.0012),.012));if(o.userData.normal)o.position.copy(o.userData.base).addScaledVector(o.userData.normal,o.scale.x*.9);
+     if(!o.children[0])continue;if(recheck){o.getWorldPosition(w);const to=w.sub(camera.position),far=to.length();sight.set(camera.position,to.divideScalar(far));sight.far=far-o.scale.x;o.userData.hidden=sight.intersectObjects(solid,false).length>0;}
+     o.children[0].visible=!!en.reveal.key||!!o.userData.hidden;}
+    // Each label sits beside its surface: above or below to the right, else on the other side or the left, whichever
+    // keeps it clear of the labels placed before it and inside the view.
+    const b=div.getBoundingClientRect(),placed:number[][]=[];for(const el of Array.from(labels.children) as HTMLElement[]){const p=JSON.parse(el.dataset.point!);v.set(p[0],p[1],p[2]).applyMatrix4(en.group.matrixWorld).project(camera);const off=v.z>1||Math.abs(v.x)>1.1||Math.abs(v.y)>1.1;el.style.display=off?'none':'';if(off)continue;
+     const x=(v.x+1)/2*b.width,y=(1-v.y)/2*b.height,lw=el.offsetWidth,lh=el.offsetHeight,first=el.dataset.below?8:-30,other=first<0?8:-30,spots=[[8,first],[8,other],[-8-lw,first],[-8-lw,other]].map(([dx,dy])=>[x+dx,y+dy,lw,lh]);
+     const pick=spots.find(r=>r[0]>=0&&r[0]+lw<=b.width&&!placed.some(q=>r[0]<q[0]+q[2]&&q[0]<r[0]+lw&&r[1]<q[1]+q[3]&&q[1]<r[1]+lh))??spots[0];placed.push(pick);el.style.transform=`translate(${pick[0]}px,${pick[1]}px)`;}
    }
    renderer.render(scene,camera);
   });
@@ -174,10 +183,10 @@ export default function Viewer(props:Props){
   for(const child of [...en.overlay.children]){en.overlay.remove(child);child.traverse(o=>{if(o instanceof THREE.Mesh||o instanceof THREE.Line){o.geometry.dispose();(o.material as THREE.Material).dispose();}});}
   for(const m of d.markers){const sphere=new THREE.Mesh(new THREE.SphereGeometry(1,16,12),new THREE.MeshStandardMaterial({color:m.color,emissive:m.color,emissiveIntensity:m.size==='lg'?.35:0,roughness:.5}));sphere.position.fromArray(m.point);sphere.scale.setScalar(.004);
    const n=m.mesh?surfaceNormal(en.meshes.get(m.mesh),m.point):null;sphere.userData={entry:m.entry,size:m.size==='lg'?.011:.0065,...(n?{normal:n.clone(),base:sphere.position.clone()}:{})};sphere.renderOrder=2;en.overlay.add(sphere);
-   // While the rest is see-through for a hidden landmark, a faint copy shows through its own bone as well.
+   // A faint copy shows through bone while the rest is see-through for a hidden landmark, or bone hides it from the camera.
    if(m.size==='lg'){const ghost=new THREE.Mesh(sphere.geometry,new THREE.MeshBasicMaterial({color:m.color,transparent:true,opacity:.45,depthTest:false,depthWrite:false}));ghost.renderOrder=4;ghost.visible=false;sphere.add(ghost);}}
   for(const l of d.lines){const geo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...l.from),new THREE.Vector3(...l.to)]);const line=new THREE.Line(geo,new THREE.LineDashedMaterial({color:l.color,dashSize:.003,gapSize:.002,depthTest:false,transparent:true,opacity:.85}));line.computeLineDistances();line.renderOrder=3;en.overlay.add(line);}
-  labels.replaceChildren(...d.labels.map((l,i)=>{const el=document.createElement('span');el.className='surface-label'+(i%2?' below':'');el.textContent=l.text;el.style.setProperty('--label-color',l.color);el.dataset.point=JSON.stringify(l.point);return el;}));
+  labels.replaceChildren(...d.labels.map((l,i)=>{const el=document.createElement('span');el.className='surface-label';if(i%2)el.dataset.below='1';el.textContent=l.text;el.style.setProperty('--label-color',l.color);el.dataset.point=JSON.stringify(l.point);return el;}));
  },[props.display,props.isolate,props.region,props.side,ready]);
  useEffect(()=>{engine.current?.fit(props.view.name);},[props.view,ready]);
  return <><div ref={host} className="canvas-host"/><div ref={labelHost} className="surface-labels" aria-hidden="true"/>{status&&<div role="status" className="model-status">{status}{!status.startsWith('Loading')&&<button onClick={()=>setRetry(v=>v+1)}>Retry loading</button>}</div>}</>;
