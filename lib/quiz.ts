@@ -26,7 +26,8 @@ const twins=(id:string)=>SAME_SPOT.find(g=>g.includes(id))?.filter(x=>x!==id)??[
 export const PARTS:Record<string,string[]>={
  'coxal-mark-1':['coxal-mark-2','coxal-mark-3','coxal-mark-4','coxal-mark-5','coxal-mark-6','coxal-mark-7','coxal-mark-8'],
  'coxal-mark-9':['coxal-mark-10','coxal-mark-11','coxal-mark-12','coxal-mark-13','coxal-mark-14'],'coxal-mark-15':['coxal-mark-16','coxal-mark-17','coxal-mark-18'],
- 'scapula-mark-0':['scapula-mark-6'],'scapula-mark-5':['scapula-mark-13'],'mandible-mark-0':['mandible-mark-3'],'mandible-mark-1':['mandible-mark-6','mandible-mark-7'],
+ 'scapula-mark-0':['scapula-mark-6'],'scapula-mark-5':['scapula-mark-13'],'mandible-mark-0':['mandible-mark-3'],'mandible-mark-1':['mandible-mark-4','mandible-mark-5','mandible-mark-6','mandible-mark-7'],
+ 'vertebrae-mark-5':['vertebrae-mark-7'],'vertebrae-mark-6':['vertebrae-mark-8'],
  'sphenoid-0':['sphenoid-5','sphenoid-6'],'tibia-mark-0':['tibia-mark-1','tibia-mark-2'],'femur-mark-0':['femur-mark-1'],'frontal-mark-0':['frontal-mark-1'],
 };
 // Ilium, ischium and pubis are whole parts of the coxal bone. Their points sit on smaller features (the ilium's in the
@@ -47,7 +48,7 @@ function akaFor(e:Entry):string[]{
  const parts=e.label.split('/').map(s=>s.trim()),out=parts.length>1?parts.map((p,k)=>k&&GENERIC.test(p)?parts[0].replace(/\S+$/,p):p):[];
  // Catalog aka: other accepted names, e.g. the English or plural form of a Latin label (its parenthesis is ignored).
  out.push(...e.aka??[]);for(const t of twins(e.id)){const c=catalog.find(c=>c.id===t)!;out.push(c.label,...c.aka??[]);}
- if(e.kind==='landmark')for(const p of [...parts,...e.aka??[]])out.push(`${p} of ${boneLabel(e.bone)}`);
+ if(e.kind==='landmark')for(const p of [...parts,...e.aka??[]])out.push(`${p} of ${boneLabel(e.bone).split(' / ')[0]}`);
  else{const l=e.label;if(/ae$/.test(l))out.push(l.slice(0,-1));else if(/s$/.test(l))out.push(l.slice(0,-1));if(e.bone==='coxal')out.push('hip bone','os coxae','innominate');
   // Metacarpal II -> "metacarpal 2", "second metacarpal"; Proximal phalanx · digit 1 -> "proximal phalanx of the thumb".
   const m=/^(Metacarpal|Metatarsal) (I{1,3}|IV|V)$/.exec(l);if(m){const n=['I','II','III','IV','V'].indexOf(m[2]);out.push(`${m[1]} ${n+1}`,`${ORD[n]} ${m[1]}`);}

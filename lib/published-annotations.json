@@ -31,13 +31,14 @@
   },
   "vertebrae-mark-3": {
     "point": [
-      -0.014135891160983682,
-      1.0769043782431194,
-      -0.02617843057281198
+      -0.0111,
+      1.0897,
+      -0.0273
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T14:43:42.312Z"
+    "reviewedAt": "2026-09-13T14:43:42.312Z",
+    "note": "Corrected 2026-09-30 (instructor approved): moved up the same pedicle wall of L2 so the spot faces into the vertebral foramen and can be seen from above."
   },
   "vertebrae-mark-4": {
     "point": [

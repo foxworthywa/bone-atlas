@@ -9,7 +9,7 @@ type Prefs={sections:SectionId[];types:QType[];length:number|'all'};
 // chose: answered right from the choices after "Show choices instead" (reported apart from typed answers).
 type Q={type:QType;id:string;answered:boolean;attempts:number;showChoices:boolean;choices:string[];pick?:string;chose?:boolean;feedback?:{cls:'good'|'bad'|'info';text:string}};
 // n: which run this is, so each question gets a fresh answer box (a retry of the same list included).
-type Run={n:number;questions:Q[];i:number;score:number;missed:{type:QType;id:string}[];done:boolean};
+type Run={n:number;retry?:boolean;questions:Q[];i:number;score:number;missed:{type:QType;id:string}[];done:boolean};
 let runs=0;
 const STORE='bone-atlas.quiz';
 function loadPrefs():Prefs{
@@ -53,10 +53,10 @@ export default function Quiz({active,side,pick,onShow,onReview,onExit}:{active:b
  }
  // The run lives on while Explore or Recall is open (Review on the results page, the structure list, a link).
  useEffect(()=>{if(active&&run)onShow(shown.current.d,shown.current.view);},[active]);// eslint-disable-line react-hooks/exhaustive-deps
- function start(list:{type:QType;id:string}[]){const r:Run={n:++runs,questions:list.map(x=>({...x,answered:false,attempts:0,showChoices:false,choices:[]})),i:0,score:0,missed:[],done:false};setRun(r);present(r);}
+ function start(list:{type:QType;id:string}[],retry=false){const r:Run={n:++runs,retry,questions:list.map(x=>({...x,answered:false,attempts:0,showChoices:false,choices:[]})),i:0,score:0,missed:[],done:false};setRun(r);present(r);}
  function next(){if(!run)return;if(run.i+1>=run.questions.length)return finish();run.i++;present(run);render();setTimeout(()=>input.current?.focus({preventScroll:true}));}
  // A question left after a wrong try still counts as asked and goes on the review list.
- function finish(){if(!run)return;run.done=true;for(const x of run.questions)if(!x.answered&&x.attempts)run.missed.push({type:x.type,id:x.id});run.missed=[...new Map(run.missed.map(m=>[m.type+':'+m.id,m])).values()];display(emptyDisplay(),'reset');render();}
+ function finish(){if(!run)return;run.done=true;for(const x of run.questions)if(!x.answered&&(x.attempts||run.retry))run.missed.push({type:x.type,id:x.id});run.missed=[...new Map(run.missed.map(m=>[m.type+':'+m.id,m])).values()];display(emptyDisplay(),'reset');render();}
  function right(text:string){if(!run||!q)return;q.answered=true;if(!q.attempts)run.score++;else run.missed.push({type:q.type,id:q.id});q.feedback={cls:'good',text};render();}
  function wrong(text:string){if(!run||!q)return;q.answered=true;q.attempts++;run.missed.push({type:q.type,id:q.id});q.feedback={cls:'bad',text};render();}
  function revealJoint(a:Artic){display(jointDisplay(a.joint,side,{apart:true,fade:true}),'focus');}
@@ -102,7 +102,7 @@ export default function Quiz({active,side,pick,onShow,onReview,onExit}:{active:b
  if(run.done){const asked=run.questions.filter(x=>x.answered||x.attempts).length,chose=run.questions.filter(x=>x.chose).length;return <div className="quiz">
   <p className="eyebrow">RESULTS</p><p className="score-big">{run.score} / {asked}</p><p className="muted">{asked?`${Math.round(run.score/asked*100)}% right on the first try${chose?`, ${chose} of them picked from the choices instead of typed`:''}.`:'No questions answered.'}</p>
   {!!run.missed.length&&<><p className="eyebrow">TO REVIEW</p><ul className="missed">{run.missed.map(m=>{const name=m.type==='artic'?articById.get(m.id)!.prompt:reviewName(itemById.get(m.id)!);const target=m.type==='artic'?articById.get(m.id)!.joint:m.id;return <li key={m.type+m.id}><span>{name}<small>{TYPES[m.type].label}</small></span><Button size="sm" variant="outline" onClick={()=>onReview(target)}>Review</Button></li>;})}</ul></>}
-  <div className="quiz-actions">{!!run.missed.length&&<Button onClick={()=>start(run.missed)}>Retry the ones I missed</Button>}<Button variant="outline" onClick={()=>{setRun(null);display(emptyDisplay(),'reset');}}>New quiz</Button></div>
+  <div className="quiz-actions">{!!run.missed.length&&<Button onClick={()=>start(run.missed,true)}>Retry the ones I missed</Button>}<Button variant="outline" onClick={()=>{setRun(null);display(emptyDisplay(),'reset');}}>New quiz</Button></div>
  </div>;}
  const cur=q!;
  let body;

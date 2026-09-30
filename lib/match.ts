@@ -2,7 +2,7 @@
 // same: other entries for the very same answer (two course names marked on one spot); they never compete.
 export type Named={id:string;name:string;aka?:string[];same?:string[]};
 export function normalize(s:string){
- return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\(.*?\)/g,' ').replace(/[^a-z0-9 ]/g,' ').replace(/\b(the|a|an|of|bone|bones)\b/g,' ').replace(/\s+/g,' ').trim();
+ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\(.*?\)/g,' ').replace(/[^a-z0-9 ]/g,' ').replace(/\b(collar|breast) bone/g,'$1bone').replace(/\b(the|a|an|of|bone|bones)\b/g,' ').replace(/\s+/g,' ').trim();
 }
 // Edit distance in which swapping two neighbouring letters ("humreus", "raduis") is one typo, not two.
 export function levenshtein(a:string,b:string){

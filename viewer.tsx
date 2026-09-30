@@ -171,10 +171,12 @@ export default function Viewer(props:Props){
       const plate=!!a&&!!b&&!!n&&a.object===b.object&&a.object.userData.id===o.userData.mesh&&a.distance-b.distance<.008&&far-a.distance<.02&&n.dot(to)>0;
       o.userData.hidden=hits.some(h=>h.distance<far-o.scale.x)&&!plate;}
      o.children[0].visible=!!en.reveal.key||!!o.userData.hidden;}
-    // Each label sits beside its surface: above or below to the right, else on the other side or the left, whichever
-    // keeps it clear of the labels placed before it and inside the view.
-    const b=div.getBoundingClientRect(),placed:number[][]=[];for(const el of Array.from(labels.children) as HTMLElement[]){const p=JSON.parse(el.dataset.point!);v.set(p[0],p[1],p[2]).applyMatrix4(en.group.matrixWorld).project(camera);const off=v.z>1||Math.abs(v.x)>1.1||Math.abs(v.y)>1.1;el.style.display=off?'none':'';if(off)continue;
-     const x=(v.x+1)/2*b.width,y=(1-v.y)/2*b.height,lw=el.offsetWidth,lh=el.offsetHeight,first=el.dataset.below?8:-30,other=first<0?8:-30,spots=[[8,first],[8,other],[-8-lw,first],[-8-lw,other]].map(([dx,dy])=>[x+dx,y+dy,lw,lh]);
+    // Each label sits beside its surface, on the side away from the other labelled surfaces (so the femoral head's label
+    // does not cover the acetabulum), above or below, whichever keeps it clear of labels already placed and in view.
+    const b=div.getBoundingClientRect(),placed:number[][]=[],shown:[HTMLElement,number,number][]=[];for(const el of Array.from(labels.children) as HTMLElement[]){const p=JSON.parse(el.dataset.point!);v.set(p[0],p[1],p[2]).applyMatrix4(en.group.matrixWorld).project(camera);const off=v.z>1||Math.abs(v.x)>1.1||Math.abs(v.y)>1.1;el.style.display=off?'none':'';if(!off)shown.push([el,(v.x+1)/2*b.width,(1-v.y)/2*b.height]);}
+    const cx=shown.reduce((t,[,x])=>t+x,0)/Math.max(shown.length,1);
+    for(const [el,x,y] of shown){
+     const lw=el.offsetWidth,lh=el.offsetHeight,first=el.dataset.below?8:-30,other=first<0?8:-30,right=[[8,first],[8,other]],left=[[-8-lw,first],[-8-lw,other]],spots=(shown.length>1&&x<cx-1?[...left,...right]:[...right,...left]).map(([dx,dy])=>[x+dx,y+dy,lw,lh]);
      const pick=spots.find(r=>r[0]>=0&&r[0]+lw<=b.width&&!placed.some(q=>r[0]<q[0]+q[2]&&q[0]<r[0]+lw&&r[1]<q[1]+q[3]&&q[1]<r[1]+lh))??spots[0];placed.push(pick);el.style.transform=`translate(${pick[0]}px,${pick[1]}px)`;}
    }
    renderer.render(scene,camera);

@@ -994,9 +994,9 @@
     "region": "spine",
     "kind": "landmark",
     "point": [
-      -0.014135891160983682,
-      1.0769043782431194,
-      -0.02617843057281198
+      -0.0111,
+      1.0897,
+      -0.0273
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,

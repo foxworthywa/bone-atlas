@@ -25,3 +25,4 @@
    model clear of the buttons. Touch screens get a touch hint. */
 @media(max-width:700px){.view-controls{gap:3px;left:6px;right:6px;bottom:44px}.view-controls button{padding:0 6px;font-size:12px}.canvas-host{bottom:80px}}
 .hint-touch{display:none}@media(pointer:coarse){.hint-mouse{display:none}.hint-touch{display:inline}}
+.hint-narrow{display:none}@media(max-width:700px) and (pointer:fine){.hint-mouse{display:none}.hint-narrow{display:inline}}
