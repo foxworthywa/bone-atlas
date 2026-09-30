@@ -6,7 +6,7 @@ import {NativeSelect} from '@/components/ui/native-select';
 import Viewer,{Hit,ViewName} from './viewer';
 import Quiz from './quiz';
 import {Entry,Lateral,Scope,Side,boneMeshes,catalog,defaultAnnotations,inScope,jointById,landmarkOnSide,meshById,pointSide,scopeLabels,referenceUrl} from '@/lib/atlas';
-import {Display,boneDisplay,colors,emptyDisplay,jointDisplay,landmarkDisplay,surfaceColor} from '@/lib/display';
+import {Display,boneDisplay,colors,emptyDisplay,jointDisplay,landmarkDisplay,meshForPoint,surfaceColor} from '@/lib/display';
 const annotations=defaultAnnotations;
 const course=catalog.filter(e=>e.kind!=='landmark'||annotations[e.id]?.reviewed);
 type Mode='explore'|'recall'|'quiz';
@@ -21,12 +21,13 @@ export default function App(){
  const [apart,setApart]=useState(true),[fade,setFade]=useState(true);
  const [quizDisplay,setQuizDisplay]=useState<Display>(emptyDisplay),[pick,setPick]=useState<{hit:Hit;sequence:number}|null>(null);
  const practice=mode==='recall',quiz=mode==='quiz';
- const selected=course.find(e=>e.id===selectedId)!,annotation=annotations[selectedId],joint=selected.kind==='joint'?jointById.get(selected.id)!:null,entries=course.filter(e=>inScope(e,region)),landmarks=entries.filter(e=>e.kind==='landmark'),hidden=practice&&!revealed;
+ const selected=course.find(e=>e.id===selectedId)!,annotation=annotations[selectedId],joint=selected.kind==='joint'?jointById.get(selected.id)!:null,entries=useMemo(()=>course.filter(e=>inScope(e,region)),[region]),landmarks=entries.filter(e=>e.kind==='landmark'),hidden=practice&&!revealed;
  function camera(name:ViewName){setView(v=>({name,sequence:v.sequence+1}));}
- function chooseSide(s:Lateral){setFocusSide(s);if(side!=='both'&&side!==s)setSide(s);camera('focus');}
+ // Switching sides mirrors the view, so the other side's bone is seen from the same side of the body, not through it.
+ function chooseSide(s:Lateral){const flip=s!==focusSide&&lateral(selected);setFocusSide(s);if(side!=='both'&&side!==s)setSide(s);camera(flip?'side':'focus');}
  function select(id:string,move:ViewName|null='focus'){if(!course.some(e=>e.id===id))return;setSelectedId(id);setRevealed(false);if(move)camera(move);}
  function changeRegion(r:Scope){setRegion(r);const first=course.find(e=>inScope(e,r));if(first)select(first.id,null);setQuery('');setIsolate(false);setMode('explore');camera(r==='skull-base'?'superior':r==='joints'?'focus':'anterior');}
- function changeSide(s:Side){setSide(s);if(s!=='both')setFocusSide(s);}
+ function changeSide(s:Side){setSide(s);if(s!=='both'&&s!==focusSide){setFocusSide(s);if(lateral(selected))camera('side');}}
  function nextQuestion(){if(!landmarks.length){setNotice('This region has selectable bones. Choose another region to practice landmark recall.');return;}const alternatives=landmarks.filter(e=>e.id!==selectedId),pool=alternatives.length?alternatives:landmarks;select(pool[Math.floor(Math.random()*pool.length)].id);setMode('recall');setQuery('');setSide('both');}
  function startQuiz(){setMode('quiz');setRegion('all');setSide('both');setIsolate(false);setQuizDisplay(emptyDisplay());camera('reset');}
  function onPick(hit:Hit){
@@ -41,11 +42,11 @@ export default function App(){
  const display=useMemo(()=>{
   if(quiz)return quizDisplay;
   const d=selected.kind==='bone'?boneDisplay(selected,focusSide):selected.kind==='joint'?jointDisplay(selected.id,focusSide,{labels:!hidden,apart,fade}):annotation?landmarkDisplay(selected,annotation,focusSide):boneDisplay(selected,focusSide,'soft');
-  if(showMarkers&&!practice)for(const e of entries)if(e.kind==='landmark'&&e.id!==selected.id&&!(isolate&&e.bone!==selected.bone)){const a=annotations[e.id];d.markers.push({point:landmarkOnSide(e,a.point,side==='both'?focusSide:side),color:colors.teal,size:'sm',entry:e.id});}
+  if(showMarkers&&!practice)for(const e of entries)if(e.kind==='landmark'&&e.id!==selected.id&&!(isolate&&e.bone!==selected.bone)){const p=landmarkOnSide(e,annotations[e.id].point,side==='both'?focusSide:side);d.markers.push({point:p,color:colors.teal,size:'sm',entry:e.id,mesh:meshForPoint(e.bone,p,e.id)});}
   return d;
  },[quiz,quizDisplay,selected,focusSide,hidden,annotation,showMarkers,practice,entries,isolate,side,apart,fade]);
  // A link can open a structure directly, e.g. …/bone-atlas/#h-capitulum or #joint-hip@left.
- useEffect(()=>{const open=()=>{const [id,s]=decodeURIComponent(location.hash.slice(1)).split('@');if(!course.some(e=>e.id===id))return;setMode('explore');setRegion('all');if(s==='left'||s==='right')setFocusSide(s);select(id);};open();addEventListener('hashchange',open);return()=>removeEventListener('hashchange',open);},[]);// eslint-disable-line react-hooks/exhaustive-deps
+ useEffect(()=>{const open=()=>{const [id,s]=decodeURIComponent(location.hash.slice(1)).split('@');if(!course.some(e=>e.id===id))return;setMode('explore');setRegion('all');if(s==='left'||s==='right'){setFocusSide(s);setSide(v=>v==='both'?v:s);}select(id);};open();addEventListener('hashchange',open);return()=>removeEventListener('hashchange',open);},[]);// eslint-disable-line react-hooks/exhaustive-deps
  useEffect(()=>{if(mode!=='explore')return;const hash='#'+selectedId+(lateral(selected)?'@'+focusSide:'');if(location.hash!==hash)history.replaceState(null,'',hash);},[mode,selectedId,focusSide,selected]);
  const filtered=entries.filter(e=>(e.label+' '+e.bone+' '+scopeLabels[e.region]).toLowerCase().includes(query.toLowerCase()));
  const icon=(e:Entry)=>e.kind==='bone'?<Bone size={15}/>:e.kind==='joint'?<Link2 size={15}/>:<Check size={14}/>;
@@ -63,7 +64,7 @@ export default function App(){
  <section className="stage"><div className="stage-title"><span className="eyebrow">{quiz?'QUIZ ME':scopeLabels[region]+' · '+(lateral(selected)?focusSide.toUpperCase()+' SIDE':'MIDLINE')}</span><h2>{title}</h2><span className="stage-subtitle">{subtitle}</span></div>
  <Viewer display={display} region={quiz?'all':region} side={quiz?'both':side} focusSide={focusSide} isolate={isolate&&!quiz} view={view} onPick={onPick}/>
  <div className="view-controls" aria-label="Camera presets">{(['anterior','posterior','superior','inferior','lateral'] as ViewName[]).map(v=><Button key={v} size="sm" variant="outline" onClick={()=>camera(v)}>{v[0].toUpperCase()+v.slice(1)}</Button>)}<Button size="icon" variant="outline" aria-label="Reset camera" onClick={()=>camera('reset')}><RotateCcw size={14}/></Button></div>
- <div className="stage-hint"><RotateCcw size={14}/> Drag / arrow keys to rotate · Pinch or + / − to zoom · Double-click to rotate around a spot</div></section>
+ <div className="stage-hint"><RotateCcw size={14}/> <span className="hint-mouse">Drag / arrow keys to rotate · Pinch or + / − to zoom · Double-click to rotate around a spot</span><span className="hint-touch">Drag to rotate · Pinch to zoom · Double-tap to pivot</span></div></section>
  <aside className="inspector"><div className="mode-tabs" aria-label="Learning mode"><Button size="sm" variant={mode==='explore'?'default':'ghost'} onClick={()=>setMode('explore')}><Eye/>Explore</Button><Button size="sm" variant={practice?'default':'ghost'} onClick={nextQuestion}><BookOpen/>Recall</Button><Button size="sm" variant={quiz?'default':'ghost'} onClick={startQuiz}><GraduationCap/>Quiz me</Button></div>
  {quiz?<Quiz side={focusSide} pick={pick} onShow={(d,v)=>{setQuizDisplay(d);if(v)camera(v);}} onReview={id=>{setMode('explore');select(id);}} onExit={()=>setMode('explore')}/>:<>
  <p className="eyebrow">{practice?'RECALL PROMPT':joint?'SELECTED JOINT':'SELECTED STRUCTURE'}</p><h3 className="detail-title">{hidden?'What is this structure?':selected.label}</h3>
@@ -75,7 +76,7 @@ export default function App(){
  {joint&&!hidden&&<><div className="option-row"><label htmlFor="apart">Pull the bones apart</label><input id="apart" type="checkbox" checked={apart} onChange={e=>{setApart(e.target.checked);camera('focus');}}/></div><div className="option-row"><label htmlFor="fade">Fade the other bones</label><input id="fade" type="checkbox" checked={fade} onChange={e=>setFade(e.target.checked)}/></div></>}
  <div className="option-row"><label htmlFor="isolate">Isolate {joint?'the joint’s bones':'selected structure'}</label><input id="isolate" type="checkbox" checked={isolate} onChange={e=>{setIsolate(e.target.checked);camera('focus');}}/></div>{!practice&&<div className="option-row"><label htmlFor="markers">Show other landmarks</label><input id="markers" type="checkbox" checked={showMarkers} onChange={e=>setShowMarkers(e.target.checked)}/></div>}
  <Button className="review-shortcut" variant="outline" onClick={()=>camera('focus')}><Target size={14}/>Focus on {joint?'joint':'structure'}</Button>
- {!practice&&selected.region==='skull'&&region!=='skull-base'&&<Button className="review-shortcut" variant="outline" onClick={()=>changeRegion('skull-base')}>Open skull base</Button>}
+ {!practice&&selected.region==='skull'&&region!=='skull-base'&&<Button className="review-shortcut" variant="outline" onClick={()=>{setRegion('skull-base');setQuery('');setIsolate(false);camera('superior');}}>Open skull base</Button>}
  {!hidden&&<a className="reference-link" href={referenceUrl(selected.region)} target="_blank" rel="noreferrer">Open anatomy reference ↗</a>}
  <div className="prototype-note"><strong>Study with your course model</strong><p>The colored point locates a feature; it does not trace its full boundary. Each landmark uses one representative location. Joint surfaces are shaded where the bones meet.</p><p>Use Explore to study the bones and joints, Recall to practice {landmarks.length} approved landmarks in this selection, and Quiz me to test yourself. Nothing is graded or saved.</p><a href="./credits.txt" target="_blank" rel="noreferrer">Anatomical model credits and license</a></div>
  </>}

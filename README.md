@@ -4,8 +4,9 @@ A free student atlas with a rotatable human skeleton, selectable bones, 142 inst
 
 ## For students
 
-- **Rotate**: drag or use the arrow keys. **Zoom**: scroll, pinch or + / −. **Pan**: right-drag or two-finger drag. **Double-click** a spot to rotate around it.
-- **Click a bone** to select it. Paired bones are shown one side at a time: the side you clicked is highlighted and becomes the centre of rotation. Use **Side shown: Right / Left** to switch sides.
+- **Rotate**: drag or use the arrow keys. **Zoom**: scroll, pinch or + / −. **Pan**: right-drag or two-finger drag. **Double-click** (double-tap) a spot to rotate around it; this does not change the selection.
+- **Click a bone** to select it. Paired bones are shown one side at a time: the side you clicked is highlighted and becomes the centre of rotation. Use **Side shown: Right / Left** to switch sides; the view is mirrored with it, so the other bone is seen the same way (a lateral view stays lateral). *Isolate* shows only the selected side.
+- Selecting a structure keeps the current view when the structure can be seen from it; otherwise the view turns to a side from which it can. Structures that no view shows (inside the skull, deep in a joint, the sacral canal) are shown with the rest of the skeleton see-through.
 - **Joints**: choose *Joints* to see where bones meet. The articular surfaces are shaded and labelled, and dashed lines join the surfaces that meet. *Pull the bones apart* slides one bone away so you can see the facing surfaces; *Fade the other bones* keeps the rest of the skeleton see-through.
 - **Recall**: name the highlighted landmark, then reveal the answer.
 - **Quiz me**: pick sections and question types. *Find it* (click it on the model; either side counts), *Name it* (type it, with small misspellings accepted, or choose from four), *Articulations* (which surfaces meet at each joint). Missed questions can be retried. Only the quiz settings are stored, in the student's own browser.

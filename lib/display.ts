@@ -2,8 +2,10 @@
 import {Annotation,Entry,Joint,Lateral,Point,boneMeshes,jointById,landmarkOnSide,meshById,meshOnSide,mirror,onSide,sideMeshes} from './atlas';
 import landmarkMeshes from './landmark-meshes.json';
 export type Tone='strong'|'soft'|'correct'|'wrong';
-export type Patch={point:Point;radius:number;color:string;mesh:string};
-export type Marker={point:Point;color:string;size:'lg'|'sm';entry?:string};
+// oneSided: paint only the face the point is on, not the far side of thin bone (the scapular blade). A marker with a
+// mesh sits on that mesh's surface instead of poking through it.
+export type Patch={point:Point;radius:number;color:string;mesh:string;oneSided?:boolean};
+export type Marker={point:Point;color:string;size:'lg'|'sm';entry?:string;mesh?:string};
 export type Label={point:Point;text:string;color:string};
 export type Line={from:Point;to:Point;color:string};
 // offsets slide whole meshes (a joint pulled apart); fade makes everything without a tone see-through.
@@ -28,7 +30,7 @@ export function boneDisplay(e:Entry,side:Lateral,tone:Tone='strong'):Display{
 }
 export function landmarkDisplay(e:Entry,a:Annotation,side:Lateral,color=a.reviewed?colors.teal:colors.amber,d=emptyDisplay()):Display{
  const p=landmarkOnSide(e,a.point,side),mesh=meshForPoint(e.bone,p,e.id);
- d.patches.push({point:p,radius:Math.max(a.radius,.004),color,mesh});d.markers.push({point:p,color,size:'lg',entry:e.id});
+ d.patches.push({point:p,radius:Math.max(a.radius,.004),color,mesh,oneSided:true});d.markers.push({point:p,color,size:'lg',entry:e.id,mesh});
  d.focus={meshes:[mesh],points:[p],pad:.03};return d;
 }
 // Copies of a surface to draw: one per side for midline joints (both occipital condyles), else the chosen side.
