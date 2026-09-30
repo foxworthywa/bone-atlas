@@ -29,7 +29,7 @@ function show(item:Item,side:Lateral,answer:boolean):Display{
 // Find it: the skull base opened, a partner bone see-through, the vertebra or rib meant highlighted, and (while asking)
 // the camera on the named bone from the front, with some of its surroundings. See findStage.
 function staged(item:Item,answer:boolean,d:Display=emptyDisplay()):Display{
- const s=findStage(item);d.scope=s.scope;d.ghost=s.ghost;for(const m of s.highlight)if(!d.tones.has(m))d.tones.set(m,answer?'soft':'strong');
+ const s=findStage(item);d.scope=s.scope;d.ghost=[...d.ghost??[],...s.ghost];for(const m of s.highlight)if(!d.tones.has(m))d.tones.set(m,answer?'soft':'strong');
  if(!d.focus.meshes.length&&!d.focus.points.length&&!s.scope&&s.focus.length){const box=s.focus.map(id=>meshById.get(id)!);
   d.focus={meshes:[],points:[[0,1,2].map(k=>Math.min(...box.map(m=>m.min[k]))) as Point,[0,1,2].map(k=>Math.max(...box.map(m=>m.max[k]))) as Point],pad:.05,dir:[.1,.05,1]};}
  return d;
@@ -78,8 +78,9 @@ export default function Quiz({active,side,pick,onShow,onReview,onExit}:{active:b
  function checkTyped(e:FormEvent){e.preventDefault();if(!q||!item||q.answered)return;const typed=input.current?.value??'';if(!typed.trim())return;
   const r=typedAnswer(typed,item);
   if(r==='right'){display(show(item,side,true));return right(`Correct: ${reviewName(item)}.${sameSpot(item)}`);}
-  // Naming the bone or region the landmark lies on is not wrong, just not specific enough: no attempt is used.
-  if(r==='part'){q.feedback={cls:'info',text:'Yes, it lies there, but which landmark is it? Try again.'};return render();}
+  // Naming the bone or region the landmark lies on, or a group the bone belongs to, is not wrong, just not specific
+  // enough: no attempt is used.
+  if(r==='part'){q.feedback={cls:'info',text:item.entry.kind==='landmark'?'Yes, it lies there, but which landmark is it? Try again.':'Yes, that group includes it, but be more specific. Try again.'};return render();}
   if(!q.attempts){q.attempts++;q.feedback={cls:'bad',text:'Not quite. Try again, or show the choices.'};return render();}
   q.showChoices=true;display(show(item,side,true));wrong(`It’s ${reviewName(item)}.${sameSpot(item)}`);
  }

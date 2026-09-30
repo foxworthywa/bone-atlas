@@ -47,7 +47,7 @@ function akaFor(e:Entry):string[]{
  const parts=e.label.split('/').map(s=>s.trim()),out=parts.length>1?parts.map((p,k)=>k&&GENERIC.test(p)?parts[0].replace(/\S+$/,p):p):[];
  // Catalog aka: other accepted names, e.g. the English or plural form of a Latin label (its parenthesis is ignored).
  out.push(...e.aka??[]);for(const t of twins(e.id)){const c=catalog.find(c=>c.id===t)!;out.push(c.label,...c.aka??[]);}
- if(e.kind==='landmark')for(const p of parts)out.push(`${p} of ${boneLabel(e.bone)}`);
+ if(e.kind==='landmark')for(const p of [...parts,...e.aka??[]])out.push(`${p} of ${boneLabel(e.bone)}`);
  else{const l=e.label;if(/ae$/.test(l))out.push(l.slice(0,-1));else if(/s$/.test(l))out.push(l.slice(0,-1));if(e.bone==='coxal')out.push('hip bone','os coxae','innominate');
   // Metacarpal II -> "metacarpal 2", "second metacarpal"; Proximal phalanx · digit 1 -> "proximal phalanx of the thumb".
   const m=/^(Metacarpal|Metatarsal) (I{1,3}|IV|V)$/.exec(l);if(m){const n=['I','II','III','IV','V'].indexOf(m[2]);out.push(`${m[1]} ${n+1}`,`${ORD[n]} ${m[1]}`);}
@@ -83,11 +83,13 @@ function bonePhrase(i:Item){const e=i.entry,label=lowerFirst(i.name.replace(/\s*
 export function findWhat(i:Item){const e=i.entry,name=lowerFirst(i.name).replace(' / ',' or ');
  if(e.kind==='landmark')return SERIAL[e.bone]?`the ${name} ${BETWEEN[e.id]?'between the highlighted vertebrae':'of the highlighted '+SERIAL[e.bone]}`:`the ${withBone(name,e.bone)}`;
  return e.kind==='joint'?`the ${name}${instanceMeshes(i).length?' of the highlighted bones':''}`:bonePhrase(i);}
-// Short name for the results list: "Head (femur)", "Spinous process (vertebra L1)", "Transverse foramen (atlas, C1)",
-// "Proximal phalanx · digit 1 (hand)".
+// Short name for the results list and feedback: "Head (femur)", "Spinous process (vertebra L1)", "Transverse foramen
+// (atlas, C1)", "Optic canals (foramina; sphenoid bone)", "Proximal phalanx · digit 1 (hand)", and for one bone of a
+// pair "Scapula", not "Scapulae".
 export function reviewName(i:Item){const e=i.entry;
- if(e.kind==='landmark')return `${i.name} (${SERIAL[e.bone]?meshLabel(lmMesh[e.id].right).replace(/ \((C\d)\)$/,', $1'):boneName(e.bone)})`;
- return e.kind==='bone'&&handFoot(e)?`${i.name} (${handFoot(e).slice(8)})`:i.name;}
+ if(e.kind==='landmark'){const b=SERIAL[e.bone]?meshLabel(lmMesh[e.id].right).replace(/ \((C\d)\)$/,', $1'):boneName(e.bone);return /\)$/.test(i.name)?`${i.name.slice(0,-1)}; ${b})`:`${i.name} (${b})`;}
+ if(e.kind!=='bone')return i.name;if(handFoot(e))return `${i.name} (${handFoot(e).slice(8)})`;
+ const one=boneName(e.bone);return !isGroup(e)&&/(s|ae)$/.test(i.name)?one.charAt(0).toUpperCase()+one.slice(1):i.name;}
 // Articulation questions: a surface and what it meets, plus a few common mix-ups. twin: a question asking the same
 // thing, so a quiz includes only one of the two.
 export type Artic={id:string;prompt:string;answer:string;options:string[];explain:string;joint:string;surface?:number;twin?:string};
@@ -150,10 +152,13 @@ export function buildQuestions(sections:SectionId[],types:QType[]){
  for(let i=1;i<qs.length;i++)if(qs[i].id===qs[i-1].id){const j=qs.findIndex((q,k)=>k>i&&q.id!==qs[i].id);if(j>0)[qs[i],qs[j]]=[qs[j],qs[i]];}
  return qs;
 }
+// Bone entries that share a mesh: a group and its member (the floating ribs are false ribs and ribs; the atlas is a
+// cervical vertebra).
+const overlap=(a:Entry,b:Entry)=>a.kind==='bone'&&b.kind==='bone'&&boneMeshes[a.bone].some(m=>boneMeshes[b.bone].includes(m));
 // Name distractors: same kind, preferring the same bone (landmarks) or region, never a same-named structure, the same
-// spot under another name, or a region and its part.
+// spot under another name, a region and its part, or a bone group and its member.
 export function nameChoices(target:Item,count=4){
- const e=target.entry,ok=items.filter(i=>i.entry.kind===e.kind&&normalize(i.name)!==normalize(target.name)&&!target.same?.includes(i.id)&&!nested(i.id,target.id));
+ const e=target.entry,ok=items.filter(i=>i.entry.kind===e.kind&&normalize(i.name)!==normalize(target.name)&&!target.same?.includes(i.id)&&!nested(i.id,target.id)&&!overlap(i.entry,e));
  const close=shuffle(ok.filter(i=>e.kind==='landmark'?i.entry.bone===e.bone:i.entry.region===e.region)).slice(0,2);
  const names=new Set([normalize(target.name)]),picked=[target];for(const i of [...close,...shuffle(ok)]){if(picked.length===count)break;const n=normalize(i.name);if(names.has(n))continue;names.add(n);picked.push(i);}
  return shuffle(picked).map(i=>i.id);
@@ -161,11 +166,12 @@ export function nameChoices(target:Item,count=4){
 // A typed Name-it answer is compared with structures of the same kind, so "hip" can name the coxal bone and the hip
 // joint, unless a structure of another kind is closer ("inferior concha" is not the superior nasal conchae, "ankle" not
 // the angle of the mandible) or the answer says bone for a joint or joint for anything else. 'part': the answer names
-// the bone or region the landmark lies on, not the landmark itself.
+// the bone or region the landmark lies on, or a group the bone belongs to ("tarsals" for the calcaneus), not the
+// structure itself.
 export function typedAnswer(input:string,target:Item):'right'|'part'|'wrong'{
  const e=target.entry,d=nameDistance(input,target),said=/\bjoints?\b/i.test(input)?'joint':/\bbones?\b/i.test(input)?'bone':'';
  if(nameMatches(input,target,items.filter(i=>i.entry.kind===e.kind))&&!items.some(o=>o.entry.kind!==e.kind&&!target.same?.includes(o.id)&&nameDistance(input,o)<d)&&!(said&&(said==='joint')!==(e.kind==='joint')))return 'right';
- const up=e.kind==='landmark'?[...parentsOf(target.id).map(id=>itemById.get(id)!),...items.filter(i=>i.entry.kind==='bone'&&i.entry.bone===e.bone)]:[];
+ const up=e.kind==='landmark'?[...parentsOf(target.id).map(id=>itemById.get(id)!),...items.filter(i=>i.entry.kind==='bone'&&i.entry.bone===e.bone)]:e.kind==='bone'?items.filter(i=>i.entry.kind==='bone'&&boneMeshes[i.entry.bone].length>boneMeshes[e.bone].length&&boneMeshes[e.bone].every(m=>boneMeshes[i.entry.bone].includes(m))):[];
  return up.some(u=>nameMatches(input,u,items))?'part':'wrong';
 }
 const dist=(p:Point,q:Point)=>Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);

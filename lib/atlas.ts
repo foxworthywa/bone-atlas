@@ -15,7 +15,7 @@ export type Annotations=Record<string,Annotation>;
 export type MeshInfo={id:string;name:string;region:Region;system:string;side:string;tissue?:string;min:number[];max:number[]};
 // Articular surfaces are stored on the right side; see tools/derive-joints.mjs.
 export type Surface={label:string;bone:string;landmark?:string;point:Point;mesh:string;radius:number};
-export type Joint={id:string;label:string;aka?:string[];region:Region;system:'axial'|'appendicular';type:string;note:string;midline?:boolean;surfaces:Surface[];pairs?:number[][];view:Point;move?:number[];apart?:Point;carry?:string[]};
+export type Joint={id:string;label:string;aka?:string[];region:Region;system:'axial'|'appendicular';type:string;note:string;midline?:boolean;surfaces:Surface[];pairs?:number[][];view:Point;move?:number[];apart?:Point;carry?:string[];ghost?:string[]};
 export const joints=rawJoints as Joint[];
 export const jointById=new Map(joints.map(j=>[j.id,j]));
 export const catalog:Entry[]=[...rawCatalog as Entry[],...joints.map(j=>({id:j.id,label:j.label,bone:j.surfaces[0].bone,region:j.region,system:j.system,kind:'joint' as const,point:null,note:j.note}))];

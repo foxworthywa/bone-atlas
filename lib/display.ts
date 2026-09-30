@@ -46,6 +46,8 @@ const add=(p:Point,o?:Point):Point=>o?[p[0]+o[0],p[1]+o[1],p[2]+o[2]]:p;
 // can be seen; with fade, the rest of the skeleton turns see-through.
 export function jointDisplay(id:string,side:Lateral,{labels=true,only,apart=false,fade=false}:{labels?:boolean;only?:number[];apart?:boolean;fade?:boolean}={}):Display{
  const j=jointById.get(id)!,d=emptyDisplay(),drawn=j.surfaces.map(s=>copies(j,s.point,s.mesh,side));d.fade=fade;
+ // ghost: bones that stay see-through with the others solid (the occipital, which the view down onto the dens looks through).
+ if(j.ghost)d.ghost=j.ghost.flatMap(b=>boneMeshes[b]);
  if(apart&&j.apart&&j.move){for(const i of j.move)for(const c of drawn[i])d.offsets.set(c.mesh,c.point[0]>0&&!j.midline?mirror(j.apart):j.apart);
   // Bones that travel with the moving one (the fibula with the tibia), so none is left standing in the gap.
   for(const bone of j.carry??[])for(const id of sideMeshes(bone,side))d.offsets.set(id,side==='left'&&!j.midline?mirror(j.apart):j.apart);}

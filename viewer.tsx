@@ -99,7 +99,10 @@ export default function Viewer(props:Props){
     const rank=(c:THREE.Vector3)=>point?.5*c.dot(want)+(n?c.dot(n):0)+.3*c.dot(out):.7*c.dot(want)+c.dot(out);
     let best=want,score=-1;
     const solid=visible.filter(m=>!(m.material as THREE.Material).transparent),order=[want,...[...cube].sort((a,b)=>rank(b)-rank(a))];
-    for(const c of order){const v=seen(c,point?solid:solid.filter(m=>!keep.has(m.userData.id)));if(v>=need)return c.clone();if(v>score+.05){score=v;best=c;}}
+    // A point is only kept in view from directions its surface turns toward: samples out along the normal peek past a
+    // rim, so from edge-on the marker sits on the outline and the painted spot is out of sight. A joint's own tuned view
+    // may be a little more oblique (the mandibular fossa, seen from the side).
+    for(const c of order){if(n&&c.dot(n)<(c===want&&f.dir?.2:.3))continue;const v=seen(c,point?solid:solid.filter(m=>!keep.has(m.userData.id)));if(v>=need)return c.clone();if(v>score+.05){score=v;best=c;}}
     if(!point&&score>=.3)return best.clone();
     reveal.key=focusKey(d);for(const [id,m] of meshes)if(m.visible&&!keep.has(id))setFaded(m,true);
     // Each see-through surface in front of it counts against a direction.
@@ -156,10 +159,17 @@ export default function Viewer(props:Props){
     for(const m of en.meshes.values()){const t=m.userData.offset as THREE.Vector3|undefined;if(t&&!m.position.equals(t)){m.position.lerp(t,reduced?1:.14);if(m.position.distanceTo(t)<1e-5)m.position.copy(t);}}
     // Markers keep a steady on-screen size at any zoom, and sit on their bone's surface instead of poking through it.
     // A few times a second: is bone in front of the selected marker? Then its faint copy shows through (the vertebral
-    // foramen seen from above, a landmark on the far side after turning the model).
+    // foramen seen from above, a landmark on the far side after turning the model). Not when the bone right in front of
+    // it is a thin plate of its own bone (the subscapular fossa from behind, the olecranon fossa from the front): there
+    // the copy would read as a mark on the near face.
     const recheck=now-sighted>250,solid=recheck?[...en.meshes.values()].filter(m=>m.visible&&!(m.material as THREE.Material).transparent):[];if(recheck)sighted=now;
     for(const o of en.overlay.children)if(o.userData.size){o.getWorldPosition(w);o.scale.setScalar(Math.min(Math.max(w.distanceTo(camera.position)*o.userData.size,.0012),.012));if(o.userData.normal)o.position.copy(o.userData.base).addScaledVector(o.userData.normal,o.scale.x*.9);
-     if(!o.children[0])continue;if(recheck){o.getWorldPosition(w);const to=w.sub(camera.position),far=to.length();sight.set(camera.position,to.divideScalar(far));sight.far=far-o.scale.x;o.userData.hidden=sight.intersectObjects(solid,false).length>0;}
+     if(!o.children[0])continue;if(recheck){o.getWorldPosition(w);const to=w.sub(camera.position),far=to.length();sight.set(camera.position,to.divideScalar(far));sight.far=far;
+      // Bone within the marker's radius does not hide it, but the last two hits (up to its centre) are where the ray enters
+      // and leaves the bone nearest the marker.
+      const hits=sight.intersectObjects(solid,false),a=hits[hits.length-1],b=hits[hits.length-2],n=o.userData.normal as THREE.Vector3|undefined;
+      const plate=!!a&&!!b&&!!n&&a.object===b.object&&a.object.userData.id===o.userData.mesh&&a.distance-b.distance<.008&&far-a.distance<.02&&n.dot(to)>0;
+      o.userData.hidden=hits.some(h=>h.distance<far-o.scale.x)&&!plate;}
      o.children[0].visible=!!en.reveal.key||!!o.userData.hidden;}
     // Each label sits beside its surface: above or below to the right, else on the other side or the left, whichever
     // keeps it clear of the labels placed before it and inside the view.
@@ -182,7 +192,7 @@ export default function Viewer(props:Props){
    const o=d.offsets.get(id);mesh.userData.offset=new THREE.Vector3(...(o??[0,0,0]));}
   for(const child of [...en.overlay.children]){en.overlay.remove(child);child.traverse(o=>{if(o instanceof THREE.Mesh||o instanceof THREE.Line){o.geometry.dispose();(o.material as THREE.Material).dispose();}});}
   for(const m of d.markers){const sphere=new THREE.Mesh(new THREE.SphereGeometry(1,16,12),new THREE.MeshStandardMaterial({color:m.color,emissive:m.color,emissiveIntensity:m.size==='lg'?.35:0,roughness:.5}));sphere.position.fromArray(m.point);sphere.scale.setScalar(.004);
-   const n=m.mesh?surfaceNormal(en.meshes.get(m.mesh),m.point):null;sphere.userData={entry:m.entry,size:m.size==='lg'?.011:.0065,...(n?{normal:n.clone(),base:sphere.position.clone()}:{})};sphere.renderOrder=2;en.overlay.add(sphere);
+   const n=m.mesh?surfaceNormal(en.meshes.get(m.mesh),m.point):null;sphere.userData={entry:m.entry,mesh:m.mesh,size:m.size==='lg'?.011:.0065,...(n?{normal:n.clone(),base:sphere.position.clone()}:{})};sphere.renderOrder=2;en.overlay.add(sphere);
    // A faint copy shows through bone while the rest is see-through for a hidden landmark, or bone hides it from the camera.
    if(m.size==='lg'){const ghost=new THREE.Mesh(sphere.geometry,new THREE.MeshBasicMaterial({color:m.color,transparent:true,opacity:.45,depthTest:false,depthWrite:false}));ghost.renderOrder=4;ghost.visible=false;sphere.add(ghost);}}
   for(const l of d.lines){const geo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...l.from),new THREE.Vector3(...l.to)]);const line=new THREE.Line(geo,new THREE.LineDashedMaterial({color:l.color,dashSize:.003,gapSize:.002,depthTest:false,transparent:true,opacity:.85}));line.computeLineDistances();line.renderOrder=3;en.overlay.add(line);}
