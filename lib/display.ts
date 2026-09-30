@@ -1,5 +1,5 @@
 // What the viewer should emphasise: mesh tones, painted surface patches, point markers, labels and joint lines.
-import {Annotation,Entry,Joint,Lateral,Point,boneMeshes,jointById,landmarkOnSide,meshById,meshOnSide,mirror,onSide,sideMeshes} from './atlas';
+import {Annotation,Entry,Joint,Lateral,Point,Scope,boneMeshes,jointById,landmarkOnSide,meshById,meshOnSide,mirror,onSide,sideMeshes} from './atlas';
 import landmarkMeshes from './landmark-meshes.json';
 export type Tone='strong'|'soft'|'correct'|'wrong';
 // oneSided: paint only the face the point is on, not the far side of thin bone (the scapular blade). A marker with a
@@ -8,8 +8,9 @@ export type Patch={point:Point;radius:number;color:string;mesh:string;oneSided?:
 export type Marker={point:Point;color:string;size:'lg'|'sm';entry?:string;mesh?:string};
 export type Label={point:Point;text:string;color:string};
 export type Line={from:Point;to:Point;color:string};
-// offsets slide whole meshes (a joint pulled apart); fade makes everything without a tone see-through.
-export type Display={tones:Map<string,Tone>;patches:Patch[];markers:Marker[];labels:Label[];lines:Line[];offsets:Map<string,Point>;fade:boolean;focus:{meshes:string[];points:Point[];pad:number;dir?:Point}};
+// offsets slide whole meshes (a joint pulled apart); fade makes everything without a tone see-through, ghost only the
+// meshes listed; scope replaces the region shown (the quiz opens the skull base).
+export type Display={tones:Map<string,Tone>;patches:Patch[];markers:Marker[];labels:Label[];lines:Line[];offsets:Map<string,Point>;fade:boolean;ghost?:string[];scope?:Scope;focus:{meshes:string[];points:Point[];pad:number;dir?:Point}};
 export const colors={teal:'#358574',amber:'#c57c32',joint:'#d4572a',joint2:'#2f6fd0',correct:'#2e9e57',wrong:'#8c5cf0'};
 export const emptyDisplay=():Display=>({tones:new Map(),patches:[],markers:[],labels:[],lines:[],offsets:new Map(),fade:false,focus:{meshes:[],points:[],pad:0}});
 const near=(p:Point,q:Point)=>Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);

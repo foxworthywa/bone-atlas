@@ -9,7 +9,7 @@ A free student atlas with a rotatable human skeleton, selectable bones, 142 inst
 - Selecting a structure keeps the current view when the structure can be seen from it; otherwise the view turns to a side from which it can. Structures that no view shows (inside the skull, deep in a joint, the sacral canal) are shown with the rest of the skeleton see-through.
 - **Joints**: choose *Joints* to see where bones meet. The articular surfaces are shaded and labelled, and dashed lines join the surfaces that meet. *Pull the bones apart* slides one bone away so you can see the facing surfaces; *Fade the other bones* keeps the rest of the skeleton see-through.
 - **Recall**: name the highlighted landmark, then reveal the answer.
-- **Quiz me**: pick sections and question types. *Find it* (click it on the model; either side counts), *Name it* (type it, with small misspellings accepted, or choose from four), *Articulations* (which surfaces meet at each joint). Missed questions can be retried. Only the quiz settings are stored, in the student's own browser.
+- **Quiz me**: pick sections and question types. *Find it* (click it on the model; either side counts), *Name it* (type it, with small misspellings and common alternative names accepted, or choose from four), *Articulations* (which surfaces meet at each joint). Find it starts on the named bone. Landmarks inside the cranium open the skull base; those hidden inside a joint (the fovea, the acetabulum, the sacrum's auricular surface) show the partner bone see-through. A landmark marked on one vertebra or rib is asked on that one, shown highlighted. Long features (sutures, borders, crests, the linea aspera) count along their length, and a click on the far face of a thin plate (the back of the scapula for the subscapular fossa) does not count. Leaving the quiz for Explore or Recall keeps it where it was. Missed and unfinished questions are listed for review and can be retried. Only the quiz settings are stored, in the student's own browser.
 
 A link can open a structure directly, e.g. `…/bone-atlas/#h-capitulum` or `#joint-hip@left`.
 
@@ -35,7 +35,15 @@ Joints live in `lib/joints.json`. Each joint lists its articular surfaces. A sur
 node tools/derive-joints.mjs
 ```
 
-This recomputes every surface point and records the mesh it sits on. Points are stored on the right side; the atlas mirrors them for the left. It also regenerates `lib/landmark-meshes.json`, the bone mesh under each landmark on each side (e.g. which vertebra or rib), found by nearest surface; the atlas uses it to paint and isolate the right bone.
+This recomputes every surface point and records the mesh it sits on. Points are stored on the right side; the atlas mirrors them for the left. It also regenerates `lib/landmark-meshes.json`, the bone mesh under each landmark on each side (e.g. which vertebra or rib), found by nearest surface, and the landmark's outward surface normal; the atlas uses them to paint and isolate the right bone, and Quiz me to tell the two faces of a thin plate apart.
+
+`lib/find-extents.json` lists, for long or broad landmarks, where a *Find it* click counts beyond the point itself: a line of points along a suture, border, crest or the linea aspera, or one point and a radius for the femoral head and the fossae (right side, metres). Update it if such a landmark moves. Then check Quiz me against the data and the model:
+
+```sh
+node tools/check-quiz.mjs
+```
+
+It checks that every name and accepted alternative (catalog and joint `aka`) is right for its own structure and never for another, that Name it and Articulations never offer two right answers, and that every Find-it question can be clicked from outside the body and scores clicks on the right structure (and not on neighbouring landmarks or joints). `--verbose` lists every prompt. It runs in Node through the project's Vite and three.js; no browser is needed.
 
 With Node.js 22.13 or later and pnpm installed:
 

@@ -6,7 +6,8 @@ import {Lateral,Point,Scope,Side,meshIndex,meshInScope} from '@/lib/atlas';
 import {Display,Tone,colors} from '@/lib/display';
 // 'side': like 'focus', but from the mirrored direction (the same view of the other side's bone).
 export type ViewName='anterior'|'posterior'|'superior'|'inferior'|'lateral'|'reset'|'focus'|'pivot'|'side';
-export type Hit={mesh:string;point:Point;entry?:string};
+// normal: the clicked face's normal turned toward the camera (which face of a thin plate was clicked), in model space.
+export type Hit={mesh:string;point:Point;entry?:string;normal?:Point};
 type Props={display:Display;region:Scope;side:Side;focusSide:Lateral;isolate:boolean;view:{name:ViewName;sequence:number};onPick:(hit:Hit)=>void};
 type Model={id:string;name:string;positions:number[];indices:number[]};
 type Engine={group:THREE.Group;overlay:THREE.Group;camera:THREE.PerspectiveCamera;controls:OrbitControls;meshes:Map<string,THREE.Mesh>;fit:(name:ViewName)=>void;patches:{centers:THREE.Vector4[];colors:THREE.Color[];normals:THREE.Vector3[]};reveal:{key:string}};
@@ -138,7 +139,9 @@ export default function Viewer(props:Props){
   // Picks use 'click' (primary button or one-finger tap, never a right-drag or the end of a pinch) and wait out the
   // double-click window, so a double-click only sets the centre of rotation: no new selection, no extra quiz answer.
   const onClick=(e:MouseEvent)=>{clearTimeout(pickTimer);if(e.detail>1||Math.hypot(e.clientX-down[0],e.clientY-down[1])>6)return;const r=cast(e);if(!r)return;const {hit,en}=r;
-   const pick={mesh:hit.object.userData.id,point:en.group.worldToLocal(hit.point.clone()).toArray() as Point,entry:hit.object.userData.entry};pickTimer=window.setTimeout(()=>latest.current.onPick(pick),400);};
+   // Meshes are only translated, so the face normal is already in model space.
+   const n=hit.face?.normal.clone();if(n&&n.dot(ray.ray.direction)>0)n.negate();
+   const pick={mesh:hit.object.userData.id,point:en.group.worldToLocal(hit.point.clone()).toArray() as Point,entry:hit.object.userData.entry,normal:n?.toArray() as Point|undefined};pickTimer=window.setTimeout(()=>latest.current.onPick(pick),400);};
   // Double-click (or double-tap) a spot to make it the centre of rotation.
   const onDouble=(e:MouseEvent)=>{clearTimeout(pickTimer);const r=cast(e);if(!r)return;const target=r.hit.point.clone();moveTo(camera.position.clone().add(target.clone().sub(controls.target)),target,450);};
   // Modified keys stay with the browser (Ctrl/Cmd +/- zoom the page, Alt+Left goes back).
@@ -166,7 +169,7 @@ export default function Viewer(props:Props){
   for(const [id,mesh] of en.meshes){const info=mesh.userData.info,tone=d.tones.get(id);
    mesh.visible=(props.isolate?keep.has(id):meshInScope(info,props.region)||d.tones.has(id)||patchMeshes.has(id))&&(props.side==='both'||info.side==='midline'||info.side===props.side);
    const mat=mesh.material as THREE.MeshStandardMaterial;mat.color.copy(tone?toneColor[tone]:info.tissue==='cartilage'?cartilage:ivory);mat.userData.mask.value=masks.get(id)??0;
-   setFaded(mesh,d.fade&&!tone&&!patchMeshes.has(id)||!!en.reveal.key&&!keep.has(id));
+   setFaded(mesh,d.fade&&!tone&&!patchMeshes.has(id)||!!d.ghost?.includes(id)||!!en.reveal.key&&!keep.has(id));
    const o=d.offsets.get(id);mesh.userData.offset=new THREE.Vector3(...(o??[0,0,0]));}
   for(const child of [...en.overlay.children]){en.overlay.remove(child);child.traverse(o=>{if(o instanceof THREE.Mesh||o instanceof THREE.Line){o.geometry.dispose();(o.material as THREE.Material).dispose();}});}
   for(const m of d.markers){const sphere=new THREE.Mesh(new THREE.SphereGeometry(1,16,12),new THREE.MeshStandardMaterial({color:m.color,emissive:m.color,emissiveIntensity:m.size==='lg'?.35:0,roughness:.5}));sphere.position.fromArray(m.point);sphere.scale.setScalar(.004);

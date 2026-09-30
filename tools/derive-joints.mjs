@@ -6,6 +6,8 @@
 // Points are stored on the right side (x < 0); the atlas mirrors them for the left.
 // It also writes lib/landmark-meshes.json: the mesh under each landmark, by nearest surface. Bounding boxes of stacked
 // vertebrae and ribs overlap, so the viewer cannot tell from them which one a landmark is on.
+// It also records each landmark's outward surface normal (right side), which Find it uses to tell the two faces of a
+// thin plate apart (the subscapular fossa is not the back of the scapula).
 // Run after changing lib/joints.json or lib/published-annotations.json:  node tools/derive-joints.mjs
 import {readFileSync,writeFileSync} from 'node:fs';
 import {Triangle,Vector3} from 'three';
@@ -21,6 +23,15 @@ function closest(ids,target){
  return best;
 }
 const round=p=>p.map(v=>+v.toFixed(5));
+// Outward normal where a point lies on a mesh, as the viewer computes it: the closest face's normal averaged with nearby
+// faces on the same side. Meshes stored inside-out (negative volume) have their faces flipped.
+const outward=new Map();
+function normalAt(id,target){
+ const {positions:P,indices:I}=models.get(id),v=i=>new Vector3(P[i*3],P[i*3+1],P[i*3+2]),t=new Vector3(...target),tri=new Triangle(),out=new Vector3(),near=[];let best=Infinity,n=null;
+ if(!outward.has(id)){let vol=0;for(let k=0;k<I.length;k+=3)vol+=v(I[k]).dot(new Vector3().crossVectors(v(I[k+1]),v(I[k+2])));outward.set(id,vol<0?-1:1);}
+ for(let k=0;k<I.length;k+=3){tri.set(v(I[k]),v(I[k+1]),v(I[k+2]));tri.closestPointToPoint(t,out);const d=out.distanceTo(t);if(d>.004)continue;const fn=tri.getNormal(new Vector3()).multiplyScalar(outward.get(id));near.push([fn,tri.getArea()]);if(d<best){best=d;n=fn;}}
+ if(!n)return null;const sum=new Vector3();for(const [fn,a] of near)if(fn.dot(n)>-.3)sum.addScaledVector(fn,a);return sum.normalize().toArray().map(x=>+x.toFixed(2));
+}
 for(const j of joints)for(const s of j.surfaces){
  const ids=index.groups[s.bone].filter(id=>info.get(id).side!=='left'&&!(s.excludeMeshOf!==undefined&&id===j.surfaces[s.excludeMeshOf].mesh));
  if(!ids.length)throw Error(`${j.id}: no meshes for ${s.bone}`);
@@ -34,12 +45,13 @@ for(const j of joints)for(const s of j.surfaces){
  console.log(`${j.id.padEnd(30)} ${s.label.padEnd(42)} ${info.get(s.mesh).name.padEnd(22)} ${s.landmark?'landmark':'derived '} ${(hit.d*1000).toFixed(1)} mm`);
 }
 writeFileSync(new URL('../lib/joints.json',import.meta.url),'[\n'+joints.map(j=>' '+JSON.stringify(j)).join(',\n')+'\n]\n');
-// "right" is the mesh under the landmark's copy on the body's right (x <= 0), "left" under its copy on the left.
+// "right" is the mesh under the landmark's copy on the body's right (x <= 0), "left" under its copy on the left;
+// "normal" is the outward surface normal at the right copy.
 const lines=[];
 for(const e of catalog){const a=annotations[e.id];if(e.kind!=='landmark'||!a)continue;const ids=index.groups[e.bone],x=Math.abs(a.point[0]);
  const [right,left]=[-x,x].map(v=>closest(ids,[v,a.point[1],a.point[2]]));
  if(Math.min(right.d,left.d)>.003)console.warn(`${e.id}: ${(Math.min(right.d,left.d)*1000).toFixed(1)} mm from its bone`);
- lines.push(` ${JSON.stringify(e.id)}:{"right":${JSON.stringify(right.mesh)},"left":${JSON.stringify(left.mesh)}}`);
+ lines.push(` ${JSON.stringify(e.id)}:{"right":${JSON.stringify(right.mesh)},"left":${JSON.stringify(left.mesh)},"normal":${JSON.stringify(normalAt(right.mesh,[-x,a.point[1],a.point[2]]))}}`);
 }
 writeFileSync(new URL('../lib/landmark-meshes.json',import.meta.url),'{\n'+lines.join(',\n')+'\n}\n');
 console.log(`${lines.length} landmark meshes`);
