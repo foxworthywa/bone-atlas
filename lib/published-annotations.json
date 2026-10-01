@@ -31,13 +31,14 @@
   },
   "vertebrae-mark-3": {
     "point": [
-      -0.014135891160983682,
-      1.0769043782431194,
-      -0.02617843057281198
+      -0.0111,
+      1.0897,
+      -0.0273
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T14:43:42.312Z"
+    "reviewedAt": "2026-09-13T14:43:42.312Z",
+    "note": "Corrected 2026-09-30 (instructor approved): moved up the same pedicle wall of L2 so the spot faces into the vertebral foramen and can be seen from above."
   },
   "vertebrae-mark-4": {
     "point": [
@@ -81,13 +82,14 @@
   },
   "thoracic-vertebrae-mark-0": {
     "point": [
-      0.03480729509592073,
-      1.3299124513481488,
-      -0.08244306515780725
+      0.015,
+      1.33,
+      -0.0605
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T14:50:05.623Z"
+    "reviewedAt": "2026-09-13T14:50:05.623Z",
+    "note": "Corrected 2026-09-29: moved from the transverse costal facet (tip of the T6 transverse process, where the rib tubercle articulates) to the superior costal facet on the body of T6, where the head of rib 6 articulates."
   },
   "sacrum-mark-1": {
     "point": [
@@ -461,13 +463,14 @@
   },
   "ethmoid-4": {
     "point": [
-      -0.004151420766809648,
-      1.5861022156945446,
-      0.07424746031900152
+      -0.0033,
+      1.588,
+      0.045
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T14:30:58.800Z"
+    "reviewedAt": "2026-09-13T14:30:58.800Z",
+    "note": "Corrected 2026-09-29: moved from the front edge of the ethmoid (beside the lacrimal bone) to the posterosuperior medial wall of the labyrinth, above and behind the middle concha."
   },
   "ethmoid-5": {
     "point": [
@@ -751,13 +754,14 @@
   },
   "sternum-mark-1": {
     "point": [
-      0.02391315531970048,
-      1.3840399242721941,
-      0.04519069187179048
+      0.01657,
+      1.39435,
+      0.0397
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T14:51:52.047Z"
+    "reviewedAt": "2026-09-13T14:51:52.047Z",
+    "note": "Corrected 2026-09-30: moved from the notch for the first costal cartilage, below the end of the clavicle, to the clavicular notch, where the sternal end of the clavicle meets the manubrium."
   },
   "ribs-mark-2": {
     "point": [
@@ -861,13 +865,14 @@
   },
   "scapula-mark-6": {
     "point": [
-      -0.08677889780756204,
-      1.4052196415198626,
-      -0.07324943560305491
+      -0.11536,
+      1.38674,
+      -0.05092
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T15:03:14.863Z"
+    "reviewedAt": "2026-09-13T15:03:14.863Z",
+    "note": "Corrected 2026-09-29: moved from the superior angle to the notch in the lateral superior border, just medial to the base of the coracoid process."
   },
   "scapula-mark-7": {
     "point": [
@@ -981,13 +986,14 @@
   },
   "radius-mark-4": {
     "point": [
-      -0.2682417126666223,
-      0.8657173084186082,
-      0.005430560458695999
+      -0.25541,
+      0.86837,
+      0.01925
     ],
     "reviewed": true,
     "radius": 0.002,
-    "reviewedAt": "2026-09-13T15:07:26.711Z"
+    "reviewedAt": "2026-09-13T15:07:26.711Z",
+    "note": "Corrected 2026-09-29: moved from the dorsal surface of the distal radius to the medial (ulnar) face that holds the head of the ulna."
   },
   "ulna-mark-0": {
     "point": [

@@ -12,6 +12,7 @@
   {
     "id": "frontal-mark-0",
     "label": "Supraorbital margin",
+    "aka": ["Supraorbital rim"],
     "bone": "frontal",
     "region": "skull",
     "kind": "landmark",
@@ -27,6 +28,7 @@
   {
     "id": "frontal-mark-1",
     "label": "Supraorbital foramen / notch",
+    "aka": ["Supraorbital notch", "Supraorbital foramen"],
     "bone": "frontal",
     "region": "skull",
     "kind": "landmark",
@@ -102,6 +104,7 @@
   {
     "id": "temporal-2",
     "label": "External auditory meatus",
+    "aka": ["External acoustic meatus"],
     "bone": "temporal",
     "region": "skull",
     "kind": "landmark",
@@ -116,6 +119,7 @@
   {
     "id": "temporal-3",
     "label": "Internal auditory meatus",
+    "aka": ["Internal acoustic meatus"],
     "bone": "temporal",
     "region": "skull",
     "kind": "landmark",
@@ -224,6 +228,7 @@
   {
     "id": "occipital-3",
     "label": "External occipital protuberance",
+    "aka": ["Inion"],
     "bone": "occipital",
     "region": "skull",
     "kind": "landmark",
@@ -304,6 +309,7 @@
   {
     "id": "sphenoid-4",
     "label": "Optic canals (foramina)",
+    "aka": ["Optic canal", "Optic foramen", "Optic foramina"],
     "bone": "sphenoid",
     "region": "skull",
     "kind": "landmark",
@@ -332,6 +338,7 @@
   {
     "id": "sphenoid-6",
     "label": "Hypophyseal fossa",
+    "aka": ["Pituitary fossa"],
     "bone": "sphenoid",
     "region": "skull",
     "kind": "landmark",
@@ -412,13 +419,15 @@
   {
     "id": "ethmoid-4",
     "label": "Superior nasal conchae",
+    "aka": ["Superior concha", "Superior conchae", "Superior turbinate"],
     "bone": "ethmoid",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
-      -0.004151420766809648,
-      1.5861022156945446,
-      0.07424746031900152
+      -0.0033,
+      1.588,
+      0.045
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "system": "axial"
@@ -426,9 +435,11 @@
   {
     "id": "ethmoid-5",
     "label": "Middle nasal conchae",
+    "aka": ["Middle concha", "Middle conchae", "Middle turbinate"],
     "bone": "ethmoid",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
       0.00353255933526719,
       1.5765307847788652,
@@ -513,6 +524,7 @@
     "bone": "maxilla",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
       0.004585432265474976,
       1.5481886775586247,
@@ -538,6 +550,7 @@
     "bone": "palatine",
     "region": "skull",
     "kind": "landmark",
+    "paired": true,
     "point": [
       0.005746653803117302,
       1.5489248205891961,
@@ -640,6 +653,7 @@
   {
     "id": "inferior-conchae",
     "label": "Inferior nasal conchae",
+    "aka": ["Inferior concha", "Inferior nasal concha", "Inferior turbinate"],
     "bone": "inferior-conchae",
     "region": "skull",
     "kind": "bone",
@@ -670,6 +684,7 @@
   {
     "id": "mandible-mark-0",
     "label": "Body",
+    "aka": ["Mandibular body", "Body of mandible"],
     "bone": "mandible",
     "region": "skull",
     "kind": "landmark",
@@ -685,6 +700,7 @@
   {
     "id": "mandible-mark-1",
     "label": "Ramus",
+    "aka": ["Mandibular ramus", "Ramus of mandible"],
     "bone": "mandible",
     "region": "skull",
     "kind": "landmark",
@@ -700,6 +716,7 @@
   {
     "id": "mandible-mark-2",
     "label": "Angle",
+    "aka": ["Mandibular angle", "Angle of mandible"],
     "bone": "mandible",
     "region": "skull",
     "kind": "landmark",
@@ -730,6 +747,7 @@
   {
     "id": "mandible-mark-4",
     "label": "Condylar process",
+    "aka": ["Mandibular condyle", "Condyle of mandible", "Head of mandible", "Condyle"],
     "bone": "mandible",
     "region": "skull",
     "kind": "landmark",
@@ -745,6 +763,7 @@
   {
     "id": "mandible-mark-5",
     "label": "Coronoid process",
+    "aka": ["Coronoid"],
     "bone": "mandible",
     "region": "skull",
     "kind": "landmark",
@@ -815,6 +834,7 @@
   {
     "id": "hyoid-mark-1",
     "label": "Greater cornu (horns)",
+    "aka": ["Greater horn", "Greater horns", "Greater cornua"],
     "bone": "hyoid",
     "region": "skull",
     "kind": "landmark",
@@ -830,6 +850,7 @@
   {
     "id": "hyoid-mark-2",
     "label": "Lesser cornu (horns)",
+    "aka": ["Lesser horn", "Lesser horns", "Lesser cornua"],
     "bone": "hyoid",
     "region": "skull",
     "kind": "landmark",
@@ -865,6 +886,7 @@
   {
     "id": "atlas",
     "label": "Atlas (C1)",
+    "aka": ["C1", "First cervical vertebra"],
     "bone": "atlas",
     "region": "spine",
     "kind": "bone",
@@ -875,6 +897,7 @@
   {
     "id": "axis",
     "label": "Axis (C2)",
+    "aka": ["C2", "Second cervical vertebra"],
     "bone": "axis",
     "region": "spine",
     "kind": "bone",
@@ -885,6 +908,7 @@
   {
     "id": "axis-mark-0",
     "label": "Odontoid process / dens",
+    "aka": ["Dens of axis"],
     "bone": "axis",
     "region": "spine",
     "kind": "landmark",
@@ -920,6 +944,7 @@
   {
     "id": "vertebrae-mark-0",
     "label": "Body (centrum)",
+    "aka": ["Centrum", "Vertebral body", "Body of vertebra"],
     "bone": "vertebrae",
     "region": "spine",
     "kind": "landmark",
@@ -969,9 +994,9 @@
     "region": "spine",
     "kind": "landmark",
     "point": [
-      -0.014135891160983682,
-      1.0769043782431194,
-      -0.02617843057281198
+      -0.0111,
+      1.0897,
+      -0.0273
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,
@@ -1055,6 +1080,7 @@
   {
     "id": "cervical-mark-0",
     "label": "Transverse foramen",
+    "aka": ["Foramen transversarium"],
     "bone": "cervical",
     "region": "spine",
     "kind": "landmark",
@@ -1070,13 +1096,14 @@
   {
     "id": "thoracic-vertebrae-mark-0",
     "label": "Costal facets for head of rib",
+    "aka": ["Costal facet", "Costal facets", "Superior costal facet", "Costal demifacet", "Demifacet", "Costal facet for head of rib"],
     "bone": "thoracic-vertebrae",
     "region": "spine",
     "kind": "landmark",
     "point": [
-      0.03480729509592073,
-      1.3299124513481488,
-      -0.08244306515780725
+      0.015,
+      1.33,
+      -0.0605
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,
@@ -1135,6 +1162,7 @@
   {
     "id": "sternum",
     "label": "Sternum",
+    "aka": ["Breastbone"],
     "bone": "sternum",
     "region": "thorax",
     "kind": "bone",
@@ -1155,6 +1183,7 @@
   {
     "id": "sternal-body",
     "label": "Body of sternum",
+    "aka": ["Sternal body", "Gladiolus"],
     "bone": "sternal-body",
     "region": "thorax",
     "kind": "bone",
@@ -1165,6 +1194,7 @@
   {
     "id": "xiphoid",
     "label": "Xiphoid process",
+    "aka": ["Xiphoid"],
     "bone": "xiphoid",
     "region": "thorax",
     "kind": "bone",
@@ -1175,6 +1205,7 @@
   {
     "id": "sternum-mark-0",
     "label": "Suprasternal (jugular) notch",
+    "aka": ["Jugular notch", "Suprasternal notch"],
     "bone": "sternum",
     "region": "thorax",
     "kind": "landmark",
@@ -1194,9 +1225,9 @@
     "region": "thorax",
     "kind": "landmark",
     "point": [
-      0.02391315531970048,
-      1.3840399242721941,
-      0.04519069187179048
+      0.01657,
+      1.39435,
+      0.0397
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,
@@ -1255,6 +1286,7 @@
   {
     "id": "ribs-mark-0",
     "label": "Head",
+    "aka": ["Rib head"],
     "bone": "ribs",
     "region": "thorax",
     "kind": "landmark",
@@ -1270,6 +1302,7 @@
   {
     "id": "ribs-mark-1",
     "label": "Neck",
+    "aka": ["Rib neck"],
     "bone": "ribs",
     "region": "thorax",
     "kind": "landmark",
@@ -1285,6 +1318,7 @@
   {
     "id": "ribs-mark-2",
     "label": "Tubercle",
+    "aka": ["Rib tubercle"],
     "bone": "ribs",
     "region": "thorax",
     "kind": "landmark",
@@ -1300,6 +1334,7 @@
   {
     "id": "ribs-mark-3",
     "label": "Shaft",
+    "aka": ["Body of rib", "Rib shaft", "Shaft of rib"],
     "bone": "ribs",
     "region": "thorax",
     "kind": "landmark",
@@ -1315,6 +1350,7 @@
   {
     "id": "clavicle",
     "label": "Clavicles",
+    "aka": ["Collarbone"],
     "bone": "clavicle",
     "region": "shoulder",
     "kind": "bone",
@@ -1325,6 +1361,7 @@
   {
     "id": "clavicle-mark-0",
     "label": "Acromial (lateral) end",
+    "aka": ["Lateral end", "Acromial end of clavicle", "Lateral end of clavicle"],
     "bone": "clavicle",
     "region": "shoulder",
     "kind": "landmark",
@@ -1340,6 +1377,7 @@
   {
     "id": "clavicle-mark-1",
     "label": "Sternal (medial) end",
+    "aka": ["Medial end", "Sternal end of clavicle", "Medial end of clavicle"],
     "bone": "clavicle",
     "region": "shoulder",
     "kind": "landmark",
@@ -1355,6 +1393,7 @@
   {
     "id": "scapula",
     "label": "Scapulae",
+    "aka": ["Shoulder blade"],
     "bone": "scapula",
     "region": "shoulder",
     "kind": "bone",
@@ -1459,9 +1498,9 @@
     "region": "shoulder",
     "kind": "landmark",
     "point": [
-      -0.08677889780756204,
-      1.4052196415198626,
-      -0.07324943560305491
+      -0.11536,
+      1.38674,
+      -0.05092
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,
@@ -1470,6 +1509,7 @@
   {
     "id": "scapula-mark-7",
     "label": "Spine",
+    "aka": ["Scapular spine", "Spine of scapula"],
     "bone": "scapula",
     "region": "shoulder",
     "kind": "landmark",
@@ -1530,6 +1570,7 @@
   {
     "id": "scapula-mark-11",
     "label": "Acromion",
+    "aka": ["Acromion process"],
     "bone": "scapula",
     "region": "shoulder",
     "kind": "landmark",
@@ -1545,6 +1586,7 @@
   {
     "id": "scapula-mark-12",
     "label": "Coracoid process",
+    "aka": ["Coracoid"],
     "bone": "scapula",
     "region": "shoulder",
     "kind": "landmark",
@@ -1560,6 +1602,7 @@
   {
     "id": "scapula-mark-13",
     "label": "Glenoid cavity",
+    "aka": ["Glenoid fossa", "Glenoid"],
     "bone": "scapula",
     "region": "shoulder",
     "kind": "landmark",
@@ -1585,6 +1628,7 @@
   {
     "id": "h-head",
     "label": "Head",
+    "aka": ["Humeral head"],
     "bone": "humerus",
     "region": "humerus",
     "kind": "landmark",
@@ -1627,6 +1671,7 @@
   {
     "id": "h-greater-tubercle",
     "label": "Greater tubercle",
+    "aka": ["Greater tuberosity"],
     "bone": "humerus",
     "region": "humerus",
     "kind": "landmark",
@@ -1641,6 +1686,7 @@
   {
     "id": "h-lesser-tubercle",
     "label": "Lesser tubercle",
+    "aka": ["Lesser tuberosity"],
     "bone": "humerus",
     "region": "humerus",
     "kind": "landmark",
@@ -1655,6 +1701,7 @@
   {
     "id": "h-capitulum",
     "label": "Capitulum",
+    "aka": ["Capitellum"],
     "bone": "humerus",
     "region": "humerus",
     "kind": "landmark",
@@ -1749,6 +1796,7 @@
   {
     "id": "radius-mark-0",
     "label": "Head",
+    "aka": ["Radial head"],
     "bone": "radius",
     "region": "forearm",
     "kind": "landmark",
@@ -1764,6 +1812,7 @@
   {
     "id": "radius-mark-1",
     "label": "Neck",
+    "aka": ["Radial neck"],
     "bone": "radius",
     "region": "forearm",
     "kind": "landmark",
@@ -1794,6 +1843,7 @@
   {
     "id": "radius-mark-3",
     "label": "Styloid process",
+    "aka": ["Radial styloid process", "Radial styloid"],
     "bone": "radius",
     "region": "forearm",
     "kind": "landmark",
@@ -1813,9 +1863,9 @@
     "region": "forearm",
     "kind": "landmark",
     "point": [
-      -0.2682417126666223,
-      0.8657173084186082,
-      0.005430560458695999
+      -0.25541,
+      0.86837,
+      0.01925
     ],
     "note": "The point locates this feature; the colored spot does not trace its full boundaries.",
     "unavailable": false,
@@ -1834,6 +1884,7 @@
   {
     "id": "ulna-mark-0",
     "label": "Trochlear notch",
+    "aka": ["Semilunar notch"],
     "bone": "ulna",
     "region": "forearm",
     "kind": "landmark",
@@ -1849,6 +1900,7 @@
   {
     "id": "ulna-mark-1",
     "label": "Olecranon",
+    "aka": ["Olecranon process"],
     "bone": "ulna",
     "region": "forearm",
     "kind": "landmark",
@@ -1864,6 +1916,7 @@
   {
     "id": "ulna-mark-2",
     "label": "Styloid process",
+    "aka": ["Ulnar styloid process", "Ulnar styloid"],
     "bone": "ulna",
     "region": "forearm",
     "kind": "landmark",
@@ -2146,6 +2199,7 @@
   {
     "id": "calcaneus",
     "label": "Calcaneus",
+    "aka": ["Heel bone"],
     "bone": "calcaneus",
     "region": "foot",
     "kind": "bone",
@@ -2156,6 +2210,7 @@
   {
     "id": "talus",
     "label": "Talus",
+    "aka": ["Astragalus"],
     "bone": "talus",
     "region": "foot",
     "kind": "bone",
@@ -2441,6 +2496,7 @@
   {
     "id": "coxal-mark-3",
     "label": "Anterior superior iliac spine",
+    "aka": ["ASIS"],
     "bone": "coxal",
     "region": "pelvis",
     "kind": "landmark",
@@ -2456,6 +2512,7 @@
   {
     "id": "coxal-mark-4",
     "label": "Anterior inferior iliac spine",
+    "aka": ["AIIS"],
     "bone": "coxal",
     "region": "pelvis",
     "kind": "landmark",
@@ -2471,6 +2528,7 @@
   {
     "id": "coxal-mark-5",
     "label": "Posterior superior iliac spine",
+    "aka": ["PSIS"],
     "bone": "coxal",
     "region": "pelvis",
     "kind": "landmark",
@@ -2486,6 +2544,7 @@
   {
     "id": "coxal-mark-6",
     "label": "Posterior inferior iliac spine",
+    "aka": ["PIIS"],
     "bone": "coxal",
     "region": "pelvis",
     "kind": "landmark",
@@ -2706,6 +2765,7 @@
   {
     "id": "femur-mark-0",
     "label": "Head",
+    "aka": ["Femoral head"],
     "bone": "femur",
     "region": "thigh",
     "kind": "landmark",
@@ -2721,6 +2781,7 @@
   {
     "id": "femur-mark-1",
     "label": "Fovea",
+    "aka": ["Fovea capitis", "Fovea capitis femoris"],
     "bone": "femur",
     "region": "thigh",
     "kind": "landmark",
@@ -2841,6 +2902,7 @@
   {
     "id": "femur-mark-9",
     "label": "Intercondylar fossa",
+    "aka": ["Intercondylar notch"],
     "bone": "femur",
     "region": "thigh",
     "kind": "landmark",
@@ -2856,6 +2918,7 @@
   {
     "id": "femur-mark-10",
     "label": "Patellar surface",
+    "aka": ["Patellar groove"],
     "bone": "femur",
     "region": "thigh",
     "kind": "landmark",
@@ -2871,6 +2934,7 @@
   {
     "id": "patella",
     "label": "Patella",
+    "aka": ["Kneecap"],
     "bone": "patella",
     "region": "thigh",
     "kind": "bone",
@@ -2891,6 +2955,7 @@
   {
     "id": "tibia-mark-0",
     "label": "Head",
+    "aka": ["Tibial head"],
     "bone": "tibia",
     "region": "leg",
     "kind": "landmark",
@@ -2936,6 +3001,7 @@
   {
     "id": "tibia-mark-3",
     "label": "Tibial tuberosity",
+    "aka": ["Tuberosity of tibia"],
     "bone": "tibia",
     "region": "leg",
     "kind": "landmark",
@@ -2951,6 +3017,7 @@
   {
     "id": "tibia-mark-4",
     "label": "Anterior border / crest",
+    "aka": ["Anterior crest", "Tibial crest", "Anterior border of tibia", "Crest of tibia"],
     "bone": "tibia",
     "region": "leg",
     "kind": "landmark",
@@ -2991,6 +3058,7 @@
   {
     "id": "fibula-mark-0",
     "label": "Head",
+    "aka": ["Fibular head"],
     "bone": "fibula",
     "region": "leg",
     "kind": "landmark",

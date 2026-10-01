@@ -3609,7 +3609,7 @@
       "name": "Parietal bone",
       "region": "skull",
       "system": "axial",
-      "side": "midline",
+      "side": "left",
       "tissue": "bone",
       "min": [
         -0.0070125,
@@ -3933,7 +3933,7 @@
       "name": "Vomer",
       "region": "skull",
       "system": "axial",
-      "side": "right",
+      "side": "midline",
       "tissue": "bone",
       "min": [
         -0.0052763,
